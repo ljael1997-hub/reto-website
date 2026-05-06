@@ -1,13 +1,11 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
 
 interface Props {
   lang?: 'es' | 'en';
 }
 const { lang = 'es' } = Astro.props;
 const t = useTranslations(lang);
-const otherLang = lang === 'es' ? 'en' : 'es';
-const otherLangPath = lang === 'es' ? '/en/' : '/';
 ---
 
 <header class="site-header">
@@ -38,16 +36,14 @@ const otherLangPath = lang === 'es' ? '/en/' : '/';
       <!-- Selector de idioma -->
       <div class="lang-switcher" aria-label="Selector de idioma">
         <a
-          href={lang === 'es' ? '/' : '/en/'}
+          href="/"
           class={lang === 'es' ? 'lang-link lang-link--active' : 'lang-link'}
-          lang="es"
           hreflang="es"
         >ES</a>
         <span aria-hidden="true">|</span>
         <a
-          href={lang === 'en' ? '/' : '/en/'}
+          href="/en/"
           class={lang === 'en' ? 'lang-link lang-link--active' : 'lang-link'}
-          lang="en"
           hreflang="en"
         >EN</a>
       </div>

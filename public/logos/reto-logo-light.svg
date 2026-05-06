@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" role="img" aria-label="Reto">
+  <!-- Isologo Reto - versión sobre fondo claro -->
+  <!-- Creciente azul (atrás) -->
+  <ellipse cx="80" cy="50" rx="14" ry="32" fill="#66B3FF"/>
+  <!-- Círculo amarillo (encima del creciente) -->
+  <circle cx="44" cy="50" r="32" fill="#FFB500"/>
+  <!-- Texto "Reto" -->
+  <text x="92" y="76"
+        font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+        font-weight="900"
+        font-size="74"
+        letter-spacing="-3"
+        fill="#201E1E">Reto</text>
+</svg>

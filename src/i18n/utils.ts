@@ -1,8 +1,6 @@
 import es from './es.json';
 import en from './en.json';
 
-const translations = { es, en } as const;
-
 export type Lang = 'es' | 'en';
 
 export function getLangFromUrl(url: URL): Lang {
@@ -11,24 +9,15 @@ export function getLangFromUrl(url: URL): Lang {
   return 'es';
 }
 
-type Translations = typeof es;
-
-function getNestedValue(obj: Record<string, unknown>, path: string): string {
-  const keys = path.split('.');
-  let current: unknown = obj;
-  for (const key of keys) {
-    if (current === null || typeof current !== 'object') return path;
-    current = (current as Record<string, unknown>)[key];
-  }
-  return typeof current === 'string' ? current : path;
-}
-
 export function useTranslations(lang: Lang) {
+  const dict: Record<string, unknown> = (lang === 'en' ? en : es) as unknown as Record<string, unknown>;
   return function t(key: string): string {
-    return (
-      getNestedValue(translations[lang] as unknown as Record<string, unknown>, key) ||
-      getNestedValue(translations['es'] as unknown as Record<string, unknown>, key) ||
-      key
-    );
+    const keys = key.split('.');
+    let current: unknown = dict;
+    for (const k of keys) {
+      if (current == null || typeof current !== 'object') return key;
+      current = (current as Record<string, unknown>)[k];
+    }
+    return typeof current === 'string' ? current : key;
   };
 }
