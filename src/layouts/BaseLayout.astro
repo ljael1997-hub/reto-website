@@ -34,7 +34,7 @@ const enToEs: Record<string, string> = Object.fromEntries(
   Object.entries(esToEn).map(([k, v]) => [v, k])
 );
 
-const path = Astro.url.pathname;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 let esPath: string;
 let enPath: string;
 if (lang === 'en') {
