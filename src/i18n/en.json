@@ -15,6 +15,37 @@
     "powered_by": "Reto is a Mellow platform",
     "rights": "All rights reserved."
   },
+  "methodology": {
+    "hero": {
+      "h1": "Methodology",
+      "subtitle": "Five pillars that sustain every Reto educational path."
+    },
+    "pillar1": {
+      "title": "Accessibility",
+      "description": "Medical knowledge must be available where physicians need it: in their office, at the hospital, on their phone. We design every experience to work in real-world conditions: limited connections, short windows of time, diverse devices.",
+      "placeholder": "Illustration: multiple devices accessing the same content"
+    },
+    "pillar2": {
+      "title": "Case-Based Learning",
+      "description": "Medicine is learned by solving cases, not memorizing lists. Every Reto path is built on real clinical scenarios that force the physician to make decisions, justify them and review them.",
+      "placeholder": "Illustration: structure of an interactive clinical case"
+    },
+    "pillar3": {
+      "title": "Purposeful gamification",
+      "description": "We don't use points to entertain: we use progress systems to sustain motivation over months of training. Reto's gamification is designed by medical educators, not marketers.",
+      "placeholder": "Illustration: levels, achievements and progress system"
+    },
+    "pillar4": {
+      "title": "Analytics that matter",
+      "description": "Every interaction generates useful data: where a cohort gets stuck, which cases best discriminate between competence levels, which paths correlate with better clinical performance. Institutions receive dashboards designed for decision-making, not for show.",
+      "placeholder": "Illustration: dashboard with learning metrics"
+    },
+    "pillar5": {
+      "title": "Adaptive personalization",
+      "description": "Every physician arrives with a different starting point. Reto adapts the pace, depth and focus of each path based on individual performance, without sacrificing the program's rigor.",
+      "placeholder": "Illustration: adaptive path with divergent branches"
+    }
+  },
   "whatIsReto": {
     "hero": {
       "h1": "What is Reto?",

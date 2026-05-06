@@ -15,6 +15,37 @@
     "powered_by": "Reto es una plataforma de Mellow",
     "rights": "Todos los derechos reservados."
   },
+  "methodology": {
+    "hero": {
+      "h1": "Metodología",
+      "subtitle": "Cinco pilares que sostienen cada ruta educativa de Reto."
+    },
+    "pillar1": {
+      "title": "Accesibilidad",
+      "description": "El conocimiento médico debe estar disponible donde los médicos lo necesitan: en su consultorio, en el hospital, en su teléfono. Diseñamos cada experiencia para funcionar en condiciones reales: conexiones limitadas, tiempos cortos, dispositivos diversos.",
+      "placeholder": "Ilustración: dispositivos múltiples accediendo al mismo contenido"
+    },
+    "pillar2": {
+      "title": "Aprendizaje Basado en Casos",
+      "description": "La medicina se aprende resolviendo casos, no memorizando listas. Cada ruta de Reto está construida sobre escenarios clínicos reales que obligan al médico a tomar decisiones, justificarlas y revisarlas.",
+      "placeholder": "Ilustración: estructura de un caso clínico interactivo"
+    },
+    "pillar3": {
+      "title": "Gamificación con propósito",
+      "description": "No usamos puntos para entretener: usamos sistemas de progreso para sostener la motivación a lo largo de meses de formación. La gamificación de Reto está diseñada por educadores médicos, no por marketers.",
+      "placeholder": "Ilustración: sistema de niveles, logros y progreso"
+    },
+    "pillar4": {
+      "title": "Analítica que importa",
+      "description": "Cada interacción genera datos útiles: dónde se traba un grupo, qué casos discriminan mejor entre niveles de competencia, qué rutas correlacionan con mejor desempeño clínico. Las instituciones reciben dashboards diseñados para tomar decisiones, no para impresionar.",
+      "placeholder": "Ilustración: dashboard con métricas de aprendizaje"
+    },
+    "pillar5": {
+      "title": "Personalización adaptativa",
+      "description": "Cada médico llega con un punto de partida distinto. Reto adapta el ritmo, la profundidad y el enfoque de cada ruta según el desempeño individual, sin sacrificar el rigor del programa.",
+      "placeholder": "Ilustración: ruta adaptativa con caminos divergentes"
+    }
+  },
   "whatIsReto": {
     "hero": {
       "h1": "¿Qué es Reto?",

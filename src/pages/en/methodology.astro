@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+import PillarSection from '../../components/methodology/PillarSection.astro';
+
+const lang = 'en';
+const t = useTranslations(lang);
+const pillars = [
+  { number: '01', index: 1, bgColor: 'white', imageOnLeft: false },
+  { number: '02', index: 2, bgColor: 'aliceblue', imageOnLeft: true },
+  { number: '03', index: 3, bgColor: 'white', imageOnLeft: false },
+  { number: '04', index: 4, bgColor: 'aliceblue', imageOnLeft: true },
+  { number: '05', index: 5, bgColor: 'white', imageOnLeft: false },
+] as const;
+---
+
+<BaseLayout
+  title="Methodology"
+  description="Five pillars that sustain every Reto educational path."
+  lang={lang}
+>
+  <section class="methodology-hero" aria-labelledby="methodology-title">
+    <div class="methodology-hero__inner">
+      <h1 id="methodology-title">{t('methodology.hero.h1')}</h1>
+      <p>{t('methodology.hero.subtitle')}</p>
+    </div>
+  </section>
+
+  {
+    pillars.map((pillar) => (
+      <PillarSection
+        lang={lang}
+        number={pillar.number}
+        titleKey={`methodology.pillar${pillar.index}.title`}
+        descriptionKey={`methodology.pillar${pillar.index}.description`}
+        placeholderTextKey={`methodology.pillar${pillar.index}.placeholder`}
+        bgColor={pillar.bgColor}
+        imageOnLeft={pillar.imageOnLeft}
+      />
+    ))
+  }
+</BaseLayout>
+
+<style>
+  .methodology-hero {
+    min-height: 50vh;
+    background: var(--color-aliceblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: var(--space-16);
+    padding-inline: var(--container-padding);
+  }
+
+  .methodology-hero__inner {
+    max-width: 960px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .methodology-hero p {
+    max-width: 720px;
+    margin: var(--space-6) auto 0;
+    color: rgba(32, 30, 30, 0.76);
+    font-family: var(--font-body);
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 500;
+  }
+</style>
