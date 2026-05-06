@@ -7,7 +7,14 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-const members = Array.from({ length: 6 });
+const members = [
+  '/brand/team-avatar-doctor.webp',
+  '/brand/team-avatar-bot-yellow.webp',
+  '/brand/team-avatar-bot-blue.webp',
+  '/brand/team-avatar-bot-gold.webp',
+  '/brand/team-avatar-bot-purple.webp',
+  '/brand/team-avatar-bot-cyan.webp',
+];
 ---
 
 <section class="team-section" aria-labelledby="team-title">
@@ -19,9 +26,9 @@ const members = Array.from({ length: 6 });
 
     <div class="team-grid">
       {
-        members.map(() => (
+        members.map((imageSrc) => (
           <article class="team-card">
-            <div class="team-card__photo" aria-hidden="true"></div>
+            <img class="team-card__photo" src={imageSrc} alt="" loading="lazy" />
             <h3>{t('whatIsReto.team.member.placeholderName')}</h3>
             <p>{t('whatIsReto.team.member.placeholderRole')}</p>
           </article>
@@ -75,9 +82,9 @@ const members = Array.from({ length: 6 });
     aspect-ratio: 1;
     margin-inline: auto;
     border-radius: var(--radius-sm);
-    background:
-      linear-gradient(135deg, rgba(102, 179, 255, 0.28), rgba(255, 181, 0, 0.2)),
-      #e9eef3;
+    background: white;
+    object-fit: contain;
+    padding: var(--space-3);
   }
 
   .team-card h3 {

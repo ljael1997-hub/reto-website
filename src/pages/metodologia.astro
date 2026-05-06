@@ -6,11 +6,11 @@ import PillarSection from '../components/methodology/PillarSection.astro';
 const lang = 'es';
 const t = useTranslations(lang);
 const pillars = [
-  { number: '01', index: 1, bgColor: 'white', imageOnLeft: false },
-  { number: '02', index: 2, bgColor: 'aliceblue', imageOnLeft: true },
-  { number: '03', index: 3, bgColor: 'white', imageOnLeft: false },
-  { number: '04', index: 4, bgColor: 'aliceblue', imageOnLeft: true },
-  { number: '05', index: 5, bgColor: 'white', imageOnLeft: false },
+  { number: '01', index: 1, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-accessibility.webp' },
+  { number: '02', index: 2, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-cases.webp' },
+  { number: '03', index: 3, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-gamification.webp' },
+  { number: '04', index: 4, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-analytics.webp' },
+  { number: '05', index: 5, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-personalization.webp' },
 ] as const;
 ---
 
@@ -34,6 +34,7 @@ const pillars = [
         titleKey={`methodology.pillar${pillar.index}.title`}
         descriptionKey={`methodology.pillar${pillar.index}.description`}
         placeholderTextKey={`methodology.pillar${pillar.index}.placeholder`}
+        imageSrc={pillar.imageSrc}
         bgColor={pillar.bgColor}
         imageOnLeft={pillar.imageOnLeft}
       />
