@@ -1,12 +1,18 @@
 {
   "site": {
     "name": "Reto",
-    "tagline": "Medical education platform"
+    "tagline": "Medical education platform connecting institutions, hospitals and industry with doctors."
   },
   "nav": {
     "home": "Home",
     "about": "What is Reto?",
     "methodology": "Methodology",
+    "solutions": "Solutions",
     "contact": "Contact"
+  },
+  "footer": {
+    "quick_links": "Quick links",
+    "powered_by": "Reto is a Mellow platform",
+    "rights": "All rights reserved."
   }
 }

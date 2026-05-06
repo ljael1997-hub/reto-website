@@ -1,0 +1,215 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang?: 'es' | 'en';
+}
+const { lang = 'es' } = Astro.props;
+const t = useTranslations(lang);
+const otherLang = lang === 'es' ? 'en' : 'es';
+const otherLangPath = lang === 'es' ? '/en/' : '/';
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <!-- Logo -->
+    <a href={lang === 'es' ? '/' : '/en/'} class="header-logo" aria-label="Reto — Inicio">
+      <img src="/logos/reto-logo-light.svg" alt="Reto" height="36" />
+    </a>
+
+    <!-- Hamburger toggle (CSS-only) -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Nav -->
+    <nav class="header-nav" aria-label="Navegación principal">
+      <ul class="nav-list" role="list">
+        <li><a href={lang === 'es' ? '/#home' : '/en/#home'}>{t('nav.home')}</a></li>
+        <li><a href={lang === 'es' ? '/#about' : '/en/#about'}>{t('nav.about')}</a></li>
+        <li><a href={lang === 'es' ? '/#methodology' : '/en/#methodology'}>{t('nav.methodology')}</a></li>
+        <li><a href={lang === 'es' ? '/#solutions' : '/en/#solutions'}>{t('nav.solutions')}</a></li>
+        <li><a href={lang === 'es' ? '/#contact' : '/en/#contact'}>{t('nav.contact')}</a></li>
+      </ul>
+
+      <!-- Selector de idioma -->
+      <div class="lang-switcher" aria-label="Selector de idioma">
+        <a
+          href={lang === 'es' ? '/' : '/en/'}
+          class={lang === 'es' ? 'lang-link lang-link--active' : 'lang-link'}
+          lang="es"
+          hreflang="es"
+        >ES</a>
+        <span aria-hidden="true">|</span>
+        <a
+          href={lang === 'en' ? '/' : '/en/'}
+          class={lang === 'en' ? 'lang-link lang-link--active' : 'lang-link'}
+          lang="en"
+          hreflang="en"
+        >EN</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-aliceblue);
+    border-bottom: 1px solid rgba(32, 30, 30, 0.08);
+  }
+
+  .header-inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+    padding-block: var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+
+  /* Logo */
+  .header-logo {
+    flex-shrink: 0;
+    line-height: 0;
+  }
+
+  .header-logo img {
+    height: 36px;
+    width: auto;
+  }
+
+  /* Nav */
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    list-style: none;
+  }
+
+  .nav-list a {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--text-small);
+    color: var(--color-pelicula);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .nav-list a:hover {
+    color: #000;
+    text-decoration: none;
+  }
+
+  /* Lang switcher */
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-small);
+    color: rgba(32, 30, 30, 0.4);
+  }
+
+  .lang-link {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: rgba(32, 30, 30, 0.5);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .lang-link:hover {
+    color: var(--color-pelicula);
+    text-decoration: none;
+  }
+
+  .lang-link--active {
+    font-weight: 700;
+    color: var(--color-pelicula);
+  }
+
+  /* Hamburger — hidden on desktop */
+  .nav-toggle-input {
+    display: none;
+  }
+
+  .nav-toggle-label {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: var(--space-2);
+    z-index: 110;
+  }
+
+  .nav-toggle-label span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-pelicula);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  /* Mobile */
+  @media (max-width: 63.999em) {
+    .nav-toggle-label {
+      display: flex;
+    }
+
+    .header-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-aliceblue);
+      border-bottom: 1px solid rgba(32, 30, 30, 0.08);
+      padding: var(--space-6);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-6);
+    }
+
+    .nav-list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-4);
+      width: 100%;
+    }
+
+    .nav-list a {
+      font-size: var(--text-body);
+    }
+
+    /* Show nav when checkbox is checked */
+    .nav-toggle-input:checked ~ .header-nav {
+      display: flex;
+    }
+
+    /* Animate hamburger → X */
+    .nav-toggle-input:checked ~ .nav-toggle-label span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-toggle-input:checked ~ .nav-toggle-label span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle-input:checked ~ .nav-toggle-label span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+</style>

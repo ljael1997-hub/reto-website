@@ -1,0 +1,153 @@
+---
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang?: 'es' | 'en';
+}
+const { lang = 'es' } = Astro.props;
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+
+      <!-- Col 1: Logo + tagline -->
+      <div class="footer-col footer-col--brand">
+        <a href={lang === 'es' ? '/' : '/en/'} class="footer-logo" aria-label="Reto — Inicio">
+          <img src="/logos/reto-logo-dark.svg" alt="Reto" height="36" />
+        </a>
+        <p class="footer-tagline">{t('site.tagline')}</p>
+      </div>
+
+      <!-- Col 2: Links rápidos -->
+      <div class="footer-col">
+        <p class="footer-col-title">{t('footer.quick_links')}</p>
+        <ul class="footer-links" role="list">
+          <li><a href={lang === 'es' ? '/#home' : '/en/#home'}>{t('nav.home')}</a></li>
+          <li><a href={lang === 'es' ? '/#about' : '/en/#about'}>{t('nav.about')}</a></li>
+          <li><a href={lang === 'es' ? '/#methodology' : '/en/#methodology'}>{t('nav.methodology')}</a></li>
+          <li><a href={lang === 'es' ? '/#contact' : '/en/#contact'}>{t('nav.contact')}</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Powered by Mellow -->
+      <div class="footer-col">
+        <p class="footer-powered">
+          {t('footer.powered_by')} —
+          <a
+            href="https://www.mellow.cc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-mellow-link"
+          >mellow.cc</a>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {year} Reto. {t('footer.rights')}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-pelicula);
+    color: var(--color-aliceblue);
+  }
+
+  .footer-inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+    padding-block: var(--space-16);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 64em) {
+    .footer-grid {
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: var(--space-16);
+    }
+  }
+
+  /* Col 1 */
+  .footer-logo img {
+    height: 36px;
+    width: auto;
+  }
+
+  .footer-tagline {
+    margin-top: var(--space-4);
+    font-size: var(--text-small);
+    color: rgba(245, 249, 252, 0.65);
+    max-width: 36ch;
+    line-height: 1.6;
+  }
+
+  /* Col 2 */
+  .footer-col-title {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--text-small);
+    color: rgba(245, 249, 252, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .footer-links a {
+    font-size: var(--text-small);
+    color: rgba(245, 249, 252, 0.75);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-aliceblue);
+    text-decoration: none;
+  }
+
+  /* Col 3 */
+  .footer-powered {
+    font-size: var(--text-small);
+    color: rgba(245, 249, 252, 0.65);
+    line-height: 1.6;
+  }
+
+  .footer-mellow-link {
+    color: var(--color-amarillo);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s ease;
+  }
+
+  .footer-mellow-link:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    margin-top: var(--space-12);
+    padding-top: var(--space-6);
+    border-top: 1px solid rgba(245, 249, 252, 0.1);
+    font-size: var(--text-tiny);
+    color: rgba(245, 249, 252, 0.4);
+  }
+</style>

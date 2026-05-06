@@ -1,12 +1,18 @@
 {
   "site": {
     "name": "Reto",
-    "tagline": "Plataforma de educación médica"
+    "tagline": "Plataforma de educación médica que conecta instituciones, hospitales e industria con médicos."
   },
   "nav": {
     "home": "Inicio",
     "about": "¿Qué es Reto?",
     "methodology": "Metodología",
+    "solutions": "Soluciones",
     "contact": "Contacto"
+  },
+  "footer": {
+    "quick_links": "Enlaces rápidos",
+    "powered_by": "Reto es una plataforma de Mellow",
+    "rights": "Todos los derechos reservados."
   }
 }

@@ -1,0 +1,60 @@
+/* ============================================================
+   RETO — Design Tokens
+   Fuente de verdad del sistema visual. No modificar sin revisar
+   el branding oficial completo.
+   ============================================================ */
+
+:root {
+  /* ----------------------------------------------------------
+     COLORES
+     ---------------------------------------------------------- */
+  --color-pelicula:   #201E1E;
+  --color-amarillo:   #FFB500;
+  --color-azul-acero: #66B3FF;
+  --color-aliceblue:  #F5F9FC;
+  --color-cielo:      #7C99EC;
+  --color-tomate:     #E45A3D;
+  --color-rosa:       #F8BAD4;
+
+  /* ----------------------------------------------------------
+     TIPOGRAFÍA
+     ---------------------------------------------------------- */
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  --text-h1:    clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  --text-h2:    clamp(2rem, 3vw + 1rem, 3rem);
+  --text-h3:    clamp(1.5rem, 2vw + 0.75rem, 2rem);
+  --text-h4:    1.25rem;
+  --text-body:  1rem;
+  --text-small: 0.875rem;
+  --text-tiny:  0.75rem;
+
+  /* ----------------------------------------------------------
+     ESPACIADO
+     ---------------------------------------------------------- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ----------------------------------------------------------
+     BORDER RADIUS
+     ---------------------------------------------------------- */
+  --radius-sm:   0.375rem;
+  --radius-md:   0.75rem;
+  --radius-lg:   1.25rem;
+  --radius-pill: 9999px;
+
+  /* ----------------------------------------------------------
+     LAYOUT
+     ---------------------------------------------------------- */
+  --container-max:     1280px;
+  --container-padding: var(--space-6);
+}

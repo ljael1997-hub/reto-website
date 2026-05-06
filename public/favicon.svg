@@ -1,3 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="40" fill="#FFB500"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Reto">
+  <!-- Isotipo Reto - solo el símbolo, para favicon/app -->
+  <!-- Creciente azul (atrás) -->
+  <ellipse cx="64" cy="50" rx="14" ry="32" fill="#66B3FF"/>
+  <!-- Círculo amarillo (encima) -->
+  <circle cx="50" cy="50" r="32" fill="#FFB500"/>
 </svg>
