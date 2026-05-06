@@ -1,0 +1,79 @@
+---
+import Button from '../../components/Button.astro';
+import AudienceBenefits from '../../components/audiences/AudienceBenefits.astro';
+import CaseStudy from '../../components/audiences/CaseStudy.astro';
+import FinalCta from '../../components/audiences/FinalCta.astro';
+import IndustrySolutionsSection from '../../components/audiences/IndustrySolutionsSection.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title="For the pharmaceutical industry"
+  description="A platform to reach physicians through validated educational content, therapeutic update campaigns, and specialty communities."
+  lang={lang}
+>
+  <section class="industry-hero" aria-labelledby="industry-title">
+    <div class="industry-hero__inner">
+      <h1 id="industry-title">{t('industry.hero.h1')}</h1>
+      <p>{t('industry.hero.subtitle')}</p>
+      <Button href="#contacto" variant="secondary">{t('industry.hero.cta')}</Button>
+    </div>
+  </section>
+
+  <IndustrySolutionsSection lang={lang} />
+  <AudienceBenefits
+    lang={lang}
+    titleKey="industry.benefits.title"
+    subtitleKey="industry.benefits.subtitle"
+    itemBaseKey="industry.benefits"
+  />
+  <CaseStudy
+    lang={lang}
+    titleKey="industry.case.title"
+    quoteKey="industry.case.quote"
+    attributionBaseKey="industry.case.attribution"
+    metricBaseKey="industry.case"
+  />
+  <FinalCta
+    lang={lang}
+    titleKey="industry.finalCta.title"
+    bodyKey="industry.finalCta.body"
+    buttonKey="industry.finalCta.button"
+    href="#contacto"
+  />
+</BaseLayout>
+
+<style>
+  .industry-hero {
+    min-height: 50vh;
+    background: var(--color-aliceblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: var(--space-16);
+    padding-inline: var(--container-padding);
+  }
+
+  .industry-hero__inner {
+    max-width: 960px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .industry-hero p {
+    max-width: 760px;
+    margin: var(--space-6) auto 0;
+    color: rgba(32, 30, 30, 0.76);
+    font-family: var(--font-body);
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 500;
+  }
+
+  .industry-hero :global(.btn) {
+    margin-top: var(--space-8);
+  }
+</style>

@@ -40,3 +40,15 @@ Isologo Reto en su versión B2B (sin Emdi, que es B2C/app).
 - Componentes base: Button, Section, Card (Prompt 01)
 - Header con selector de idioma (Prompt 01)
 - Footer con enlace a Mellow (Prompt 01)
+
+## 2026-05-06 — Formulario de contacto: frontend-only en v1
+
+**Contexto:** Prompt 09 implementa la página de contacto con formulario completo.
+
+**Decisión:** El formulario en esta versión es frontend-only. Valida y muestra mensaje de éxito, pero no envía datos a ningún backend.
+
+**Razón:** El cliente (Reto) aún no ha aprobado la propuesta. Cuando lo haga, se decidirá con ellos qué servicio de backend usar — pueden tener un CRM propio, preferir Formspree, o querer una solución más robusta como Resend con dominio propio. Comprometerse ahora a una infra obligaría a migrar después.
+
+**Punto de modificación:** `src/components/forms/ContactForm.astro`, función `handleSubmit`. Es el único punto a tocar cuando se defina el backend.
+
+**Implicación:** El sitio se puede entregar y mostrar al cliente. Si alguien llena el formulario antes de conectar backend, los datos se pierden — esto debe estar documentado para Reto antes del deploy productivo.

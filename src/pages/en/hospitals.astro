@@ -12,43 +12,43 @@ const t = useTranslations(lang);
 ---
 
 <BaseLayout
-  title="For universities"
-  description="A platform designed for medical schools and faculties that need to train better, measure more and institutionally back every step."
+  title="For hospitals"
+  description="A platform for hospitals that need to train and certify their medical staff continuously, measurably, and with institutional backing."
   lang={lang}
 >
-  <section class="universities-hero" aria-labelledby="universities-title">
-    <div class="universities-hero__inner">
-      <h1 id="universities-title">{t('universities.hero.h1')}</h1>
-      <p>{t('universities.hero.subtitle')}</p>
-      <Button href="#contacto" variant="secondary">{t('universities.hero.cta')}</Button>
+  <section class="hospitals-hero" aria-labelledby="hospitals-title">
+    <div class="hospitals-hero__inner">
+      <h1 id="hospitals-title">{t('hospitals.hero.h1')}</h1>
+      <p>{t('hospitals.hero.subtitle')}</p>
+      <Button href="#contacto" variant="secondary">{t('hospitals.hero.cta')}</Button>
     </div>
   </section>
 
-  <AudienceProgramSection lang={lang} baseKey="universities.enarm" />
+  <AudienceProgramSection lang={lang} baseKey="hospitals.program" />
   <AudienceBenefits
     lang={lang}
-    titleKey="universities.benefits.title"
-    subtitleKey="universities.benefits.subtitle"
-    itemBaseKey="universities.benefits"
+    titleKey="hospitals.benefits.title"
+    subtitleKey="hospitals.benefits.subtitle"
+    itemBaseKey="hospitals.benefits"
   />
   <CaseStudy
     lang={lang}
-    titleKey="universities.case.title"
-    quoteKey="universities.case.quote"
-    attributionBaseKey="universities.case.attribution"
-    metricBaseKey="universities.case"
+    titleKey="hospitals.case.title"
+    quoteKey="hospitals.case.quote"
+    attributionBaseKey="hospitals.case.attribution"
+    metricBaseKey="hospitals.case"
   />
   <FinalCta
     lang={lang}
-    titleKey="universities.finalCta.title"
-    bodyKey="universities.finalCta.body"
-    buttonKey="universities.finalCta.button"
+    titleKey="hospitals.finalCta.title"
+    bodyKey="hospitals.finalCta.body"
+    buttonKey="hospitals.finalCta.button"
     href="#contacto"
   />
 </BaseLayout>
 
 <style>
-  .universities-hero {
+  .hospitals-hero {
     min-height: 50vh;
     background: var(--color-aliceblue);
     display: flex;
@@ -58,13 +58,13 @@ const t = useTranslations(lang);
     padding-inline: var(--container-padding);
   }
 
-  .universities-hero__inner {
+  .hospitals-hero__inner {
     max-width: 960px;
     margin-inline: auto;
     text-align: center;
   }
 
-  .universities-hero p {
+  .hospitals-hero p {
     max-width: 760px;
     margin: var(--space-6) auto 0;
     color: rgba(32, 30, 30, 0.76);
@@ -73,7 +73,7 @@ const t = useTranslations(lang);
     font-weight: 500;
   }
 
-  .universities-hero :global(.btn) {
+  .hospitals-hero :global(.btn) {
     margin-top: var(--space-8);
   }
 </style>

@@ -1,0 +1,106 @@
+---
+import esJson from '../i18n/es.json';
+import enJson from '../i18n/en.json';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const dict = lang === 'en' ? enJson : esJson;
+const { title, subtitle } = dict.home.partners;
+
+const partnerLabel = lang === 'en' ? 'Partner' : 'Aliado';
+const partners = Array.from({ length: 8 }, (_, i) => {
+  const num = String(i + 1).padStart(2, '0');
+  return `${partnerLabel} ${num}`;
+});
+---
+<section class="partners" id="aliados">
+  <div class="partners__container">
+    <h2 class="partners__title">{title}</h2>
+    {subtitle && <p class="partners__subtitle">{subtitle}</p>}
+
+    <!-- TODO: reemplazar placeholders por <img> con logos reales cuando Reto entregue el listado de aliados -->
+    <div class="partners__grid" role="list" aria-label={title}>
+      {partners.map((label) => (
+        <div class="partner-placeholder" role="listitem" aria-label={label}>
+          <span class="partner-placeholder__label">{label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .partners {
+    background: #ffffff;
+    padding-block: var(--space-16);
+    padding-inline: var(--container-padding);
+  }
+
+  .partners__container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .partners__title {
+    text-align: center;
+    color: var(--color-pelicula);
+    font-size: var(--text-h3);
+    margin-bottom: var(--space-3);
+  }
+
+  .partners__subtitle {
+    text-align: center;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--text-body);
+    color: var(--color-pelicula);
+    opacity: 0.7;
+    margin-bottom: var(--space-8);
+  }
+
+  .partners__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  /* Tablet: 3 columns */
+  @media (min-width: 48em) {
+    .partners__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Desktop: 4 columns */
+  @media (min-width: 64em) {
+    .partners__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .partner-placeholder {
+    aspect-ratio: 3 / 2;
+    background: rgba(32, 30, 30, 0.05);
+    border: 1px solid rgba(32, 30, 30, 0.1);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .partner-placeholder__label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--text-small);
+    color: var(--color-pelicula);
+    opacity: 0.4;
+  }
+</style>

@@ -1,0 +1,128 @@
+---
+import Button from './Button.astro';
+import esJson from '../i18n/es.json';
+import enJson from '../i18n/en.json';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const dict = lang === 'en' ? enJson : esJson;
+const hero = dict.home.hero;
+const base = lang === 'en' ? '/en' : '';
+const aboutHref = lang === 'en' ? '/en/what-is-reto' : '/que-es-reto';
+---
+<section class="hero" id="home" aria-label={lang === 'en' ? 'Hero' : 'Inicio'}>
+  <div class="hero__blob hero__blob--yellow" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--blue" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <h1 class="hero__h1">
+      {hero.title.before}<span class="hero-title-accent">{hero.title.accent}</span>{hero.title.after}
+    </h1>
+    <p class="hero__subtitle">{hero.subtitle}</p>
+    <div class="hero__ctas">
+      <Button variant="primary" href={`${base}/#contact`}>{hero.cta_primary}</Button>
+      <Button variant="secondary" href={aboutHref}>{hero.cta_secondary}</Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 80vh;
+    background: var(--color-aliceblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: var(--space-16);
+    padding-inline: var(--container-padding);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── Decorative blobs ─────────────────────────────────────────────── */
+  .hero__blob {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero__blob--yellow {
+    width: 480px;
+    height: 480px;
+    background: var(--color-amarillo);
+    opacity: 0.13;
+    filter: blur(100px);
+    top: -120px;
+    right: -80px;
+  }
+
+  .hero__blob--blue {
+    width: 420px;
+    height: 420px;
+    background: var(--color-azul-acero);
+    opacity: 0.10;
+    filter: blur(90px);
+    bottom: -100px;
+    left: -60px;
+  }
+
+  .hero__inner {
+    max-width: 960px;
+    width: 100%;
+    text-align: center;
+    margin-inline: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Title accent ─────────────────────────────────────────────────── */
+  .hero-title-accent {
+    color: var(--color-azul-acero);
+  }
+
+  .hero__h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--text-h1);
+    color: var(--color-pelicula);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .hero__subtitle {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    color: var(--color-pelicula);
+    opacity: 0.75;
+    margin-top: var(--space-6);
+    max-width: 640px;
+    margin-inline: auto;
+    line-height: 1.6;
+  }
+
+  .hero__ctas {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 47.999em) {
+    .hero__blob--yellow {
+      width: 280px;
+      height: 280px;
+      top: -60px;
+      right: -40px;
+    }
+
+    .hero__blob--blue {
+      display: none;
+    }
+  }
+</style>

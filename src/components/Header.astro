@@ -16,6 +16,12 @@ const localizedPaths = {
   '/en/learning-paths': { es: '/rutas-educativas', en: '/en/learning-paths' },
   '/universidades': { es: '/universidades', en: '/en/universities' },
   '/en/universities': { es: '/universidades', en: '/en/universities' },
+  '/hospitales': { es: '/hospitales', en: '/en/hospitals' },
+  '/en/hospitals': { es: '/hospitales', en: '/en/hospitals' },
+  '/industria': { es: '/industria', en: '/en/industry' },
+  '/en/industry': { es: '/industria', en: '/en/industry' },
+  '/contacto': { es: '/contacto', en: '/en/contact' },
+  '/en/contact': { es: '/contacto', en: '/en/contact' },
 } as const;
 const currentLocalizedPath = localizedPaths[pathname as keyof typeof localizedPaths];
 const spanishHref = currentLocalizedPath?.es ?? '/';
@@ -54,7 +60,7 @@ const englishHref = currentLocalizedPath?.en ?? '/en/';
             </ul>
           </details>
         </li>
-        <li><a href={lang === 'es' ? '/#contact' : '/en/#contact'}>{t('nav.contact')}</a></li>
+        <li><a href={lang === 'es' ? '/contacto' : '/en/contact'}>{t('nav.contact')}</a></li>
       </ul>
 
       <!-- Selector de idioma -->
@@ -132,7 +138,7 @@ const englishHref = currentLocalizedPath?.en ?? '/en/';
 
   .nav-list a:hover,
   .nav-list summary:hover {
-    color: #000;
+    color: var(--color-amarillo);
     text-decoration: none;
   }
 
@@ -201,7 +207,7 @@ const englishHref = currentLocalizedPath?.en ?? '/en/';
   }
 
   .lang-link:hover {
-    color: var(--color-pelicula);
+    color: var(--color-amarillo);
     text-decoration: none;
   }
 

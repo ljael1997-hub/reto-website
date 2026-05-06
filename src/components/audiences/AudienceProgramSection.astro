@@ -1,0 +1,140 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  baseKey: string;
+}
+
+const { lang, baseKey } = Astro.props;
+const t = useTranslations(lang);
+const advantages = [1, 2, 3, 4];
+---
+
+<section class="program-section" aria-labelledby="program-title">
+  <div class="program-section__inner">
+    <div class="program-section__content">
+      <h2 id="program-title">{t(`${baseKey}.title`)}</h2>
+      <div class="program-section__copy">
+        <p>{t(`${baseKey}.body1`)}</p>
+        <p>{t(`${baseKey}.body2`)}</p>
+      </div>
+
+      <div class="program-section__advantages">
+        <p class="program-section__advantages-title">{t(`${baseKey}.advantages.title`)}</p>
+        <ul>
+          {
+            advantages.map((item) => (
+              <li>{t(`${baseKey}.advantages.a${item}`)}</li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="program-section__mockup">
+      <img
+        src="/brand/methodology-analytics.webp"
+        alt={t(`${baseKey}.placeholder`)}
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .program-section {
+    background: white;
+    padding-block: var(--space-32);
+    padding-inline: var(--container-padding);
+  }
+
+  .program-section__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    display: grid;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  .program-section__content {
+    max-width: 680px;
+  }
+
+  .program-section__copy {
+    margin-top: var(--space-6);
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .program-section__copy p,
+  .program-section__advantages li {
+    color: rgba(32, 30, 30, 0.74);
+    font-size: clamp(1.0625rem, 1.3vw, 1.1875rem);
+  }
+
+  .program-section__advantages {
+    margin-top: var(--space-8);
+  }
+
+  .program-section__advantages-title {
+    font-weight: 800;
+  }
+
+  .program-section__advantages ul {
+    margin-top: var(--space-4);
+    display: grid;
+    gap: var(--space-3);
+    list-style: none;
+  }
+
+  .program-section__advantages li {
+    position: relative;
+    padding-left: var(--space-6);
+  }
+
+  .program-section__advantages li::before {
+    content: '';
+    position: absolute;
+    top: 0.72em;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-pill);
+    background: var(--color-amarillo);
+  }
+
+  .program-section__mockup {
+    min-height: 360px;
+    aspect-ratio: 1;
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    border-radius: var(--radius-sm);
+    background:
+      linear-gradient(135deg, rgba(102, 179, 255, 0.18), rgba(255, 181, 0, 0.16)),
+      var(--color-aliceblue);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    padding: var(--space-8);
+  }
+
+  .program-section__mockup img {
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+  }
+
+  @media (min-width: 64em) {
+    .program-section__inner {
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+    }
+  }
+
+  @media (max-width: 47.999em) {
+    .program-section {
+      padding-block: var(--space-24);
+    }
+  }
+</style>

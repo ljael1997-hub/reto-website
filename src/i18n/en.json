@@ -20,6 +20,222 @@
     "powered_by": "Reto is a Mellow platform",
     "rights": "All rights reserved."
   },
+  "contact": {
+    "hero": {
+      "h1": "Contact",
+      "subtitle": "Tell us about your institution and we will get back to you within 48 business hours."
+    },
+    "form": {
+      "name": {
+        "label": "Full name",
+        "placeholder": "María González"
+      },
+      "email": {
+        "label": "Institutional email",
+        "placeholder": "m.gonzalez@institution.edu"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+1 555 123 4567"
+      },
+      "institution": {
+        "label": "Institution",
+        "placeholder": "University / Hospital / Laboratory"
+      },
+      "institutionType": {
+        "label": "Institution type",
+        "placeholder": "Select an option",
+        "options": {
+          "university": "University",
+          "hospital": "Hospital",
+          "industry": "Pharmaceutical industry",
+          "other": "Other"
+        }
+      },
+      "role": {
+        "label": "Role",
+        "placeholder": "Academic coordinator, Medical director, Medical Affairs..."
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us what your institution needs..."
+      },
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "success": {
+        "title": "Thank you for reaching out.",
+        "body": "We will get back to you within the next 48 business hours."
+      },
+      "errors": {
+        "required": "This field is required",
+        "minLength": "Minimum {min} characters",
+        "email": "Please enter a valid email address",
+        "phone": "Please enter a valid phone number"
+      }
+    },
+    "sidebar": {
+      "title": "Other ways to reach us",
+      "email": {
+        "label": "Email",
+        "value": "contacto@reto.health"
+      },
+      "location": {
+        "label": "Office",
+        "value": "Mexico City, Mexico"
+      },
+      "response": {
+        "label": "Response time",
+        "value": "Within 48 business hours"
+      }
+    },
+    "homeCta": {
+      "title": "Ready to talk about your institution?",
+      "subtitle": "If you want to see how Reto can integrate into your university, hospital, or lab, let's schedule a conversation.",
+      "button": "Go to contact"
+    }
+  },
+  "industry": {
+    "hero": {
+      "h1": "For the pharmaceutical industry",
+      "subtitle": "A platform to reach physicians through validated educational content, therapeutic update campaigns, and specialty communities.",
+      "cta": "Request a proposal"
+    },
+    "solutions": {
+      "eyebrow": "Industry solutions",
+      "title": "Solutions for the industry",
+      "body1": "Reto gives pharmaceutical and life sciences companies a direct channel to support physicians in their professional development — through specialist-validated educational content, not advertising.",
+      "body2": "Every initiative is built with academic rigor, hosted on a measurable infrastructure, and respects the ethical codes governing medical communications.",
+      "s1": {
+        "title": "Therapeutic update campaigns",
+        "body": "Sponsored educational paths that bring physicians up to date on new evidence, clinical guidelines, and therapeutic approaches in a specific area."
+      },
+      "s2": {
+        "title": "Specialty communities",
+        "body": "Curated spaces organized by medical specialty where the brand supports the scientific conversation with editorial — not promotional — presence."
+      },
+      "s3": {
+        "title": "Educational behavior research",
+        "body": "Aggregated, anonymized insights on how physicians learn, what they seek out, and where adoption of new therapies stalls."
+      },
+      "s4": {
+        "title": "Sponsored medical content",
+        "body": "Academically backed editorial production: clinical cases, literature reviews, and virtual symposia with specialist faculty."
+      },
+      "placeholder": "Mockup: educational campaigns panel"
+    },
+    "benefits": {
+      "title": "Why Reto for the industry?",
+      "subtitle": "Medical education as a relationship channel, not a promotional one.",
+      "b1": {
+        "title": "Real physicians, real metrics",
+        "body": "Access to a verified physician audience with educational engagement metrics — not advertising impressions."
+      },
+      "b2": {
+        "title": "Academic rigor",
+        "body": "All content is reviewed by specialists and built to continuing medical education standards."
+      },
+      "b3": {
+        "title": "Regulatory compliance",
+        "body": "Aligned with industry ethics codes and the regulatory requirements governing medical communications."
+      },
+      "b4": {
+        "title": "Actionable insights",
+        "body": "Reports that show what works, what lands, and where the educational barrier lies in each therapeutic area."
+      }
+    },
+    "case": {
+      "title": "Success story",
+      "quote": "Replace with real quote when available.",
+      "attribution": {
+        "name": "First Last",
+        "role": "Medical Affairs",
+        "institution": "Placeholder pharma company"
+      },
+      "metric1": {
+        "number": "—",
+        "label": "physicians reached"
+      },
+      "metric2": {
+        "number": "—",
+        "label": "content completion rate"
+      },
+      "metric3": {
+        "number": "—",
+        "label": "points of improvement in post-campaign assessment"
+      }
+    },
+    "finalCta": {
+      "title": "Let's build content physicians actually want to engage with.",
+      "body": "If you lead Medical Affairs, medical marketing, or continuing education at a life sciences company, we'll show you how Reto can support your next launch or campaign.",
+      "button": "Schedule a meeting"
+    }
+  },
+  "hospitals": {
+    "hero": {
+      "h1": "For hospitals",
+      "subtitle": "A platform for hospitals that need to train and certify their medical staff continuously, measurably, and with institutional backing.",
+      "cta": "Request an institutional demo"
+    },
+    "program": {
+      "title": "Continuous training for medical staff",
+      "body1": "Reto enables hospitals and hospital groups to build continuing education programs for residents, attending physicians, and nursing staff, with validated content and clinical traceability.",
+      "body2": "Healthcare professionals access specialty updates, clinical cases, and practice exams from their daily routine. The institution accesses metrics that allow competency certification and support accreditation processes.",
+      "advantages": {
+        "title": "What's included:",
+        "a1": "Specialty-specific update paths",
+        "a2": "Institutional dashboard with metrics by department",
+        "a3": "Completion records and reports for accreditation",
+        "a4": "Institution-wide licenses, not individual subscriptions"
+      },
+      "placeholder": "Mockup: hospital institutional dashboard"
+    },
+    "benefits": {
+      "title": "Institutional benefits",
+      "subtitle": "Continuing education that does not disrupt clinical operations.",
+      "b1": {
+        "title": "Traceable certification",
+        "body": "Every learning activity is logged and available for certifying bodies."
+      },
+      "b2": {
+        "title": "Specialty-focused content",
+        "body": "Expert-curated material aligned with the hospital's critical care areas."
+      },
+      "b3": {
+        "title": "Zero friction for physicians",
+        "body": "Staff access content from their phone during downtime, without disrupting clinical operations."
+      },
+      "b4": {
+        "title": "Institutional model",
+        "body": "One license for the hospital — no individual contracts for each professional."
+      }
+    },
+    "case": {
+      "title": "Success story",
+      "quote": "Replace with real quote when available.",
+      "attribution": {
+        "name": "First Last",
+        "role": "Medical Director",
+        "institution": "Placeholder hospital"
+      },
+      "metric1": {
+        "number": "—",
+        "label": "physicians in program"
+      },
+      "metric2": {
+        "number": "—",
+        "label": "completion rate"
+      },
+      "metric3": {
+        "number": "—",
+        "label": "training hours logged"
+      }
+    },
+    "finalCta": {
+      "title": "Let's train your hospital's medical team together.",
+      "body": "If you lead a training or continuing education program at a hospital, we'll show you how Reto integrates into your institution.",
+      "button": "Schedule a demo"
+    }
+  },
   "universities": {
     "hero": {
       "h1": "For universities",
@@ -247,7 +463,11 @@
   },
   "home": {
     "hero": {
-      "h1": "Medical education that connects.",
+      "title": {
+        "before": "Medical education that ",
+        "accent": "connects",
+        "after": "."
+      },
       "subtitle": "Medical education platform connecting institutions, hospitals and industry with doctors.",
       "cta_primary": "Request demo",
       "cta_secondary": "Learn more"

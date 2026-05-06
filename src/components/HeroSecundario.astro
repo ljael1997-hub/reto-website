@@ -1,0 +1,44 @@
+---
+import esJson from '../i18n/es.json';
+import enJson from '../i18n/en.json';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const titulo = lang === 'en' ? 'What is Reto?' : '¿Qué es Reto?';
+---
+<section class="hero-secundario" aria-label={titulo}>
+  <div class="hero__inner">
+    <h1 class="hero__h1">{titulo}</h1>
+  </div>
+</section>
+
+<style>
+  .hero-secundario {
+    min-height: 50vh; /* Aquí está el ajuste: visiblemente más corto que el de Home */
+    background: var(--color-aliceblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: var(--space-16);
+    padding-inline: var(--container-padding);
+  }
+
+  .hero__inner {
+    max-width: 960px;
+    width: 100%;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .hero__h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--text-h1);
+    color: var(--color-pelicula);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+</style>

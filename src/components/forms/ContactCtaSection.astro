@@ -1,0 +1,137 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const contactHref = lang === 'es' ? '/contacto' : '/en/contact';
+---
+
+<section class="contact-cta" id="contact" aria-labelledby="contact-cta-title">
+  <div class="contact-cta__inner">
+    <div class="contact-cta__copy">
+      <h2 id="contact-cta-title">{t('contact.homeCta.title')}</h2>
+      <p>{t('contact.homeCta.subtitle')}</p>
+      <a href={contactHref} class="contact-cta__btn">{t('contact.homeCta.button')}</a>
+    </div>
+
+    <ul class="contact-cta__info" aria-label={t('contact.sidebar.title')}>
+      <li>
+        <span class="contact-cta__info-label">{t('contact.sidebar.email.label')}</span>
+        <a href={`mailto:${t('contact.sidebar.email.value')}`} class="contact-cta__info-value">
+          {t('contact.sidebar.email.value')}
+        </a>
+      </li>
+      <li>
+        <span class="contact-cta__info-label">{t('contact.sidebar.location.label')}</span>
+        <span class="contact-cta__info-value">{t('contact.sidebar.location.value')}</span>
+      </li>
+      <li>
+        <span class="contact-cta__info-label">{t('contact.sidebar.response.label')}</span>
+        <span class="contact-cta__info-value">{t('contact.sidebar.response.value')}</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .contact-cta {
+    background: var(--color-pelicula);
+    padding-block: var(--space-32);
+    padding-inline: var(--container-padding);
+  }
+
+  .contact-cta__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    display: grid;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  /* Copy block */
+  .contact-cta__copy h2 {
+    color: white;
+  }
+
+  .contact-cta__copy p {
+    margin-top: var(--space-5);
+    color: rgba(255, 255, 255, 0.72);
+    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+    max-width: 560px;
+  }
+
+  .contact-cta__btn {
+    display: inline-block;
+    margin-top: var(--space-8);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 700;
+    color: var(--color-pelicula);
+    background: var(--color-amarillo);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3) var(--space-8);
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .contact-cta__btn:hover {
+    background: #e6a200;
+    text-decoration: none;
+  }
+
+  .contact-cta__btn:focus-visible {
+    outline: 3px solid rgba(255, 181, 0, 0.5);
+    outline-offset: 2px;
+  }
+
+  /* Info list */
+  .contact-cta__info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .contact-cta__info li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .contact-cta__info-label {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.44);
+  }
+
+  .contact-cta__info-value {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    text-decoration: none;
+  }
+
+  a.contact-cta__info-value:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  /* Desktop: 2 columns */
+  @media (min-width: 64em) {
+    .contact-cta__inner {
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 0.45fr);
+    }
+  }
+
+  @media (max-width: 47.999em) {
+    .contact-cta {
+      padding-block: var(--space-24);
+    }
+  }
+</style>

@@ -9,6 +9,6 @@ _Este archivo se irá llenando conforme se apruebe el copy de cada sección._
 | ¿Qué es Reto? | ⏳ pendiente |
 | Metodología | ⏳ pendiente |
 | Para universidades | ⏳ pendiente |
-| Para hospitales | ⏳ pendiente |
-| Para industria farmacéutica | ⏳ pendiente |
-| Contacto | ⏳ pendiente |
+| Para hospitales | ✅ |
+| Para industria farmacéutica | ✅ |
+| Contacto | ✅ |

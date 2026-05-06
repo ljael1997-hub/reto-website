@@ -20,6 +20,222 @@
     "powered_by": "Reto es una plataforma de Mellow",
     "rights": "Todos los derechos reservados."
   },
+  "contact": {
+    "hero": {
+      "h1": "Contacto",
+      "subtitle": "Cuéntanos sobre tu institución y te respondemos en máximo 48 horas hábiles."
+    },
+    "form": {
+      "name": {
+        "label": "Nombre completo",
+        "placeholder": "María González"
+      },
+      "email": {
+        "label": "Email institucional",
+        "placeholder": "maria.gonzalez@institucion.edu.mx"
+      },
+      "phone": {
+        "label": "Teléfono",
+        "placeholder": "+52 55 1234 5678"
+      },
+      "institution": {
+        "label": "Institución",
+        "placeholder": "Universidad / Hospital / Laboratorio"
+      },
+      "institutionType": {
+        "label": "Tipo de institución",
+        "placeholder": "Selecciona una opción",
+        "options": {
+          "university": "Universidad",
+          "hospital": "Hospital",
+          "industry": "Industria farmacéutica",
+          "other": "Otro"
+        }
+      },
+      "role": {
+        "label": "Cargo",
+        "placeholder": "Coordinación académica, Dirección médica, Medical Affairs..."
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Cuéntanos qué necesita tu institución..."
+      },
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando...",
+      "success": {
+        "title": "Gracias por contactarnos.",
+        "body": "Te responderemos en las próximas 48 horas hábiles."
+      },
+      "errors": {
+        "required": "Este campo es obligatorio",
+        "minLength": "Mínimo {min} caracteres",
+        "email": "Ingresa un email válido",
+        "phone": "Ingresa un teléfono válido"
+      }
+    },
+    "sidebar": {
+      "title": "Otras vías de contacto",
+      "email": {
+        "label": "Correo",
+        "value": "contacto@reto.health"
+      },
+      "location": {
+        "label": "Oficina",
+        "value": "Ciudad de México, México"
+      },
+      "response": {
+        "label": "Tiempo de respuesta",
+        "value": "Máximo 48 horas hábiles"
+      }
+    },
+    "homeCta": {
+      "title": "¿Listo para hablar de tu institución?",
+      "subtitle": "Si quieres ver cómo Reto puede integrarse en tu universidad, hospital o laboratorio, agenda una conversación.",
+      "button": "Ir a contacto"
+    }
+  },
+  "industry": {
+    "hero": {
+      "h1": "Para industria farmacéutica",
+      "subtitle": "Una plataforma para conectar con médicos a través de contenido educativo validado, campañas de actualización terapéutica y comunidades por especialidad.",
+      "cta": "Solicita una propuesta"
+    },
+    "solutions": {
+      "eyebrow": "Soluciones para industria",
+      "title": "Soluciones para la industria",
+      "body1": "Reto ofrece a la industria farmacéutica una vía directa para acompañar al médico en su actualización profesional, no a través de publicidad sino a través de contenido educativo validado por especialistas.",
+      "body2": "Cada iniciativa se construye con rigor académico, queda alojada en una infraestructura medible y respeta los códigos éticos de la comunicación médica.",
+      "s1": {
+        "title": "Campañas de actualización terapéutica",
+        "body": "Rutas educativas patrocinadas que actualizan al médico sobre nuevas evidencias, guías y abordajes clínicos en un área terapéutica específica."
+      },
+      "s2": {
+        "title": "Comunidades por especialidad",
+        "body": "Espacios curados por especialidad médica donde la marca acompaña la conversación científica con presencia editorial, no publicitaria."
+      },
+      "s3": {
+        "title": "Estudios de comportamiento educativo",
+        "body": "Insights agregados y anonimizados sobre cómo los médicos aprenden, qué buscan y dónde se traba la curva de adopción de nuevas terapias."
+      },
+      "s4": {
+        "title": "Contenido médico patrocinado",
+        "body": "Producción editorial con respaldo académico: casos clínicos, revisiones de literatura, simposios virtuales con expertos."
+      },
+      "placeholder": "Mockup: panel de campañas educativas"
+    },
+    "benefits": {
+      "title": "¿Por qué Reto para la industria?",
+      "subtitle": "Educación médica como canal de relación, no de promoción.",
+      "b1": {
+        "title": "Médicos reales, métricas reales",
+        "body": "Acceso a una audiencia médica verificada con métricas de engagement educativo, no de impresiones publicitarias."
+      },
+      "b2": {
+        "title": "Rigor académico",
+        "body": "Todo el contenido es revisado por especialistas y construido con estándares de educación médica continua."
+      },
+      "b3": {
+        "title": "Cumplimiento normativo",
+        "body": "Respeta los códigos de ética de la industria y los lineamientos regulatorios de comunicación médica."
+      },
+      "b4": {
+        "title": "Insights accionables",
+        "body": "Reportes que muestran qué funciona, qué se entiende, y dónde está el bloqueo educativo en cada área terapéutica."
+      }
+    },
+    "case": {
+      "title": "Caso de éxito",
+      "quote": "Reemplazar con cita real cuando esté disponible.",
+      "attribution": {
+        "name": "Nombre Apellido",
+        "role": "Medical Affairs",
+        "institution": "Laboratorio placeholder"
+      },
+      "metric1": {
+        "number": "—",
+        "label": "médicos alcanzados"
+      },
+      "metric2": {
+        "number": "—",
+        "label": "tasa de finalización del contenido"
+      },
+      "metric3": {
+        "number": "—",
+        "label": "puntos de mejora en evaluación post-campaña"
+      }
+    },
+    "finalCta": {
+      "title": "Construyamos juntos contenido que el médico sí quiera consumir.",
+      "body": "Si lideras Medical Affairs, marketing médico o educación continua en la industria, te mostramos cómo Reto puede acompañar tu próximo lanzamiento o campaña.",
+      "button": "Agendar reunión"
+    }
+  },
+  "hospitals": {
+    "hero": {
+      "h1": "Para hospitales",
+      "subtitle": "Una plataforma para hospitales que necesitan formar y certificar a su personal médico de forma continua, medible y respaldada institucionalmente.",
+      "cta": "Solicita una demo institucional"
+    },
+    "program": {
+      "title": "Capacitación continua del personal médico",
+      "body1": "Reto permite a hospitales y grupos hospitalarios construir programas de formación continua para residentes, médicos adscritos y personal de enfermería, con contenido validado y trazabilidad clínica.",
+      "body2": "Los profesionales acceden a rutas de actualización, casos clínicos y simulacros desde su día a día. La institución accede a métricas que permiten certificar competencias y respaldar procesos de acreditación.",
+      "advantages": {
+        "title": "Lo que incluye:",
+        "a1": "Rutas de actualización por especialidad",
+        "a2": "Dashboard institucional con métricas por servicio",
+        "a3": "Constancias y reportes para acreditación",
+        "a4": "Licencias por institución, no por usuario suelto"
+      },
+      "placeholder": "Mockup: dashboard institucional hospitalario"
+    },
+    "benefits": {
+      "title": "Beneficios para el hospital",
+      "subtitle": "Formación continua que no interrumpe la operación clínica.",
+      "b1": {
+        "title": "Certificación trazable",
+        "body": "Cada actividad académica queda registrada y disponible para órganos certificadores."
+      },
+      "b2": {
+        "title": "Contenido por especialidad",
+        "body": "Material curado por especialistas, alineado con las áreas críticas del hospital."
+      },
+      "b3": {
+        "title": "Sin fricción para el médico",
+        "body": "El personal accede desde móvil en tiempos muertos, sin interrumpir la operación clínica."
+      },
+      "b4": {
+        "title": "Modelo institucional",
+        "body": "Una sola licencia para el hospital, no contratos individuales por cada profesional."
+      }
+    },
+    "case": {
+      "title": "Caso de éxito",
+      "quote": "Reemplazar con cita real cuando esté disponible.",
+      "attribution": {
+        "name": "Nombre Apellido",
+        "role": "Dirección médica",
+        "institution": "Hospital placeholder"
+      },
+      "metric1": {
+        "number": "—",
+        "label": "médicos en programa"
+      },
+      "metric2": {
+        "number": "—",
+        "label": "tasa de finalización"
+      },
+      "metric3": {
+        "number": "—",
+        "label": "horas de capacitación registradas"
+      }
+    },
+    "finalCta": {
+      "title": "Capacitemos juntos al equipo médico de tu hospital.",
+      "body": "Si diriges un programa de formación o educación continua en un hospital, te mostramos cómo Reto se integra a tu institución.",
+      "button": "Agendar demo"
+    }
+  },
   "universities": {
     "hero": {
       "h1": "Para universidades",
@@ -247,7 +463,11 @@
   },
   "home": {
     "hero": {
-      "h1": "Educación médica que conecta.",
+      "title": {
+        "before": "Educación médica que ",
+        "accent": "conecta",
+        "after": "."
+      },
       "subtitle": "Plataforma de educación médica que conecta instituciones, hospitales e industria con médicos.",
       "cta_primary": "Solicitar demo",
       "cta_secondary": "Conocer más"

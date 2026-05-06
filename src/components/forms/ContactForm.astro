@@ -1,0 +1,447 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// Strings passed to client-side JS — only interactive/dynamic text goes here
+const i18nJS = {
+  errRequired: t('contact.form.errors.required'),
+  errMinLength: t('contact.form.errors.minLength'),
+  errEmail: t('contact.form.errors.email'),
+  errPhone: t('contact.form.errors.phone'),
+  submitting: t('contact.form.submitting'),
+  successTitle: t('contact.form.success.title'),
+  successBody: t('contact.form.success.body'),
+};
+---
+
+<div class="contact-form-wrap">
+  <div
+    id="form-success"
+    class="form-success"
+    role="status"
+    aria-live="polite"
+    tabindex="-1"
+    hidden
+  >
+    <p class="form-success__title">{t('contact.form.success.title')}</p>
+    <p class="form-success__body">{t('contact.form.success.body')}</p>
+  </div>
+
+  <form
+    id="contact-form"
+    class="contact-form"
+    aria-labelledby="contact-form-heading"
+    novalidate
+  >
+    <div class="form-grid">
+
+      <!-- Nombre completo -->
+      <div class="form-group">
+        <label for="field-name">{t('contact.form.name.label')}</label>
+        <input
+          type="text"
+          id="field-name"
+          name="name"
+          placeholder={t('contact.form.name.placeholder')}
+          required
+          minlength="2"
+          autocomplete="name"
+          aria-describedby="field-name-error"
+          aria-invalid="false"
+        />
+        <span id="field-name-error" class="form-error" aria-live="polite"></span>
+      </div>
+
+      <!-- Email institucional -->
+      <div class="form-group">
+        <label for="field-email">{t('contact.form.email.label')}</label>
+        <input
+          type="email"
+          id="field-email"
+          name="email"
+          placeholder={t('contact.form.email.placeholder')}
+          required
+          autocomplete="email"
+          aria-describedby="field-email-error"
+          aria-invalid="false"
+        />
+        <span id="field-email-error" class="form-error" aria-live="polite"></span>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="form-group">
+        <label for="field-phone">{t('contact.form.phone.label')}</label>
+        <input
+          type="tel"
+          id="field-phone"
+          name="phone"
+          placeholder={t('contact.form.phone.placeholder')}
+          required
+          autocomplete="tel"
+          aria-describedby="field-phone-error"
+          aria-invalid="false"
+        />
+        <span id="field-phone-error" class="form-error" aria-live="polite"></span>
+      </div>
+
+      <!-- Institución -->
+      <div class="form-group">
+        <label for="field-institution">{t('contact.form.institution.label')}</label>
+        <input
+          type="text"
+          id="field-institution"
+          name="institution"
+          placeholder={t('contact.form.institution.placeholder')}
+          required
+          minlength="2"
+          aria-describedby="field-institution-error"
+          aria-invalid="false"
+        />
+        <span id="field-institution-error" class="form-error" aria-live="polite"></span>
+      </div>
+
+      <!-- Tipo de institución -->
+      <div class="form-group">
+        <label for="field-institution-type">{t('contact.form.institutionType.label')}</label>
+        <select
+          id="field-institution-type"
+          name="institutionType"
+          required
+          aria-describedby="field-institution-type-error"
+          aria-invalid="false"
+        >
+          <option value="">{t('contact.form.institutionType.placeholder')}</option>
+          <option value="university">{t('contact.form.institutionType.options.university')}</option>
+          <option value="hospital">{t('contact.form.institutionType.options.hospital')}</option>
+          <option value="industry">{t('contact.form.institutionType.options.industry')}</option>
+          <option value="other">{t('contact.form.institutionType.options.other')}</option>
+        </select>
+        <span id="field-institution-type-error" class="form-error" aria-live="polite"></span>
+      </div>
+
+      <!-- Cargo -->
+      <div class="form-group">
+        <label for="field-role">{t('contact.form.role.label')}</label>
+        <input
+          type="text"
+          id="field-role"
+          name="role"
+          placeholder={t('contact.form.role.placeholder')}
+          required
+          minlength="2"
+          aria-describedby="field-role-error"
+          aria-invalid="false"
+        />
+        <span id="field-role-error" class="form-error" aria-live="polite"></span>
+      </div>
+
+      <!-- Mensaje — full width -->
+      <div class="form-group form-group--full">
+        <label for="field-message">{t('contact.form.message.label')}</label>
+        <textarea
+          id="field-message"
+          name="message"
+          placeholder={t('contact.form.message.placeholder')}
+          required
+          minlength="10"
+          maxlength="1000"
+          rows="5"
+          aria-describedby="field-message-error"
+          aria-invalid="false"
+        ></textarea>
+        <span id="field-message-error" class="form-error" aria-live="polite"></span>
+      </div>
+
+    </div>
+
+    <button type="submit" class="form-submit" id="form-submit-btn">
+      {t('contact.form.submit')}
+    </button>
+  </form>
+</div>
+
+<script define:vars={{ i18nJS }}>
+  (function () {
+    const form = document.getElementById('contact-form');
+    const successEl = document.getElementById('form-success');
+    const submitBtn = document.getElementById('form-submit-btn');
+    if (!form || !successEl || !submitBtn) return;
+
+    const originalSubmitText = submitBtn.textContent.trim();
+
+    // ─── Field validation ────────────────────────────────────────────────────
+
+    function getFieldError(field) {
+      const isSelect = field.tagName === 'SELECT';
+      const value = isSelect ? field.value : field.value.trim();
+
+      if (!value) return i18nJS.errRequired;
+
+      if (field.type === 'email') {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return i18nJS.errEmail;
+      } else if (field.type === 'tel') {
+        const digits = value.replace(/\D/g, '');
+        if (digits.length < 8) return i18nJS.errPhone;
+      } else if (field.minLength > 0 && value.length < field.minLength) {
+        return i18nJS.errMinLength.replace('{min}', field.minLength);
+      }
+
+      return '';
+    }
+
+    function applyFieldState(field, error) {
+      const errorEl = document.getElementById(field.id + '-error');
+      if (errorEl) errorEl.textContent = error;
+      field.setAttribute('aria-invalid', error ? 'true' : 'false');
+      field.classList.toggle('is-invalid', !!error);
+    }
+
+    function validateField(field) {
+      const error = getFieldError(field);
+      applyFieldState(field, error);
+      return !error;
+    }
+
+    function validateAll() {
+      const fields = Array.from(
+        form.querySelectorAll('input[required], select[required], textarea[required]')
+      );
+      let firstInvalid = null;
+      let allValid = true;
+
+      fields.forEach(function (field) {
+        const valid = validateField(field);
+        if (!valid) {
+          allValid = false;
+          if (!firstInvalid) firstInvalid = field;
+        }
+      });
+
+      if (firstInvalid) firstInvalid.focus();
+      return allValid;
+    }
+
+    // Validate on blur (only if touched or already invalid)
+    form.querySelectorAll('input, select, textarea').forEach(function (field) {
+      field.addEventListener('blur', function () {
+        if (field.value.trim() || field.classList.contains('is-invalid')) {
+          validateField(field);
+        }
+      });
+      // Re-validate on input to clear error as user corrects the field
+      field.addEventListener('input', function () {
+        if (field.classList.contains('is-invalid')) {
+          validateField(field);
+        }
+      });
+    });
+
+    // ─── Submit handler ──────────────────────────────────────────────────────
+    // TODO: conectar con backend cuando esté definido (Formspree, Resend, CRM cliente).
+    // Este es el único punto a modificar. Reemplazar el setTimeout() por la llamada real.
+    //
+    // Ejemplo con Formspree:
+    //   const res = await fetch('https://formspree.io/f/XXXXXXX', {
+    //     method: 'POST', body: formData, headers: { Accept: 'application/json' },
+    //   });
+    //   if (!res.ok) throw new Error('submit_error');
+    //
+    // Ejemplo con Resend / endpoint propio:
+    //   const res = await fetch('/api/contact', {
+    //     method: 'POST', body: JSON.stringify(Object.fromEntries(formData)),
+    //     headers: { 'Content-Type': 'application/json' },
+    //   });
+    //   if (!res.ok) throw new Error('submit_error');
+    // ─────────────────────────────────────────────────────────────────────────
+    function handleSubmit(formData) {
+      return new Promise(function (resolve) {
+        setTimeout(resolve, 800);
+      });
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!validateAll()) return;
+
+      // Sending state
+      submitBtn.textContent = i18nJS.submitting;
+      submitBtn.disabled = true;
+
+      handleSubmit(new FormData(form))
+        .then(function () {
+          form.hidden = true;
+          successEl.hidden = false;
+          successEl.focus();
+        })
+        .catch(function () {
+          // Restore button — a real error message can be added when backend is wired
+          submitBtn.textContent = originalSubmitText;
+          submitBtn.disabled = false;
+        });
+    });
+  })();
+</script>
+
+<style>
+  /* ── Success state ─────────────────────────────────────────────────── */
+  .form-success {
+    padding: var(--space-12) var(--space-8);
+    background: var(--color-aliceblue);
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    border-radius: var(--radius-sm);
+    text-align: center;
+  }
+
+  .form-success__title {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    font-weight: 800;
+  }
+
+  .form-success__body {
+    margin-top: var(--space-4);
+    color: rgba(32, 30, 30, 0.72);
+    font-size: clamp(1.0625rem, 1.3vw, 1.1875rem);
+  }
+
+  /* ── Form layout ───────────────────────────────────────────────────── */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .form-group--full {
+    grid-column: 1 / -1;
+  }
+
+  /* ── Labels ────────────────────────────────────────────────────────── */
+  label {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 700;
+    color: var(--color-pelicula);
+  }
+
+  /* ── Fields ────────────────────────────────────────────────────────── */
+  input,
+  select,
+  textarea {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    color: var(--color-pelicula);
+    background: white;
+    border: 1.5px solid rgba(32, 30, 30, 0.2);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3) var(--space-4);
+    width: 100%;
+    outline: none;
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(32, 30, 30, 0.36);
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: rgba(32, 30, 30, 0.56);
+    box-shadow: 0 0 0 3px rgba(255, 181, 0, 0.2);
+  }
+
+  input.is-invalid,
+  select.is-invalid,
+  textarea.is-invalid {
+    border-color: #c0392b;
+  }
+
+  input.is-invalid:focus,
+  select.is-invalid:focus,
+  textarea.is-invalid:focus {
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  /* Custom select arrow */
+  select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23201E1E' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-4) center;
+    padding-right: var(--space-10);
+  }
+
+  /* ── Error messages ────────────────────────────────────────────────── */
+  .form-error {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    color: #c0392b;
+    min-height: 1.25em;
+  }
+
+  /* ── Submit button ─────────────────────────────────────────────────── */
+  .form-submit {
+    align-self: flex-start;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 700;
+    color: var(--color-pelicula);
+    background: var(--color-amarillo);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: var(--space-3) var(--space-8);
+    cursor: pointer;
+    transition:
+      background 0.15s ease,
+      opacity 0.15s ease;
+  }
+
+  .form-submit:hover:not(:disabled) {
+    background: #e6a200;
+  }
+
+  .form-submit:focus-visible {
+    outline: 3px solid rgba(255, 181, 0, 0.5);
+    outline-offset: 2px;
+  }
+
+  .form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* ── Desktop 2-column grid ─────────────────────────────────────────── */
+  @media (min-width: 48em) {
+    .form-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: var(--space-6);
+    }
+  }
+</style>

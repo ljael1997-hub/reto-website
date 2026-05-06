@@ -1,99 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Container from '../components/Container.astro';
-import Section from '../components/Section.astro';
-import Button from '../components/Button.astro';
-import Card from '../components/Card.astro';
+import Hero from '../components/Hero.astro';
+import BenefitsGrid from '../components/BenefitsGrid.astro';
+import VideoPlaceholder from '../components/VideoPlaceholder.astro';
+import PartnersGrid from '../components/PartnersGrid.astro';
+import ContactCtaSection from '../components/forms/ContactCtaSection.astro';
 ---
-<BaseLayout title="Design System" lang="es">
-
-  <Section background="aliceblue" id="home">
-    <Container>
-      <h1>Design system de Reto</h1>
-      <p style="max-width: 60ch; margin-top: var(--space-4);">
-        Esta página existe solo para verificar que el sistema visual está aplicado correctamente.
-        Cuando el sitio real esté listo, esta página se reemplaza por el Home.
-      </p>
-      <div style="display: flex; gap: var(--space-4); margin-top: var(--space-8); flex-wrap: wrap;">
-        <Button variant="primary">CTA primario</Button>
-        <Button variant="secondary">CTA secundario</Button>
-      </div>
-    </Container>
-  </Section>
-
-  <Section background="pelicula">
-    <Container>
-      <h2>Sección sobre fondo oscuro</h2>
-      <p style="margin-top: var(--space-4); max-width: 60ch;">
-        Esta sección demuestra el uso del color "Película clásica" como fondo, con texto en aliceblue.
-      </p>
-    </Container>
-  </Section>
-
-  <Section background="amarillo">
-    <Container>
-      <h2>Sección sobre amarillo Mellow</h2>
-      <p style="margin-top: var(--space-4); max-width: 60ch;">
-        El amarillo es el color principal de marca. Se usa en secciones de énfasis tipo manifiesto, no en botones.
-      </p>
-    </Container>
-  </Section>
-
-  <Section background="rosa">
-    <Container>
-      <h2>Sección sobre rosa</h2>
-      <p style="margin-top: var(--space-4); max-width: 60ch;">
-        El rosa se usa en bloques cálidos y como contraste con el amarillo.
-      </p>
-    </Container>
-  </Section>
-
-  <Section background="aliceblue">
-    <Container>
-      <h2>Tarjetas</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-6); margin-top: var(--space-8);">
-        <Card>
-          <h4>Acceso a comunidades médicas</h4>
-          <p style="margin-top: var(--space-3);">Conecta con médicos activos, segmentados por especialidad.</p>
-        </Card>
-        <Card>
-          <h4>Educación con engagement real</h4>
-          <p style="margin-top: var(--space-3);">Experiencias de aprendizaje basadas en casos clínicos.</p>
-        </Card>
-        <Card>
-          <h4>Impacto medible</h4>
-          <p style="margin-top: var(--space-3);">Mide engagement, interacción y evolución del desempeño.</p>
-        </Card>
-      </div>
-    </Container>
-  </Section>
-
-  <Section background="aliceblue">
-    <Container>
-      <h2>Escala tipográfica</h2>
-      <div style="margin-top: var(--space-8); display: flex; flex-direction: column; gap: var(--space-6);">
-        <div>
-          <p style="font-size: var(--text-tiny); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(32,30,30,0.4); margin-bottom: var(--space-2);">H1 — Bricolage Grotesque 800</p>
-          <h1>Título H1</h1>
-        </div>
-        <div>
-          <p style="font-size: var(--text-tiny); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(32,30,30,0.4); margin-bottom: var(--space-2);">H2 — Bricolage Grotesque 800</p>
-          <h2>Título H2</h2>
-        </div>
-        <div>
-          <p style="font-size: var(--text-tiny); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(32,30,30,0.4); margin-bottom: var(--space-2);">H3 — Bricolage Grotesque 800</p>
-          <h3>Título H3</h3>
-        </div>
-        <div>
-          <p style="font-size: var(--text-tiny); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(32,30,30,0.4); margin-bottom: var(--space-2);">H4 — Bricolage Grotesque 700</p>
-          <h4>Título H4</h4>
-        </div>
-        <div>
-          <p style="font-size: var(--text-tiny); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(32,30,30,0.4); margin-bottom: var(--space-2);">Body — Inter 400</p>
-          <p>Texto de cuerpo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-      </div>
-    </Container>
-  </Section>
-
+<BaseLayout
+  title="Educación médica que conecta"
+  description="Plataforma de educación médica que conecta instituciones, hospitales e industria con médicos."
+  lang="es"
+>
+  <Hero lang="es" />
+  <BenefitsGrid lang="es" />
+  <VideoPlaceholder lang="es" />
+  <PartnersGrid lang="es" />
+  <ContactCtaSection lang="es" />
 </BaseLayout>
