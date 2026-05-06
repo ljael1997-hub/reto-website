@@ -52,3 +52,13 @@ Isologo Reto en su versión B2B (sin Emdi, que es B2C/app).
 **Punto de modificación:** `src/components/forms/ContactForm.astro`, función `handleSubmit`. Es el único punto a tocar cuando se defina el backend.
 
 **Implicación:** El sitio se puede entregar y mostrar al cliente. Si alguien llena el formulario antes de conectar backend, los datos se pierden — esto debe estar documentado para Reto antes del deploy productivo.
+
+## 2026-05-06 — Banda de "modo demo" en formulario de contacto
+
+**Contexto:** Deploy del sitio antes de definir backend del formulario.
+
+**Decisión:** Mostrar banda visible arriba del formulario indicando que está en modo demo y dirigiendo a un email genérico.
+
+**Razón:** Si se entrega el sitio sin esto, alguien puede llenar el formulario, ver el mensaje de éxito, y pensar que su mensaje llegó. Esto es peor que no tener formulario — genera expectativa de respuesta sin que nadie lo reciba.
+
+**Punto de modificación:** `src/components/forms/ContactForm.astro`, prop `showDemoBanner`. Cambiar a `false` (o eliminar el bloque) cuando se conecte backend real.

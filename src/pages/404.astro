@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Página no encontrada"
+  description="La página que buscas no existe o fue movida."
+  lang="es"
+>
+  <section class="not-found">
+    <div class="not-found__inner">
+      <p class="not-found__code">404</p>
+      <h1>Página no encontrada</h1>
+      <p class="not-found__subtitle">
+        Parece que esta página no existe o fue movida.
+      </p>
+      <a href="/" class="not-found__btn">Volver al inicio</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-16) var(--container-padding);
+    background: var(--color-aliceblue);
+  }
+
+  .not-found__inner {
+    max-width: 560px;
+    text-align: center;
+  }
+
+  .not-found__code {
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 12vw, 9rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-amarillo);
+    letter-spacing: -0.04em;
+    margin-bottom: var(--space-4);
+  }
+
+  h1 {
+    margin-bottom: var(--space-4);
+  }
+
+  .not-found__subtitle {
+    color: rgba(32, 30, 30, 0.64);
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    margin-bottom: var(--space-8);
+  }
+
+  .not-found__btn {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 700;
+    color: var(--color-pelicula);
+    background: var(--color-amarillo);
+    padding: var(--space-3) var(--space-8);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .not-found__btn:hover {
+    background: #e6a200;
+    text-decoration: none;
+  }
+
+  .not-found__btn:focus-visible {
+    outline: 3px solid rgba(255, 181, 0, 0.5);
+    outline-offset: 2px;
+  }
+</style>

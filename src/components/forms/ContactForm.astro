@@ -3,9 +3,11 @@ import { useTranslations, type Lang } from '../../i18n/utils';
 
 interface Props {
   lang: Lang;
+  /** Mostrar banda de "modo demo" encima del formulario. Cambiar a false cuando se conecte backend real. */
+  showDemoBanner?: boolean;
 }
 
-const { lang } = Astro.props;
+const { lang, showDemoBanner = true } = Astro.props;
 const t = useTranslations(lang);
 
 // Strings passed to client-side JS — only interactive/dynamic text goes here
@@ -21,6 +23,18 @@ const i18nJS = {
 ---
 
 <div class="contact-form-wrap">
+  {showDemoBanner && (
+    <div class="demo-banner" role="note" aria-label={lang === 'es' ? 'Aviso de modo demo' : 'Demo mode notice'}>
+      <span class="demo-banner__icon" aria-hidden="true">ⓘ</span>
+      <p class="demo-banner__text">
+        {lang === 'es'
+          ? <>Sitio en demo. Este formulario aún no envía mensajes — para contactar a Reto, escribe a{' '}<a href="mailto:contacto@reto.health">contacto@reto.health</a>.</>
+          : <>Demo site. This form does not yet send messages — to contact Reto, please write to{' '}<a href="mailto:contacto@reto.health">contacto@reto.health</a>.</>
+        }
+      </p>
+    </div>
+  )}
+
   <div
     id="form-success"
     class="form-success"
@@ -289,6 +303,42 @@ const i18nJS = {
 </script>
 
 <style>
+  /* ── Demo banner ───────────────────────────────────────────────────── */
+  .demo-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    background: #fff8e1;
+    border: 1.5px solid #FFB500;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-6);
+  }
+
+  .demo-banner__icon {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    flex-shrink: 0;
+    color: #916800;
+  }
+
+  .demo-banner__text {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    color: #4a3600;
+    line-height: 1.5;
+  }
+
+  .demo-banner__text a {
+    color: #4a3600;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  .demo-banner__text a:hover {
+    text-decoration: none;
+  }
+
   /* ── Success state ─────────────────────────────────────────────────── */
   .form-success {
     padding: var(--space-12) var(--space-8);

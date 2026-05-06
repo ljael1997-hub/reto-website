@@ -9,25 +9,121 @@ interface Props {
   lang?: 'es' | 'en';
 }
 
-const { title, description = 'Reto — Plataforma de educación médica', lang = 'es' } = Astro.props;
+const {
+  title,
+  description = 'Reto — Plataforma de educación médica',
+  lang = 'es',
+} = Astro.props;
+
+const site = Astro.site ?? new URL('https://reto.health');
+const canonicalURL = new URL(Astro.url.pathname, site);
+
+// Route map: ES slug → EN slug (para hreflang)
+const esToEn: Record<string, string> = {
+  '/': '/en/',
+  '/contacto': '/en/contact',
+  '/hospitales': '/en/hospitals',
+  '/industria': '/en/industry',
+  '/metodologia': '/en/methodology',
+  '/que-es-reto': '/en/what-is-reto',
+  '/rutas-educativas': '/en/learning-paths',
+  '/universidades': '/en/universities',
+  '/404': '/en/404',
+};
+const enToEs: Record<string, string> = Object.fromEntries(
+  Object.entries(esToEn).map(([k, v]) => [v, k])
+);
+
+const path = Astro.url.pathname;
+let esPath: string;
+let enPath: string;
+if (lang === 'en') {
+  enPath = path;
+  esPath = enToEs[path] ?? (path.replace(/^\/en/, '') || '/');
+} else {
+  esPath = path;
+  enPath = esToEn[path] ?? `/en${path}`;
+}
+
+const esURL = new URL(esPath, site);
+const enURL = new URL(enPath, site);
+const ogImage = new URL('/og-image.png', site);
+const ogLocale = lang === 'es' ? 'es_MX' : 'en_US';
+const skipLinkText = lang === 'es' ? 'Saltar al contenido' : 'Skip to main content';
 ---
 <!doctype html>
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+
+    <!-- Canonical y hreflang -->
+    <link rel="canonical" href={canonicalURL.href} />
+    <link rel="alternate" hreflang="es" href={esURL.href} />
+    <link rel="alternate" hreflang="en" href={enURL.href} />
+    <link rel="alternate" hreflang="x-default" href={esURL.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={`${title} | Reto`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage.href} />
+    <meta property="og:locale" content={ogLocale} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | Reto`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage.href} />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <title>{title} | Reto</title>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">{skipLinkText}</a>
     <Header lang={lang} />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Footer lang={lang} />
   </body>
 </html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 0.5rem 1.25rem;
+    background: var(--color-pelicula);
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    border-radius: 0 0 4px 0;
+    text-decoration: none;
+    z-index: 9999;
+    transition: top 0.1s ease;
+  }
+
+  .skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--color-amarillo);
+    outline-offset: 2px;
+  }
+</style>

@@ -60,6 +60,7 @@
         "label": "Mensaje",
         "placeholder": "Cuéntanos qué necesita tu institución..."
       },
+      "demoBanner": "Sitio en demo. Este formulario aún no envía mensajes — para contactar a Reto, escribe a contacto@reto.health.",
       "submit": "Enviar mensaje",
       "submitting": "Enviando...",
       "success": {

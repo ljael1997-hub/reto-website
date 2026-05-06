@@ -12,4 +12,4 @@
 | 07 | Para hospitales | ✅ |
 | 08 | Para industria farmacéutica | ✅ |
 | 09 | Contacto | ✅ |
-| 10 | Polish y deploy | ⏳ pendiente |
+| 10 | Polish y deploy | ✅ |

@@ -60,6 +60,7 @@
         "label": "Message",
         "placeholder": "Tell us what your institution needs..."
       },
+      "demoBanner": "Demo site. This form does not yet send messages — to contact Reto, please write to contacto@reto.health.",
       "submit": "Send message",
       "submitting": "Sending...",
       "success": {
