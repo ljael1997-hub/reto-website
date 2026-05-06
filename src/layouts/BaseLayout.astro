@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  lang?: string;
+}
+const { title, lang = 'es' } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <p>Reto — header placeholder</p>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>Reto es una plataforma de Mellow</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "site": {
+    "name": "Reto",
+    "tagline": "Plataforma de educación médica"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "¿Qué es Reto?",
+    "methodology": "Metodología",
+    "contact": "Contacto"
+  }
+}
