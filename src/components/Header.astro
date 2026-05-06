@@ -12,6 +12,8 @@ const localizedPaths = {
   '/en/what-is-reto': { es: '/que-es-reto', en: '/en/what-is-reto' },
   '/metodologia': { es: '/metodologia', en: '/en/methodology' },
   '/en/methodology': { es: '/metodologia', en: '/en/methodology' },
+  '/rutas-educativas': { es: '/rutas-educativas', en: '/en/learning-paths' },
+  '/en/learning-paths': { es: '/rutas-educativas', en: '/en/learning-paths' },
 } as const;
 const currentLocalizedPath = localizedPaths[pathname as keyof typeof localizedPaths];
 const spanishHref = currentLocalizedPath?.es ?? '/';
@@ -39,6 +41,7 @@ const englishHref = currentLocalizedPath?.en ?? '/en/';
         <li><a href={lang === 'es' ? '/#home' : '/en/#home'}>{t('nav.home')}</a></li>
         <li><a href={lang === 'es' ? '/que-es-reto' : '/en/what-is-reto'}>{t('nav.about')}</a></li>
         <li><a href={lang === 'es' ? '/metodologia' : '/en/methodology'}>{t('nav.methodology')}</a></li>
+        <li><a href={lang === 'es' ? '/rutas-educativas' : '/en/learning-paths'}>{t('nav.paths')}</a></li>
         <li><a href={lang === 'es' ? '/#solutions' : '/en/#solutions'}>{t('nav.solutions')}</a></li>
         <li><a href={lang === 'es' ? '/#contact' : '/en/#contact'}>{t('nav.contact')}</a></li>
       </ul>

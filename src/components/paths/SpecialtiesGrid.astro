@@ -1,0 +1,121 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const specialties = [
+  'cardiology',
+  'oncology',
+  'pediatrics',
+  'internal-medicine',
+  'gynecology',
+  'endocrinology',
+  'neurology',
+  'family-medicine',
+];
+---
+
+<section class="specialties-section" aria-labelledby="specialties-title">
+  <div class="specialties-section__inner">
+    <div class="specialties-section__heading">
+      <h2 id="specialties-title">{t('paths.specialties.title')}</h2>
+      <p>{t('paths.specialties.subtitle')}</p>
+    </div>
+
+    <div class="specialties-grid">
+      {
+        specialties.map((specialty, index) => (
+          <article class="specialty-card">
+            <img
+              class="specialty-card__icon"
+              src={`/brand/specialty-${specialty}.webp`}
+              alt=""
+              loading="lazy"
+            />
+            <h3>{t(`paths.specialties.s${index + 1}.name`)}</h3>
+            <p>{t(`paths.specialties.s${index + 1}.body`)}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .specialties-section {
+    background: white;
+    padding-block: var(--space-24);
+    padding-inline: var(--container-padding);
+  }
+
+  .specialties-section__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  .specialties-section__heading {
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .specialties-section__heading p {
+    margin-top: var(--space-4);
+    color: rgba(32, 30, 30, 0.72);
+    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  }
+
+  .specialties-grid {
+    margin-top: var(--space-12);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .specialty-card {
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    border-radius: var(--radius-sm);
+    background: var(--color-aliceblue);
+    padding: var(--space-6);
+    min-height: 220px;
+  }
+
+  .specialty-card__icon {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    border: 2px solid var(--color-amarillo);
+    border-radius: var(--radius-sm);
+    background: white;
+    padding: var(--space-2);
+  }
+
+  .specialty-card h3 {
+    margin-top: var(--space-6);
+    font-size: var(--text-h4);
+    line-height: 1.2;
+  }
+
+  .specialty-card p {
+    margin-top: var(--space-3);
+    color: rgba(32, 30, 30, 0.68);
+    font-size: var(--text-small);
+  }
+
+  @media (min-width: 64em) {
+    .specialties-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-6);
+    }
+  }
+
+  @media (max-width: 30em) {
+    .specialties-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

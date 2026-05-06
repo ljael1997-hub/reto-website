@@ -7,6 +7,7 @@
     "home": "Home",
     "about": "What is Reto?",
     "methodology": "Methodology",
+    "paths": "Learning paths",
     "solutions": "Solutions",
     "contact": "Contact"
   },
@@ -14,6 +15,97 @@
     "quick_links": "Quick links",
     "powered_by": "Reto is a Mellow platform",
     "rights": "All rights reserved."
+  },
+  "paths": {
+    "hero": {
+      "h1": "Learning paths",
+      "subtitle": "Structured, validated and measured programs. Designed to fit the physician's real pace."
+    },
+    "concept": {
+      "title": "What is a learning path?",
+      "body1": "A Reto learning path is a structured continuing education program on a specific clinical domain, designed in collaboration with academic institutions and validated by active specialists.",
+      "body2": "Each path combines theoretical content, clinical cases, formative assessments and discussion moments, organized into modules that respect the physician's real availability.",
+      "body3": "It is not an isolated course: it is a journey the physician can start, pause, resume and complete with institutional traceability.",
+      "placeholder": "Illustration: anatomy of a learning path"
+    },
+    "structure": {
+      "title": "Anatomy of a path",
+      "step1": {
+        "title": "Initial diagnostic",
+        "body": "Assessment of the physician's starting point to personalize the path."
+      },
+      "step2": {
+        "title": "Theoretical modules",
+        "body": "Specialist-validated content, in brief and applicable formats."
+      },
+      "step3": {
+        "title": "Clinical cases",
+        "body": "Real scenario resolution with immediate feedback."
+      },
+      "step4": {
+        "title": "Formative assessment",
+        "body": "Continuous measurement of progress and areas to reinforce."
+      },
+      "step5": {
+        "title": "Accreditation",
+        "body": "Institutionally-backed certification upon completing the path."
+      }
+    },
+    "specialties": {
+      "title": "Available specialties",
+      "subtitle": "Active or in-development paths, built with partner institutions.",
+      "s1": {
+        "name": "Cardiology",
+        "body": "Clinical management and updates in cardiology"
+      },
+      "s2": {
+        "name": "Oncology",
+        "body": "Diagnostic and therapeutic advances"
+      },
+      "s3": {
+        "name": "Pediatrics",
+        "body": "Comprehensive pediatric patient care"
+      },
+      "s4": {
+        "name": "Internal Medicine",
+        "body": "Clinical reasoning and complex cases"
+      },
+      "s5": {
+        "name": "Gynecology",
+        "body": "Reproductive and women's health"
+      },
+      "s6": {
+        "name": "Endocrinology",
+        "body": "Metabolic and hormonal disorders"
+      },
+      "s7": {
+        "name": "Neurology",
+        "body": "Neurological diagnosis and management"
+      },
+      "s8": {
+        "name": "Family Medicine",
+        "body": "Primary care and clinical continuity"
+      }
+    },
+    "metrics": {
+      "title": "Measured impact",
+      "m1": {
+        "number": "—",
+        "label": "Physicians trained"
+      },
+      "m2": {
+        "number": "—",
+        "label": "Active paths"
+      },
+      "m3": {
+        "number": "—",
+        "label": "Partner institutions"
+      },
+      "m4": {
+        "number": "—",
+        "label": "Average completion rate"
+      }
+    }
   },
   "methodology": {
     "hero": {

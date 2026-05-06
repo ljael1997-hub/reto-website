@@ -1,0 +1,122 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const steps = [1, 2, 3, 4, 5];
+---
+
+<section class="path-structure" aria-labelledby="path-structure-title">
+  <div class="path-structure__inner">
+    <h2 id="path-structure-title">{t('paths.structure.title')}</h2>
+
+    <ol class="path-structure__timeline" role="list">
+      {
+        steps.map((step) => (
+          <li class="path-step">
+            <p class="path-step__number">{String(step).padStart(2, '0')}</p>
+            <h3>{t(`paths.structure.step${step}.title`)}</h3>
+            <p class="path-step__body">{t(`paths.structure.step${step}.body`)}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .path-structure {
+    background: var(--color-aliceblue);
+    padding-block: var(--space-24);
+    padding-inline: var(--container-padding);
+  }
+
+  .path-structure__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  .path-structure h2 {
+    text-align: center;
+  }
+
+  .path-structure__timeline {
+    position: relative;
+    margin-top: var(--space-12);
+    display: grid;
+    gap: var(--space-6);
+    list-style: none;
+  }
+
+  .path-step {
+    position: relative;
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    border-radius: var(--radius-sm);
+    background: white;
+    padding: var(--space-6);
+  }
+
+  .path-step__number {
+    color: var(--color-amarillo);
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 0.9;
+  }
+
+  .path-step h3 {
+    margin-top: var(--space-4);
+    font-size: var(--text-h4);
+    line-height: 1.2;
+  }
+
+  .path-step__body {
+    margin-top: var(--space-3);
+    color: rgba(32, 30, 30, 0.7);
+    font-size: var(--text-small);
+  }
+
+  @media (min-width: 64em) {
+    .path-structure__timeline {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .path-structure__timeline::before {
+      content: '';
+      position: absolute;
+      top: 2.2rem;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: rgba(255, 181, 0, 0.5);
+      z-index: 0;
+    }
+
+    .path-step {
+      z-index: 1;
+      min-height: 260px;
+    }
+  }
+
+  @media (max-width: 63.999em) {
+    .path-structure__timeline {
+      border-left: 2px solid rgba(255, 181, 0, 0.45);
+      padding-left: var(--space-6);
+    }
+
+    .path-step::before {
+      content: '';
+      position: absolute;
+      top: var(--space-8);
+      left: calc(-1 * var(--space-6) - 6px);
+      width: 10px;
+      height: 10px;
+      border-radius: var(--radius-pill);
+      background: var(--color-amarillo);
+    }
+  }
+</style>

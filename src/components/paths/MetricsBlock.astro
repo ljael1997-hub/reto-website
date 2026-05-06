@@ -1,0 +1,87 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const metrics = [1, 2, 3, 4];
+---
+
+<section class="metrics-section" aria-labelledby="metrics-title">
+  <div class="metrics-section__inner">
+    <h2 id="metrics-title">{t('paths.metrics.title')}</h2>
+
+    <div class="metrics-grid">
+      {
+        metrics.map((metric) => (
+          <article class="metric-card">
+            <p class="metric-card__number">{t(`paths.metrics.m${metric}.number`)}</p>
+            <p class="metric-card__label">{t(`paths.metrics.m${metric}.label`)}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .metrics-section {
+    background: var(--color-aliceblue);
+    padding-block: var(--space-24);
+    padding-inline: var(--container-padding);
+  }
+
+  .metrics-section__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  .metrics-section h2 {
+    text-align: center;
+  }
+
+  .metrics-grid {
+    margin-top: var(--space-12);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .metric-card {
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    border-radius: var(--radius-sm);
+    background: white;
+    padding: var(--space-8);
+    text-align: center;
+  }
+
+  .metric-card__number {
+    color: var(--color-pelicula);
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 7vw, 4rem);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .metric-card__label {
+    margin-top: var(--space-4);
+    color: rgba(32, 30, 30, 0.7);
+    font-weight: 600;
+  }
+
+  @media (min-width: 48em) {
+    .metrics-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-6);
+    }
+  }
+
+  @media (min-width: 64em) {
+    .metrics-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>

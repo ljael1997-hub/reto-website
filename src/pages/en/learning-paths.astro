@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+import ConceptSection from '../../components/paths/ConceptSection.astro';
+import PathStructure from '../../components/paths/PathStructure.astro';
+import SpecialtiesGrid from '../../components/paths/SpecialtiesGrid.astro';
+import MetricsBlock from '../../components/paths/MetricsBlock.astro';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title="Learning paths"
+  description="Structured, validated and measured programs. Designed to fit the physician's real pace."
+  lang={lang}
+>
+  <section class="paths-hero" aria-labelledby="paths-title">
+    <div class="paths-hero__inner">
+      <h1 id="paths-title">{t('paths.hero.h1')}</h1>
+      <p>{t('paths.hero.subtitle')}</p>
+    </div>
+  </section>
+
+  <ConceptSection lang={lang} />
+  <PathStructure lang={lang} />
+  <SpecialtiesGrid lang={lang} />
+  <MetricsBlock lang={lang} />
+</BaseLayout>
+
+<style>
+  .paths-hero {
+    min-height: 50vh;
+    background: var(--color-aliceblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: var(--space-16);
+    padding-inline: var(--container-padding);
+  }
+
+  .paths-hero__inner {
+    max-width: 960px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .paths-hero p {
+    max-width: 720px;
+    margin: var(--space-6) auto 0;
+    color: rgba(32, 30, 30, 0.76);
+    font-family: var(--font-body);
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 500;
+  }
+</style>

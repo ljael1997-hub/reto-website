@@ -1,0 +1,95 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="paths-concept" aria-labelledby="paths-concept-title">
+  <div class="paths-concept__inner">
+    <div class="paths-concept__content">
+      <h2 id="paths-concept-title">{t('paths.concept.title')}</h2>
+      <div class="paths-concept__copy">
+        <p>{t('paths.concept.body1')}</p>
+        <p>{t('paths.concept.body2')}</p>
+        <p>{t('paths.concept.body3')}</p>
+      </div>
+    </div>
+
+    <div class="paths-concept__visual">
+      <img src="/brand/paths-concept.webp" alt={t('paths.concept.placeholder')} loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .paths-concept {
+    background: white;
+    padding-block: var(--space-24);
+    padding-inline: var(--container-padding);
+  }
+
+  .paths-concept__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    display: grid;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  .paths-concept__content {
+    max-width: 680px;
+  }
+
+  .paths-concept__copy {
+    margin-top: var(--space-6);
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .paths-concept__copy p {
+    color: rgba(32, 30, 30, 0.74);
+    font-size: clamp(1.0625rem, 1.4vw, 1.2rem);
+  }
+
+  .paths-concept__visual {
+    min-height: 360px;
+    aspect-ratio: 1;
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    border-radius: var(--radius-sm);
+    background:
+      linear-gradient(135deg, rgba(102, 179, 255, 0.18), rgba(255, 181, 0, 0.16)),
+      var(--color-aliceblue);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    padding: var(--space-8);
+  }
+
+  .paths-concept__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 520px;
+  }
+
+  @media (min-width: 64em) {
+    .paths-concept__inner {
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+    }
+  }
+
+  @media (max-width: 47.999em) {
+    .paths-concept {
+      padding-block: var(--space-16);
+    }
+
+    .paths-concept__visual {
+      min-height: 300px;
+    }
+  }
+</style>

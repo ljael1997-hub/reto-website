@@ -7,6 +7,7 @@
     "home": "Inicio",
     "about": "¿Qué es Reto?",
     "methodology": "Metodología",
+    "paths": "Rutas educativas",
     "solutions": "Soluciones",
     "contact": "Contacto"
   },
@@ -14,6 +15,97 @@
     "quick_links": "Enlaces rápidos",
     "powered_by": "Reto es una plataforma de Mellow",
     "rights": "Todos los derechos reservados."
+  },
+  "paths": {
+    "hero": {
+      "h1": "Rutas educativas",
+      "subtitle": "Programas estructurados, validados y medidos. Diseñados para integrarse al ritmo real del médico."
+    },
+    "concept": {
+      "title": "¿Qué es una ruta educativa?",
+      "body1": "Una ruta educativa de Reto es un programa estructurado de formación continua sobre un dominio clínico específico, diseñado en colaboración con instituciones académicas y validado por especialistas en activo.",
+      "body2": "Cada ruta combina contenido teórico, casos clínicos, evaluaciones formativas y momentos de discusión, organizados en módulos que respetan la disponibilidad real del médico.",
+      "body3": "No es un curso aislado: es un trayecto que el médico puede iniciar, pausar, retomar y completar con trazabilidad institucional.",
+      "placeholder": "Ilustración: anatomía de una ruta educativa"
+    },
+    "structure": {
+      "title": "Anatomía de una ruta",
+      "step1": {
+        "title": "Diagnóstico inicial",
+        "body": "Evaluación de punto de partida del médico para personalizar la ruta."
+      },
+      "step2": {
+        "title": "Módulos teóricos",
+        "body": "Contenido validado por especialistas, en formatos breves y aplicables."
+      },
+      "step3": {
+        "title": "Casos clínicos",
+        "body": "Resolución de escenarios reales con retroalimentación inmediata."
+      },
+      "step4": {
+        "title": "Evaluación formativa",
+        "body": "Medición continua del avance y los puntos a reforzar."
+      },
+      "step5": {
+        "title": "Acreditación",
+        "body": "Certificación con respaldo institucional al completar la ruta."
+      }
+    },
+    "specialties": {
+      "title": "Especialidades disponibles",
+      "subtitle": "Rutas activas o en desarrollo, construidas con instituciones aliadas.",
+      "s1": {
+        "name": "Cardiología",
+        "body": "Manejo clínico y actualización en cardiología"
+      },
+      "s2": {
+        "name": "Oncología",
+        "body": "Avances diagnósticos y terapéuticos"
+      },
+      "s3": {
+        "name": "Pediatría",
+        "body": "Atención integral del paciente pediátrico"
+      },
+      "s4": {
+        "name": "Medicina interna",
+        "body": "Razonamiento clínico y casos complejos"
+      },
+      "s5": {
+        "name": "Ginecología",
+        "body": "Salud reproductiva y de la mujer"
+      },
+      "s6": {
+        "name": "Endocrinología",
+        "body": "Trastornos metabólicos y hormonales"
+      },
+      "s7": {
+        "name": "Neurología",
+        "body": "Diagnóstico y manejo neurológico"
+      },
+      "s8": {
+        "name": "Medicina familiar",
+        "body": "Atención primaria y continuidad clínica"
+      }
+    },
+    "metrics": {
+      "title": "Impacto medido",
+      "m1": {
+        "number": "—",
+        "label": "Médicos formados"
+      },
+      "m2": {
+        "number": "—",
+        "label": "Rutas activas"
+      },
+      "m3": {
+        "number": "—",
+        "label": "Instituciones aliadas"
+      },
+      "m4": {
+        "number": "—",
+        "label": "% de finalización promedio"
+      }
+    }
   },
   "methodology": {
     "hero": {
