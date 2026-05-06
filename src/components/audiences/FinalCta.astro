@@ -1,0 +1,48 @@
+---
+import Button from '../Button.astro';
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  titleKey: string;
+  bodyKey: string;
+  buttonKey: string;
+  href?: string;
+  id?: string;
+}
+
+const { lang, titleKey, bodyKey, buttonKey, href = '#contacto', id = 'contacto' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="final-cta" id={id} aria-labelledby="final-cta-title">
+  <div class="final-cta__inner">
+    <h2 id="final-cta-title">{t(titleKey)}</h2>
+    <p>{t(bodyKey)}</p>
+    <Button href={href} variant="primary">{t(buttonKey)}</Button>
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    background: var(--color-aliceblue);
+    padding-block: var(--space-32);
+    padding-inline: var(--container-padding);
+  }
+
+  .final-cta__inner {
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .final-cta p {
+    margin: var(--space-6) auto 0;
+    color: rgba(32, 30, 30, 0.74);
+    font-size: clamp(1.125rem, 1.6vw, 1.25rem);
+  }
+
+  .final-cta :global(.btn) {
+    margin-top: var(--space-8);
+  }
+</style>

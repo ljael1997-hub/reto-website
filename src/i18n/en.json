@@ -8,6 +8,10 @@
     "about": "What is Reto?",
     "methodology": "Methodology",
     "paths": "Learning paths",
+    "forYou": "For you",
+    "universities": "Universities",
+    "hospitals": "Hospitals",
+    "industry": "Industry",
     "solutions": "Solutions",
     "contact": "Contact"
   },
@@ -15,6 +19,72 @@
     "quick_links": "Quick links",
     "powered_by": "Reto is a Mellow platform",
     "rights": "All rights reserved."
+  },
+  "universities": {
+    "hero": {
+      "h1": "For universities",
+      "subtitle": "A platform designed for medical schools and faculties that need to train better, measure more and institutionally back every step.",
+      "cta": "Request an institutional demo"
+    },
+    "enarm": {
+      "title": "Institutional ENARM preparation",
+      "body1": "ENARM preparation built from the institution, not bought by the student. Reto offers universities a complete infrastructure to accompany their cohorts well before the exam.",
+      "body2": "Students access validated content, clinical cases, mock exams and real-time analytics. The university accesses cohort-level metrics that allow targeted intervention.",
+      "advantages": {
+        "title": "What's included:",
+        "a1": "Updated case and mock exam bank",
+        "a2": "Institutional dashboard with metrics per cohort",
+        "a3": "Academic support throughout the cycle",
+        "a4": "Impact report at the end of each cohort"
+      },
+      "placeholder": "Mockup: institutional ENARM dashboard"
+    },
+    "benefits": {
+      "title": "Institutional benefits",
+      "subtitle": "Beyond ENARM: a long-term educational partnership.",
+      "b1": {
+        "title": "Actionable metrics",
+        "body": "Dashboards that show where each cohort gets stuck, not just how many passed."
+      },
+      "b2": {
+        "title": "Validated content",
+        "body": "Academic material built and reviewed with specialists and endorsed by the institution."
+      },
+      "b3": {
+        "title": "Academic traceability",
+        "body": "Every student interaction is logged and available to tutors and coordinators."
+      },
+      "b4": {
+        "title": "Curricular integration",
+        "body": "Paths fit into the curriculum without requiring major restructuring."
+      }
+    },
+    "case": {
+      "title": "Success story",
+      "quote": "Replace with real quote when available.",
+      "attribution": {
+        "name": "First Last",
+        "role": "Academic coordination",
+        "institution": "Placeholder University"
+      },
+      "metric1": {
+        "number": "—",
+        "label": "students in program"
+      },
+      "metric2": {
+        "number": "—",
+        "label": "completion rate"
+      },
+      "metric3": {
+        "number": "—",
+        "label": "improvement vs prior cohort"
+      }
+    },
+    "finalCta": {
+      "title": "Let's build the next generation of physicians together.",
+      "body": "If you coordinate a medical academic program, we'll show you how Reto works at your institution.",
+      "button": "Schedule a demo"
+    }
   },
   "paths": {
     "hero": {

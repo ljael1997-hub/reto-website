@@ -14,6 +14,8 @@ const localizedPaths = {
   '/en/methodology': { es: '/metodologia', en: '/en/methodology' },
   '/rutas-educativas': { es: '/rutas-educativas', en: '/en/learning-paths' },
   '/en/learning-paths': { es: '/rutas-educativas', en: '/en/learning-paths' },
+  '/universidades': { es: '/universidades', en: '/en/universities' },
+  '/en/universities': { es: '/universidades', en: '/en/universities' },
 } as const;
 const currentLocalizedPath = localizedPaths[pathname as keyof typeof localizedPaths];
 const spanishHref = currentLocalizedPath?.es ?? '/';
@@ -42,7 +44,16 @@ const englishHref = currentLocalizedPath?.en ?? '/en/';
         <li><a href={lang === 'es' ? '/que-es-reto' : '/en/what-is-reto'}>{t('nav.about')}</a></li>
         <li><a href={lang === 'es' ? '/metodologia' : '/en/methodology'}>{t('nav.methodology')}</a></li>
         <li><a href={lang === 'es' ? '/rutas-educativas' : '/en/learning-paths'}>{t('nav.paths')}</a></li>
-        <li><a href={lang === 'es' ? '/#solutions' : '/en/#solutions'}>{t('nav.solutions')}</a></li>
+        <li class="nav-dropdown">
+          <details>
+            <summary>{t('nav.forYou')}</summary>
+            <ul class="nav-dropdown__menu" role="list">
+              <li><a href={lang === 'es' ? '/universidades' : '/en/universities'}>{t('nav.universities')}</a></li>
+              <li><a href={lang === 'es' ? '/hospitales' : '/en/hospitals'}>{t('nav.hospitals')}</a></li>
+              <li><a href={lang === 'es' ? '/industria' : '/en/industry'}>{t('nav.industry')}</a></li>
+            </ul>
+          </details>
+        </li>
         <li><a href={lang === 'es' ? '/#contact' : '/en/#contact'}>{t('nav.contact')}</a></li>
       </ul>
 
@@ -109,7 +120,8 @@ const englishHref = currentLocalizedPath?.en ?? '/en/';
     list-style: none;
   }
 
-  .nav-list a {
+  .nav-list a,
+  .nav-list summary {
     font-family: var(--font-body);
     font-weight: 500;
     font-size: var(--text-small);
@@ -118,9 +130,57 @@ const englishHref = currentLocalizedPath?.en ?? '/en/';
     transition: color 0.15s ease;
   }
 
-  .nav-list a:hover {
+  .nav-list a:hover,
+  .nav-list summary:hover {
     color: #000;
     text-decoration: none;
+  }
+
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown details {
+    position: relative;
+  }
+
+  .nav-dropdown summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .nav-dropdown summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .nav-dropdown summary::after {
+    content: '';
+    display: inline-block;
+    width: 0.45em;
+    height: 0.45em;
+    margin-left: var(--space-2);
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-0.18em) rotate(45deg);
+  }
+
+  .nav-dropdown__menu {
+    position: absolute;
+    top: calc(100% + var(--space-3));
+    right: 0;
+    min-width: 180px;
+    display: grid;
+    gap: var(--space-2);
+    list-style: none;
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    border-radius: var(--radius-sm);
+    background: var(--color-aliceblue);
+    padding: var(--space-3);
+    box-shadow: 0 12px 32px rgba(32, 30, 30, 0.08);
+  }
+
+  .nav-dropdown:not(:focus-within) details:not([open]) .nav-dropdown__menu {
+    display: none;
   }
 
   /* Lang switcher */
@@ -201,8 +261,23 @@ const englishHref = currentLocalizedPath?.en ?? '/en/';
       width: 100%;
     }
 
-    .nav-list a {
+    .nav-list a,
+    .nav-list summary {
       font-size: var(--text-body);
+    }
+
+    .nav-dropdown,
+    .nav-dropdown details {
+      width: 100%;
+    }
+
+    .nav-dropdown__menu {
+      position: static;
+      margin-top: var(--space-3);
+      box-shadow: none;
+      background: rgba(255, 255, 255, 0.5);
+      min-width: 0;
+      width: 100%;
     }
 
     /* Show nav when checkbox is checked */

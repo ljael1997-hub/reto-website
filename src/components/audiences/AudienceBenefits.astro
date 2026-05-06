@@ -1,0 +1,112 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  titleKey: string;
+  subtitleKey: string;
+  itemBaseKey: string;
+  count?: number;
+}
+
+const { lang, titleKey, subtitleKey, itemBaseKey, count = 4 } = Astro.props;
+const t = useTranslations(lang);
+const items = Array.from({ length: count }, (_, index) => index + 1);
+---
+
+<section class="audience-benefits" aria-labelledby="audience-benefits-title">
+  <div class="audience-benefits__inner">
+    <div class="audience-benefits__heading">
+      <h2 id="audience-benefits-title">{t(titleKey)}</h2>
+      <p>{t(subtitleKey)}</p>
+    </div>
+
+    <div class="audience-benefits__grid">
+      {
+        items.map((item) => (
+          <article class="audience-benefit-card">
+            <div class="audience-benefit-card__icon" aria-hidden="true">{String(item).padStart(2, '0')}</div>
+            <h3>{t(`${itemBaseKey}.b${item}.title`)}</h3>
+            <p>{t(`${itemBaseKey}.b${item}.body`)}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .audience-benefits {
+    background: var(--color-aliceblue);
+    padding-block: var(--space-24);
+    padding-inline: var(--container-padding);
+  }
+
+  .audience-benefits__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  .audience-benefits__heading {
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .audience-benefits__heading p {
+    margin-top: var(--space-4);
+    color: rgba(32, 30, 30, 0.72);
+    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  }
+
+  .audience-benefits__grid {
+    margin-top: var(--space-12);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .audience-benefit-card {
+    min-height: 260px;
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    border-radius: var(--radius-sm);
+    background: white;
+    padding: var(--space-6);
+  }
+
+  .audience-benefit-card__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-sm);
+    background: var(--color-amarillo);
+    display: grid;
+    place-items: center;
+    color: var(--color-pelicula);
+    font-family: var(--font-display);
+    font-weight: 800;
+  }
+
+  .audience-benefit-card h3 {
+    margin-top: var(--space-6);
+    font-size: var(--text-h4);
+    line-height: 1.2;
+  }
+
+  .audience-benefit-card p {
+    margin-top: var(--space-3);
+    color: rgba(32, 30, 30, 0.68);
+  }
+
+  @media (min-width: 48em) {
+    .audience-benefits__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-6);
+    }
+  }
+
+  @media (min-width: 64em) {
+    .audience-benefits__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>

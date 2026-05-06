@@ -1,0 +1,143 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  titleKey: string;
+  quoteKey: string;
+  attributionBaseKey: string;
+  metricBaseKey: string;
+  metricCount?: number;
+}
+
+const {
+  lang,
+  titleKey,
+  quoteKey,
+  attributionBaseKey,
+  metricBaseKey,
+  metricCount = 3,
+} = Astro.props;
+const t = useTranslations(lang);
+const metrics = Array.from({ length: metricCount }, (_, index) => index + 1);
+---
+
+<section class="case-study" aria-labelledby="case-study-title">
+  <div class="case-study__inner">
+    <h2 id="case-study-title">{t(titleKey)}</h2>
+
+    <article class="case-study__card">
+      <div class="case-study__logo" aria-hidden="true"></div>
+      <blockquote>{t(quoteKey)}</blockquote>
+      <div class="case-study__attribution">
+        <p class="case-study__name">{t(`${attributionBaseKey}.name`)}</p>
+        <p>{t(`${attributionBaseKey}.role`)}, {t(`${attributionBaseKey}.institution`)}</p>
+      </div>
+
+      <div class="case-study__metrics">
+        {
+          metrics.map((metric) => (
+            <div class="case-study__metric">
+              <p class="case-study__metric-number">{t(`${metricBaseKey}.metric${metric}.number`)}</p>
+              <p class="case-study__metric-label">{t(`${metricBaseKey}.metric${metric}.label`)}</p>
+            </div>
+          ))
+        }
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+  .case-study {
+    background: white;
+    padding-block: var(--space-24);
+    padding-inline: var(--container-padding);
+  }
+
+  .case-study__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  .case-study h2 {
+    text-align: center;
+  }
+
+  .case-study__card {
+    max-width: 960px;
+    margin: var(--space-12) auto 0;
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    border-radius: var(--radius-sm);
+    background: var(--color-aliceblue);
+    padding: var(--space-8);
+  }
+
+  .case-study__logo {
+    width: 160px;
+    height: 56px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, rgba(32, 30, 30, 0.12), rgba(32, 30, 30, 0.04));
+  }
+
+  .case-study blockquote {
+    margin-top: var(--space-8);
+    color: var(--color-pelicula);
+    font-family: var(--font-body);
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .case-study blockquote::before {
+    content: '“';
+    color: var(--color-amarillo);
+    font-family: var(--font-display);
+    font-size: 1.5em;
+    line-height: 0;
+    margin-right: var(--space-2);
+  }
+
+  .case-study__attribution {
+    margin-top: var(--space-6);
+    color: rgba(32, 30, 30, 0.64);
+  }
+
+  .case-study__name {
+    color: var(--color-pelicula);
+    font-weight: 800;
+  }
+
+  .case-study__metrics {
+    margin-top: var(--space-8);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .case-study__metric {
+    border-top: 1px solid rgba(32, 30, 30, 0.1);
+    padding-top: var(--space-4);
+  }
+
+  .case-study__metric-number {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .case-study__metric-label {
+    margin-top: var(--space-2);
+    color: rgba(32, 30, 30, 0.66);
+    font-weight: 600;
+  }
+
+  @media (min-width: 48em) {
+    .case-study__metrics {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-6);
+    }
+  }
+</style>

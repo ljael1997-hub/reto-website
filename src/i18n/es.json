@@ -8,6 +8,10 @@
     "about": "¿Qué es Reto?",
     "methodology": "Metodología",
     "paths": "Rutas educativas",
+    "forYou": "Para ti",
+    "universities": "Universidades",
+    "hospitals": "Hospitales",
+    "industry": "Industria",
     "solutions": "Soluciones",
     "contact": "Contacto"
   },
@@ -15,6 +19,72 @@
     "quick_links": "Enlaces rápidos",
     "powered_by": "Reto es una plataforma de Mellow",
     "rights": "Todos los derechos reservados."
+  },
+  "universities": {
+    "hero": {
+      "h1": "Para universidades",
+      "subtitle": "Una plataforma diseñada para escuelas y facultades de medicina que necesitan formar mejor, medir más y respaldar institucionalmente cada paso.",
+      "cta": "Solicita una demo institucional"
+    },
+    "enarm": {
+      "title": "ENARM institucional",
+      "body1": "Una preparación para el ENARM construida desde la institución, no comprada por el alumno. Reto ofrece a las universidades una infraestructura completa para acompañar a sus generaciones desde antes del examen.",
+      "body2": "Los alumnos acceden a contenido validado, casos clínicos, simulacros y analítica en tiempo real. La universidad accede a métricas de cohorte que permiten intervenir donde es necesario.",
+      "advantages": {
+        "title": "Lo que incluye:",
+        "a1": "Banco de casos y simulacros actualizado",
+        "a2": "Dashboard institucional con métricas por generación",
+        "a3": "Acompañamiento académico durante el ciclo",
+        "a4": "Reporte de impacto al cierre de cada generación"
+      },
+      "placeholder": "Mockup: dashboard institucional ENARM"
+    },
+    "benefits": {
+      "title": "Beneficios para la institución",
+      "subtitle": "Más allá del ENARM: una alianza educativa de largo plazo.",
+      "b1": {
+        "title": "Métricas accionables",
+        "body": "Dashboards que muestran dónde se traba cada generación, no solo cuántos aprobaron."
+      },
+      "b2": {
+        "title": "Contenido validado",
+        "body": "Material académico construido y revisado con especialistas y avalado por la institución."
+      },
+      "b3": {
+        "title": "Trazabilidad académica",
+        "body": "Cada interacción del alumno queda registrada y disponible para tutores y coordinadores."
+      },
+      "b4": {
+        "title": "Integración curricular",
+        "body": "Las rutas se acoplan al plan de estudios sin requerir reestructuración mayor."
+      }
+    },
+    "case": {
+      "title": "Caso de éxito",
+      "quote": "Reemplazar con cita real cuando esté disponible.",
+      "attribution": {
+        "name": "Nombre Apellido",
+        "role": "Coordinación académica",
+        "institution": "Universidad placeholder"
+      },
+      "metric1": {
+        "number": "—",
+        "label": "alumnos en programa"
+      },
+      "metric2": {
+        "number": "—",
+        "label": "tasa de finalización"
+      },
+      "metric3": {
+        "number": "—",
+        "label": "mejora vs cohorte previa"
+      }
+    },
+    "finalCta": {
+      "title": "Construyamos juntos la siguiente generación de médicos.",
+      "body": "Si coordinas un programa académico de medicina, te mostramos cómo funciona Reto en tu institución.",
+      "button": "Agendar demo"
+    }
   },
   "paths": {
     "hero": {

@@ -1,0 +1,79 @@
+---
+import Button from '../components/Button.astro';
+import AudienceBenefits from '../components/audiences/AudienceBenefits.astro';
+import CaseStudy from '../components/audiences/CaseStudy.astro';
+import EnarmSection from '../components/audiences/EnarmSection.astro';
+import FinalCta from '../components/audiences/FinalCta.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations } from '../i18n/utils';
+
+const lang = 'es';
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title="Para universidades"
+  description="Una plataforma diseñada para escuelas y facultades de medicina que necesitan formar mejor, medir más y respaldar institucionalmente cada paso."
+  lang={lang}
+>
+  <section class="universities-hero" aria-labelledby="universities-title">
+    <div class="universities-hero__inner">
+      <h1 id="universities-title">{t('universities.hero.h1')}</h1>
+      <p>{t('universities.hero.subtitle')}</p>
+      <Button href="#contacto" variant="secondary">{t('universities.hero.cta')}</Button>
+    </div>
+  </section>
+
+  <EnarmSection lang={lang} />
+  <AudienceBenefits
+    lang={lang}
+    titleKey="universities.benefits.title"
+    subtitleKey="universities.benefits.subtitle"
+    itemBaseKey="universities.benefits"
+  />
+  <CaseStudy
+    lang={lang}
+    titleKey="universities.case.title"
+    quoteKey="universities.case.quote"
+    attributionBaseKey="universities.case.attribution"
+    metricBaseKey="universities.case"
+  />
+  <FinalCta
+    lang={lang}
+    titleKey="universities.finalCta.title"
+    bodyKey="universities.finalCta.body"
+    buttonKey="universities.finalCta.button"
+    href="#contacto"
+  />
+</BaseLayout>
+
+<style>
+  .universities-hero {
+    min-height: 50vh;
+    background: var(--color-aliceblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: var(--space-16);
+    padding-inline: var(--container-padding);
+  }
+
+  .universities-hero__inner {
+    max-width: 960px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .universities-hero p {
+    max-width: 760px;
+    margin: var(--space-6) auto 0;
+    color: rgba(32, 30, 30, 0.76);
+    font-family: var(--font-body);
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 500;
+  }
+
+  .universities-hero :global(.btn) {
+    margin-top: var(--space-8);
+  }
+</style>
