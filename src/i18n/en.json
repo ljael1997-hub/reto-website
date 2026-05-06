@@ -14,5 +14,79 @@
     "quick_links": "Quick links",
     "powered_by": "Reto is a Mellow platform",
     "rights": "All rights reserved."
+  },
+  "whatIsReto": {
+    "hero": {
+      "h1": "What is Reto?",
+      "subtitle": "The platform that connects those who teach medicine with those who practice and transform it."
+    },
+    "problem": {
+      "title": "The problem",
+      "intro": "Medical education in Latin America faces three structural tensions that limit physicians' professional development.",
+      "point1": {
+        "title": "Fragmented access",
+        "body": "Clinical knowledge is unevenly distributed across institutions, regions and specialties."
+      },
+      "point2": {
+        "title": "Missing metrics",
+        "body": "It is hard to measure the real impact of continuing education on clinical practice."
+      },
+      "point3": {
+        "title": "A gap between actors",
+        "body": "Universities, hospitals and industry operate in silos, without a common channel to build education together."
+      }
+    },
+    "manifesto": {
+      "title": "Our role in medical education",
+      "body1": "Reto was born from a conviction: medical education is where the quality of care patients will receive over the next decades is decided.",
+      "body2": "We are not a course repository or a certificate platform. We are an infrastructure that connects the institutions that train physicians, the hospitals that employ them, and the industry that produces the knowledge that keeps them current.",
+      "body3": "We build educational paths that respect the complexity of medicine and the rigor it demands.",
+      "quote": "Educating physicians is not transferring information. It is building judgment."
+    },
+    "team": {
+      "title": "The team",
+      "subtitle": "Physicians, educators, technologists and designers building the next generation of medical education.",
+      "member": {
+        "placeholderName": "First Last",
+        "placeholderRole": "Role at Reto"
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "h1": "Medical education that connects.",
+      "subtitle": "Medical education platform connecting institutions, hospitals and industry with doctors.",
+      "cta_primary": "Request demo",
+      "cta_secondary": "Learn more"
+    },
+    "benefits": {
+      "title": "Why Reto?",
+      "items": [
+        {
+          "title": "Education backed by institutions",
+          "description": "Programs endorsed by recognized universities and hospitals."
+        },
+        {
+          "title": "Proprietary methodology, validated in practice",
+          "description": "Designed by and for active medical professionals."
+        },
+        {
+          "title": "Real traceability and metrics",
+          "description": "Every interaction measured, every step documented."
+        },
+        {
+          "title": "A single connection point",
+          "description": "Universities, hospitals and industry on one platform."
+        }
+      ]
+    },
+    "video": {
+      "title": "See Reto in action",
+      "placeholder": "Video coming soon"
+    },
+    "partners": {
+      "title": "Institutions that trust Reto",
+      "subtitle": "Leading universities, hospitals and healthcare companies."
+    }
   }
 }

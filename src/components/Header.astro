@@ -6,6 +6,10 @@ interface Props {
 }
 const { lang = 'es' } = Astro.props;
 const t = useTranslations(lang);
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isWhatIsRetoPage = pathname === '/que-es-reto' || pathname === '/en/what-is-reto';
+const spanishHref = isWhatIsRetoPage ? '/que-es-reto' : '/';
+const englishHref = isWhatIsRetoPage ? '/en/what-is-reto' : '/en/';
 ---
 
 <header class="site-header">
@@ -27,7 +31,7 @@ const t = useTranslations(lang);
     <nav class="header-nav" aria-label="Navegación principal">
       <ul class="nav-list" role="list">
         <li><a href={lang === 'es' ? '/#home' : '/en/#home'}>{t('nav.home')}</a></li>
-        <li><a href={lang === 'es' ? '/#about' : '/en/#about'}>{t('nav.about')}</a></li>
+        <li><a href={lang === 'es' ? '/que-es-reto' : '/en/what-is-reto'}>{t('nav.about')}</a></li>
         <li><a href={lang === 'es' ? '/#methodology' : '/en/#methodology'}>{t('nav.methodology')}</a></li>
         <li><a href={lang === 'es' ? '/#solutions' : '/en/#solutions'}>{t('nav.solutions')}</a></li>
         <li><a href={lang === 'es' ? '/#contact' : '/en/#contact'}>{t('nav.contact')}</a></li>
@@ -36,13 +40,13 @@ const t = useTranslations(lang);
       <!-- Selector de idioma -->
       <div class="lang-switcher" aria-label="Selector de idioma">
         <a
-          href="/"
+          href={spanishHref}
           class={lang === 'es' ? 'lang-link lang-link--active' : 'lang-link'}
           hreflang="es"
         >ES</a>
         <span aria-hidden="true">|</span>
         <a
-          href="/en/"
+          href={englishHref}
           class={lang === 'en' ? 'lang-link lang-link--active' : 'lang-link'}
           hreflang="en"
         >EN</a>

@@ -14,5 +14,79 @@
     "quick_links": "Enlaces rápidos",
     "powered_by": "Reto es una plataforma de Mellow",
     "rights": "Todos los derechos reservados."
+  },
+  "whatIsReto": {
+    "hero": {
+      "h1": "¿Qué es Reto?",
+      "subtitle": "La plataforma que conecta a quienes enseñan medicina con quienes la ejercen y la transforman."
+    },
+    "problem": {
+      "title": "El problema",
+      "intro": "La educación médica en Latinoamérica enfrenta tres tensiones estructurales que limitan el desarrollo profesional de los médicos.",
+      "point1": {
+        "title": "Acceso fragmentado",
+        "body": "El conocimiento clínico se distribuye de manera desigual entre instituciones, regiones y especialidades."
+      },
+      "point2": {
+        "title": "Métricas ausentes",
+        "body": "Es difícil medir el impacto real de la formación continua sobre la práctica clínica."
+      },
+      "point3": {
+        "title": "Brecha entre actores",
+        "body": "Universidades, hospitales e industria operan en silos, sin un canal común para construir educación conjunta."
+      }
+    },
+    "manifesto": {
+      "title": "Nuestro rol en la educación médica",
+      "body1": "Reto nace de una convicción: la educación médica es el punto donde se decide la calidad de la atención que recibirán los pacientes durante las próximas décadas.",
+      "body2": "No somos un repositorio de cursos ni una plataforma de certificados. Somos una infraestructura que conecta a las instituciones que forman médicos, los hospitales que los emplean y la industria que produce el conocimiento que los actualiza.",
+      "body3": "Construimos rutas educativas que respetan la complejidad de la medicina y la rigurosidad que exige.",
+      "quote": "Educar médicos no es transferir información. Es construir criterio."
+    },
+    "team": {
+      "title": "El equipo",
+      "subtitle": "Médicos, educadores, tecnólogos y diseñadores construyendo la siguiente generación de educación médica.",
+      "member": {
+        "placeholderName": "Nombre Apellido",
+        "placeholderRole": "Rol en Reto"
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "h1": "Educación médica que conecta.",
+      "subtitle": "Plataforma de educación médica que conecta instituciones, hospitales e industria con médicos.",
+      "cta_primary": "Solicitar demo",
+      "cta_secondary": "Conocer más"
+    },
+    "benefits": {
+      "title": "¿Por qué Reto?",
+      "items": [
+        {
+          "title": "Educación con respaldo institucional",
+          "description": "Programas avalados por universidades y hospitales reconocidos."
+        },
+        {
+          "title": "Metodología propia, validada en la práctica",
+          "description": "Diseñada por y para médicos en activo."
+        },
+        {
+          "title": "Trazabilidad y métricas reales",
+          "description": "Cada interacción medida, cada avance documentado."
+        },
+        {
+          "title": "Un solo punto de conexión",
+          "description": "Universidades, hospitales e industria en una misma plataforma."
+        }
+      ]
+    },
+    "video": {
+      "title": "Mira Reto en acción",
+      "placeholder": "Video próximamente"
+    },
+    "partners": {
+      "title": "Instituciones que confían en Reto",
+      "subtitle": "Universidades, hospitales y compañías líderes del sector salud."
+    }
   }
 }

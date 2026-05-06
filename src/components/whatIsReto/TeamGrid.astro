@@ -1,0 +1,111 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const members = Array.from({ length: 6 });
+---
+
+<section class="team-section" aria-labelledby="team-title">
+  <div class="team-section__inner">
+    <div class="team-section__heading">
+      <h2 id="team-title">{t('whatIsReto.team.title')}</h2>
+      <p>{t('whatIsReto.team.subtitle')}</p>
+    </div>
+
+    <div class="team-grid">
+      {
+        members.map(() => (
+          <article class="team-card">
+            <div class="team-card__photo" aria-hidden="true"></div>
+            <h3>{t('whatIsReto.team.member.placeholderName')}</h3>
+            <p>{t('whatIsReto.team.member.placeholderRole')}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-section {
+    background: white;
+    padding-block: var(--space-24);
+    padding-inline: var(--container-padding);
+  }
+
+  .team-section__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  .team-section__heading {
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .team-section__heading p {
+    margin-top: var(--space-4);
+    color: rgba(32, 30, 30, 0.72);
+    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  }
+
+  .team-grid {
+    margin-top: var(--space-12);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .team-card {
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    border-radius: var(--radius-sm);
+    padding: var(--space-6);
+    text-align: center;
+    background: var(--color-aliceblue);
+  }
+
+  .team-card__photo {
+    width: min(200px, 100%);
+    aspect-ratio: 1;
+    margin-inline: auto;
+    border-radius: var(--radius-sm);
+    background:
+      linear-gradient(135deg, rgba(102, 179, 255, 0.28), rgba(255, 181, 0, 0.2)),
+      #e9eef3;
+  }
+
+  .team-card h3 {
+    margin-top: var(--space-6);
+    font-size: var(--text-h4);
+    line-height: 1.2;
+  }
+
+  .team-card p {
+    margin-top: var(--space-2);
+    color: rgba(32, 30, 30, 0.64);
+  }
+
+  @media (min-width: 48em) {
+    .team-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 64em) {
+    .team-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 47.999em) {
+    .team-section {
+      padding-block: var(--space-16);
+    }
+  }
+</style>

@@ -1,0 +1,48 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="secondary-hero" aria-labelledby="what-is-reto-title">
+  <div class="secondary-hero__inner">
+    <h1 id="what-is-reto-title">{t('whatIsReto.hero.h1')}</h1>
+    <p>{t('whatIsReto.hero.subtitle')}</p>
+  </div>
+</section>
+
+<style>
+  .secondary-hero {
+    min-height: 50vh;
+    background: var(--color-aliceblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: var(--space-16);
+    padding-inline: var(--container-padding);
+  }
+
+  .secondary-hero__inner {
+    max-width: 960px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .secondary-hero h1 {
+    color: var(--color-pelicula);
+  }
+
+  .secondary-hero p {
+    max-width: 720px;
+    margin: var(--space-6) auto 0;
+    color: rgba(32, 30, 30, 0.76);
+    font-family: var(--font-body);
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 500;
+  }
+</style>
