@@ -465,11 +465,11 @@
   "home": {
     "hero": {
       "title": {
-        "before": "Medical education that ",
-        "accent": "connects",
-        "after": "."
+        "before": "One platform to ",
+        "accent": "educate, connect and measure",
+        "after": " impact on physicians."
       },
-      "subtitle": "Medical education platform connecting institutions, hospitals and industry with doctors.",
+      "subtitle": "Turn medical education into a strategy with real, measurable impact.",
       "cta_primary": "Request demo",
       "cta_secondary": "Learn more"
     },
@@ -477,20 +477,20 @@
       "title": "Why Reto?",
       "items": [
         {
-          "title": "Education backed by institutions",
-          "description": "Programs endorsed by recognized universities and hospitals."
+          "title": "Direct access to medical communities",
+          "description": "Connect with active physicians, segmented by specialty and constantly interacting within the platform."
         },
         {
-          "title": "Proprietary methodology, validated in practice",
-          "description": "Designed by and for active medical professionals."
+          "title": "Education that drives real engagement",
+          "description": "Case-based learning experiences designed to integrate into the physician's daily clinical practice."
         },
         {
-          "title": "Real traceability and metrics",
-          "description": "Every interaction measured, every step documented."
+          "title": "Measurable impact",
+          "description": "Track engagement, interaction and performance evolution to understand what works and optimize your strategies."
         },
         {
-          "title": "A single connection point",
-          "description": "Universities, hospitals and industry on one platform."
+          "title": "Frictionless scalability",
+          "description": "Deploy educational initiatives at an institutional or national level from a single platform."
         }
       ]
     },

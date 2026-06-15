@@ -465,11 +465,11 @@
   "home": {
     "hero": {
       "title": {
-        "before": "Educación médica que ",
-        "accent": "conecta",
-        "after": "."
+        "before": "Una sola plataforma para ",
+        "accent": "educar, conectar y medir",
+        "after": " el impacto en médicos."
       },
-      "subtitle": "Plataforma de educación médica que conecta instituciones, hospitales e industria con médicos.",
+      "subtitle": "Convierte la educación médica en una estrategia con impacto real y medible.",
       "cta_primary": "Solicitar demo",
       "cta_secondary": "Conocer más"
     },
@@ -477,20 +477,20 @@
       "title": "¿Por qué Reto?",
       "items": [
         {
-          "title": "Educación con respaldo institucional",
-          "description": "Programas avalados por universidades y hospitales reconocidos."
+          "title": "Acceso directo a comunidades médicas",
+          "description": "Conecta con médicos activos, segmentados por especialidad y en constante interacción dentro de la plataforma."
         },
         {
-          "title": "Metodología propia, validada en la práctica",
-          "description": "Diseñada por y para médicos en activo."
+          "title": "Educación que genera engagement real",
+          "description": "Experiencias de aprendizaje basadas en casos clínicos, diseñadas para integrarse a la práctica diaria del médico."
         },
         {
-          "title": "Trazabilidad y métricas reales",
-          "description": "Cada interacción medida, cada avance documentado."
+          "title": "Impacto medible",
+          "description": "Mide engagement, interacción y evolución del desempeño para entender qué funciona y optimizar tus estrategias."
         },
         {
-          "title": "Un solo punto de conexión",
-          "description": "Universidades, hospitales e industria en una misma plataforma."
+          "title": "Escalabilidad sin fricción",
+          "description": "Implementa iniciativas educativas a nivel institucional o nacional desde una sola plataforma."
         }
       ]
     },
