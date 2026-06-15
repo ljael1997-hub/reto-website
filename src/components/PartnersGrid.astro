@@ -10,24 +10,51 @@ const { lang } = Astro.props;
 const dict = lang === 'en' ? enJson : esJson;
 const { title, subtitle } = dict.home.partners;
 
-const partnerLabel = lang === 'en' ? 'Partner' : 'Aliado';
-const partners = Array.from({ length: 8 }, (_, i) => {
-  const num = String(i + 1).padStart(2, '0');
-  return `${partnerLabel} ${num}`;
-});
+const clientes = [
+  { slug: 'alcon', name: 'Alcon' },
+  { slug: 'gsk', name: 'GSK' },
+  { slug: 'cfm', name: 'CFM' },
+  { slug: 'anafam', name: 'ANAFAM' },
+  { slug: 'msd', name: 'MSD' },
+  { slug: 'bristol-myers-squibb', name: 'Bristol Myers Squibb' },
+  { slug: 'viatris', name: 'Viatris' },
+  { slug: 'laboratorios-grin', name: 'Laboratorios Grin' },
+  { slug: 'salauno', name: 'Salauno' },
+  { slug: 'corne', name: 'Corne' },
+  { slug: 'ophia', name: 'Ophia' },
+  { slug: 'universidad-panamericana', name: 'Universidad Panamericana' },
+  { slug: 'silanes', name: 'Silanes' },
+  { slug: 'galderma', name: 'Galderma' },
+  { slug: 'udlap', name: 'UDLAP' },
+  { slug: 'astellas', name: 'Astellas' },
+  { slug: 'synthon', name: 'Synthon' },
+  { slug: 'novo-nordisk', name: 'Novo Nordisk' },
+  { slug: 'loreal', name: "L'Oréal" },
+  { slug: 'ifa-celtics', name: 'IFA Celtics' },
+  { slug: 'opella', name: 'Opella' },
+];
+
+// Duplicate for infinite scroll effect
+const track = [...clientes, ...clientes];
 ---
 <section class="partners" id="aliados">
   <div class="partners__container">
     <h2 class="partners__title">{title}</h2>
     {subtitle && <p class="partners__subtitle">{subtitle}</p>}
 
-    <!-- TODO: reemplazar placeholders por <img> con logos reales cuando Reto entregue el listado de aliados -->
-    <div class="partners__grid" role="list" aria-label={title}>
-      {partners.map((label) => (
-        <div class="partner-placeholder" role="listitem" aria-label={label}>
-          <span class="partner-placeholder__label">{label}</span>
-        </div>
-      ))}
+    <div class="carousel" aria-label={title}>
+      <div class="carousel__track">
+        {track.map((p) => (
+          <div class="carousel__item">
+            <img
+              src={`/logos/clientes/${p.slug}.png`}
+              alt={p.name}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
@@ -37,6 +64,7 @@ const partners = Array.from({ length: 8 }, (_, i) => {
     background: #ffffff;
     padding-block: var(--space-16);
     padding-inline: var(--container-padding);
+    overflow: hidden;
   }
 
   .partners__container {
@@ -65,42 +93,48 @@ const partners = Array.from({ length: 8 }, (_, i) => {
     margin-bottom: var(--space-8);
   }
 
-  .partners__grid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
+  .carousel {
+    width: 100vw;
+    margin-inline: calc(-1 * var(--container-padding));
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   }
 
-  /* Tablet: 3 columns */
-  @media (min-width: 48em) {
-    .partners__grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .carousel__track {
+    display: flex;
+    gap: var(--space-8);
+    width: max-content;
+    animation: scroll-logos 40s linear infinite;
   }
 
-  /* Desktop: 4 columns */
-  @media (min-width: 64em) {
-    .partners__grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
+  .carousel__track:hover {
+    animation-play-state: paused;
   }
 
-  .partner-placeholder {
-    aspect-ratio: 3 / 2;
-    background: rgba(32, 30, 30, 0.05);
-    border: 1px solid rgba(32, 30, 30, 0.1);
-    border-radius: var(--radius-md);
+  .carousel__item {
+    flex-shrink: 0;
+    width: 140px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .partner-placeholder__label {
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: var(--text-small);
-    color: var(--color-pelicula);
-    opacity: 0.4;
+  .carousel__item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: filter 0.3s ease;
+  }
+
+  .carousel__item img:hover {
+    filter: grayscale(0%) opacity(1);
+  }
+
+  @keyframes scroll-logos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 </style>
