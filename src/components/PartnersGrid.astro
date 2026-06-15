@@ -34,8 +34,31 @@ const clientes = [
   { slug: 'opella', name: 'Opella' },
 ];
 
-// Duplicate for infinite scroll effect
-const track = [...clientes, ...clientes];
+const alianzas = [
+  { slug: 'imss-hospital', name: 'IMSS Hospital de Cardiología' },
+  { slug: 'grehta', name: 'GREHTA' },
+  { slug: 'citic-mx', name: 'CITIC MX' },
+  { slug: 'uabc', name: 'UABC' },
+  { slug: 'hospital-zambrano-hellion', name: 'Hospital Zambrano Hellion TecSalud' },
+  { slug: 'american-college-cardiology', name: 'American College of Cardiology' },
+  { slug: 'fundacion-piel-con-vida', name: 'Fundación Piel con Vida' },
+  { slug: 'academia-mexicana-pediatria', name: 'Academia Mexicana de Pediatría' },
+  { slug: 'instituto-cardiologia-ignacio-chavez', name: 'Instituto de Cardiología Ignacio Chávez' },
+  { slug: 'google', name: 'Google' },
+  { slug: 'instituto-perinatologia', name: 'Instituto Nacional de Perinatología' },
+  { slug: 'usc', name: 'USC University of Southern California' },
+  { slug: 'pronadameg', name: 'PRONADAMEG' },
+  { slug: 'sociedad-mexicana-cardiologia', name: 'Sociedad Mexicana de Cardiología' },
+  { slug: 'fundacion-imss', name: 'Fundación IMSS' },
+  { slug: 'derosearch', name: 'DeROsearch' },
+  { slug: 'anafam', name: 'ANAFAM' },
+  { slug: 'cfm', name: 'CFM' },
+];
+
+const trackClientes = [...clientes, ...clientes];
+const trackAlianzas = [...alianzas, ...alianzas];
+
+const alianzasTitle = lang === 'en' ? 'Our alliances' : 'Alianzas con las que nos apoyamos a crecer, investigar y validar';
 ---
 <section class="partners" id="aliados">
   <div class="partners__container">
@@ -44,10 +67,31 @@ const track = [...clientes, ...clientes];
 
     <div class="carousel" aria-label={title}>
       <div class="carousel__track">
-        {track.map((p) => (
+        {trackClientes.map((p) => (
           <div class="carousel__item">
             <img
               src={`/logos/clientes/${p.slug}.png`}
+              alt={p.name}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alianzas" id="alianzas">
+  <div class="partners__container">
+    <h2 class="partners__title">{alianzasTitle}</h2>
+
+    <div class="carousel carousel--reverse" aria-label={alianzasTitle}>
+      <div class="carousel__track carousel__track--reverse">
+        {trackAlianzas.map((p) => (
+          <div class="carousel__item">
+            <img
+              src={`/logos/alianzas/${p.slug}.png`}
               alt={p.name}
               loading="lazy"
               decoding="async"
@@ -67,6 +111,13 @@ const track = [...clientes, ...clientes];
     overflow: hidden;
   }
 
+  .alianzas {
+    background: #f8f8f8;
+    padding-block: var(--space-16);
+    padding-inline: var(--container-padding);
+    overflow: hidden;
+  }
+
   .partners__container {
     max-width: var(--container-max);
     margin-inline: auto;
@@ -80,7 +131,7 @@ const track = [...clientes, ...clientes];
     text-align: center;
     color: var(--color-pelicula);
     font-size: var(--text-h3);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-8);
   }
 
   .partners__subtitle {
@@ -108,7 +159,12 @@ const track = [...clientes, ...clientes];
     animation: scroll-logos 40s linear infinite;
   }
 
-  .carousel__track:hover {
+  .carousel__track--reverse {
+    animation: scroll-logos-reverse 40s linear infinite;
+  }
+
+  .carousel__track:hover,
+  .carousel__track--reverse:hover {
     animation-play-state: paused;
   }
 
@@ -136,5 +192,10 @@ const track = [...clientes, ...clientes];
   @keyframes scroll-logos {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  @keyframes scroll-logos-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
   }
 </style>
