@@ -455,10 +455,34 @@
     },
     "team": {
       "title": "The team",
-      "subtitle": "Physicians, educators, technologists and designers building the next generation of medical education.",
+      "subtitle": "Reto is built by a multidisciplinary team focused on medical education, technology and value generation for the health ecosystem. We work with one goal: to design relevant, measurable educational experiences aligned with the real needs of physicians.",
       "member": {
         "placeholderName": "First Last",
         "placeholderRole": "Role at Reto"
+      }
+    },
+    "impact": {
+      "title": "Real impact on medical education in Mexico",
+      "subtitle": "Reto has become a key partner in training and updating physicians in Mexico, accompanying different stages of their professional development.",
+      "stat1": {
+        "number": "+65,000",
+        "label": "Active communities nationwide",
+        "body": "More than 65,000 physicians are part of Reto, actively participating in learning experiences within the platform."
+      },
+      "stat2": {
+        "number": "ENARM",
+        "label": "ENARM preparation",
+        "body": "We have supported thousands of general practitioners in preparing for the ENARM, integrating simulation, clinical cases and performance tracking."
+      },
+      "stat3": {
+        "number": "🏥",
+        "label": "Specialist training",
+        "body": "We support medical specialists in their continuing education and preparation for certification exams through specialty-relevant content."
+      },
+      "stat4": {
+        "number": "🎓",
+        "label": "Partnerships with hospitals and institutions",
+        "body": "We collaborate with teaching hospitals and universities to strengthen medical training through licenses, academic programs and scholarships."
       }
     }
   },

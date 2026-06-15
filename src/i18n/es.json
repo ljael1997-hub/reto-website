@@ -428,34 +428,58 @@
   "whatIsReto": {
     "hero": {
       "h1": "¿Qué es Reto?",
-      "subtitle": "La plataforma que conecta a quienes enseñan medicina con quienes la ejercen y la transforman."
+      "subtitle": "Explicación institucional de la plataforma y su propósito dentro del ecosistema de educación médica."
     },
     "problem": {
-      "title": "El problema",
-      "intro": "La educación médica en Latinoamérica enfrenta tres tensiones estructurales que limitan el desarrollo profesional de los médicos.",
+      "title": "El problema que resolvemos",
+      "intro": "Hoy, la educación médica enfrenta una desconexión estructural: el contenido está fragmentado, las audiencias dispersas y los resultados son difíciles de medir.",
       "point1": {
-        "title": "Acceso fragmentado",
-        "body": "El conocimiento clínico se distribuye de manera desigual entre instituciones, regiones y especialidades."
+        "title": "Esfuerzos aislados",
+        "body": "Instituciones, hospitales e industria farmacéutica invierten en iniciativas educativas sin visibilidad clara sobre su impacto real en el aprendizaje y la práctica clínica."
       },
       "point2": {
-        "title": "Métricas ausentes",
-        "body": "Es difícil medir el impacto real de la formación continua sobre la práctica clínica."
+        "title": "Bajo engagement",
+        "body": "El contenido fragmentado y las audiencias dispersas generan baja participación y resultados difíciles de medir."
       },
       "point3": {
-        "title": "Brecha entre actores",
-        "body": "Universidades, hospitales e industria operan en silos, sin un canal común para construir educación conjunta."
+        "title": "Decisiones sin data",
+        "body": "Sin métricas claras, es imposible optimizar estrategias educativas ni demostrar el retorno de la inversión. Reto nace para resolver esta desconexión."
       }
     },
     "manifesto": {
-      "title": "Nuestro rol en la educación médica",
-      "body1": "Reto nace de una convicción: la educación médica es el punto donde se decide la calidad de la atención que recibirán los pacientes durante las próximas décadas.",
+      "title": "Manifiesto Reto",
+      "body1": "Reto es una plataforma de educación médica que conecta a instituciones, hospitales e industria farmacéutica con comunidades de médicos a través de experiencias de aprendizaje, contenido clínico y herramientas de medición de desempeño.",
       "body2": "No somos un repositorio de cursos ni una plataforma de certificados. Somos una infraestructura que conecta a las instituciones que forman médicos, los hospitales que los emplean y la industria que produce el conocimiento que los actualiza.",
       "body3": "Construimos rutas educativas que respetan la complejidad de la medicina y la rigurosidad que exige.",
       "quote": "Educar médicos no es transferir información. Es construir criterio."
     },
+    "impact": {
+      "title": "Impacto real en la formación médica en México",
+      "subtitle": "Reto se ha consolidado como un aliado clave en la formación y actualización de médicos en México, acompañando distintas etapas de su desarrollo profesional.",
+      "stat1": {
+        "number": "+65,000",
+        "label": "Comunidades activas a nivel nacional",
+        "body": "Más de 65,000 médicos forman parte de Reto, participando activamente en experiencias de aprendizaje dentro de la plataforma."
+      },
+      "stat2": {
+        "number": "ENARM",
+        "label": "Preparación para el ENARM",
+        "body": "Hemos acompañado a miles de médicos generales en su preparación para el ENARM, integrando simulación, casos clínicos y seguimiento de desempeño."
+      },
+      "stat3": {
+        "number": "🏥",
+        "label": "Formación de especialistas",
+        "body": "Apoyamos a médicos especialistas en su actualización y preparación para sus exámenes de certificación a través de contenido relevante por especialidad."
+      },
+      "stat4": {
+        "number": "🎓",
+        "label": "Vinculación con hospitales e instituciones",
+        "body": "Colaboramos con hospitales escuela y universidades para fortalecer la formación médica a través de licencias, programas académicos y becas."
+      }
+    },
     "team": {
-      "title": "El equipo",
-      "subtitle": "Médicos, educadores, tecnólogos y diseñadores construyendo la siguiente generación de educación médica.",
+      "title": "Equipo Reto",
+      "subtitle": "Reto es construido por un equipo multidisciplinario enfocado en educación médica, tecnología y generación de valor para el ecosistema de salud. Trabajamos con un mismo objetivo: diseñar experiencias educativas relevantes, medibles y alineadas a las necesidades reales del médico.",
       "member": {
         "placeholderName": "Nombre Apellido",
         "placeholderRole": "Rol en Reto"

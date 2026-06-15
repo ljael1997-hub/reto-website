@@ -1,0 +1,119 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const stats = [1, 2, 3, 4];
+---
+
+<section class="impact-section" aria-labelledby="impact-title">
+  <div class="impact-section__inner">
+    <div class="impact-section__heading">
+      <h2 id="impact-title">{t('whatIsReto.impact.title')}</h2>
+      <p>{t('whatIsReto.impact.subtitle')}</p>
+    </div>
+
+    <div class="impact-grid">
+      {stats.map((i) => (
+        <article class="impact-card">
+          <span class="impact-card__number">{t(`whatIsReto.impact.stat${i}.number`)}</span>
+          <h3 class="impact-card__label">{t(`whatIsReto.impact.stat${i}.label`)}</h3>
+          <p class="impact-card__body">{t(`whatIsReto.impact.stat${i}.body`)}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .impact-section {
+    background: var(--color-pelicula);
+    padding-block: var(--space-24);
+    padding-inline: var(--container-padding);
+  }
+
+  .impact-section__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    display: grid;
+    gap: var(--space-12);
+  }
+
+  .impact-section__heading {
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .impact-section__heading h2 {
+    color: #ffffff;
+  }
+
+  .impact-section__heading p {
+    margin-top: var(--space-4);
+    color: rgba(255,255,255,0.7);
+    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  }
+
+  .impact-grid {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: 1fr;
+  }
+
+  .impact-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-md);
+    padding: var(--space-8);
+  }
+
+  .impact-card__number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--color-amarillo);
+    line-height: 1;
+    margin-bottom: var(--space-3);
+  }
+
+  .impact-card__label {
+    color: #ffffff;
+    font-size: var(--text-h4);
+    margin-bottom: var(--space-2);
+  }
+
+  .impact-card__body {
+    color: rgba(255,255,255,0.65);
+    font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+    line-height: 1.6;
+  }
+
+  @media (min-width: 48em) {
+    .impact-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 64em) {
+    .impact-section__inner {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+      align-items: start;
+    }
+
+    .impact-section__heading {
+      text-align: left;
+      margin-inline: 0;
+    }
+
+    .impact-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
