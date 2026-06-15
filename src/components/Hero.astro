@@ -12,6 +12,10 @@ const dict = lang === 'en' ? enJson : esJson;
 const hero = dict.home.hero;
 const base = lang === 'en' ? '/en' : '';
 const aboutHref = lang === 'en' ? '/en/what-is-reto' : '/que-es-reto';
+
+const rotatingWords = lang === 'en'
+  ? ['physicians', 'nurses', 'cardiologists', 'residents', 'students']
+  : ['médicos', 'enfermeros', 'cardiólogos', 'residentes', 'estudiantes'];
 ---
 <section class="hero" id="home" aria-label={lang === 'en' ? 'Hero' : 'Inicio'}>
   <div class="hero__blob hero__blob--yellow" aria-hidden="true"></div>
@@ -19,7 +23,13 @@ const aboutHref = lang === 'en' ? '/en/what-is-reto' : '/que-es-reto';
 
   <div class="hero__inner">
     <h1 class="hero__h1">
-      {hero.title.before}<span class="hero-title-accent">{hero.title.accent}</span>{hero.title.after}
+      {hero.title.before}<span class="hero-title-accent">{hero.title.accent}</span>
+      {' '}el impacto en{' '}
+      <span class="hero-rotating-wrapper" aria-live="polite">
+        {rotatingWords.map((word, i) => (
+          <span class="hero-rotating-word" data-index={i}>{word}</span>
+        ))}
+      </span>.
     </h1>
     <p class="hero__subtitle">{hero.subtitle}</p>
     <div class="hero__ctas">
@@ -28,6 +38,22 @@ const aboutHref = lang === 'en' ? '/en/what-is-reto' : '/que-es-reto';
     </div>
   </div>
 </section>
+
+<script>
+  const words = document.querySelectorAll('.hero-rotating-word');
+  let current = 0;
+
+  function rotate() {
+    words[current].classList.remove('active');
+    current = (current + 1) % words.length;
+    words[current].classList.add('active');
+  }
+
+  if (words.length > 0) {
+    words[0].classList.add('active');
+    setInterval(rotate, 2000);
+  }
+</script>
 
 <style>
   .hero {
@@ -77,6 +103,27 @@ const aboutHref = lang === 'en' ? '/en/what-is-reto' : '/que-es-reto';
     margin-inline: auto;
     position: relative;
     z-index: 1;
+  }
+
+  /* ── Rotating word ────────────────────────────────────────────────── */
+  .hero-rotating-wrapper {
+    display: inline-block;
+    position: relative;
+  }
+
+  .hero-rotating-word {
+    display: none;
+    color: var(--color-amarillo);
+  }
+
+  .hero-rotating-word.active {
+    display: inline;
+    animation: fadeInUp 0.4s ease;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   /* ── Title accent ─────────────────────────────────────────────────── */
