@@ -7,13 +7,29 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
 const members = [
-  '/brand/team-avatar-doctor.webp',
-  '/brand/team-avatar-bot-yellow.webp',
-  '/brand/team-avatar-bot-blue.webp',
-  '/brand/team-avatar-bot-gold.webp',
-  '/brand/team-avatar-bot-purple.webp',
-  '/brand/team-avatar-bot-cyan.webp',
+  { name: 'Carlos Roca', role: 'CEO' },
+  { name: 'Paulina Torres', role: 'Operations Lead', extra: 'M.S.' },
+  { name: 'Alexandro Marcelo', role: 'IT Lead' },
+  { name: 'Silvia Reyna', role: 'Content Specialist' },
+  { name: 'Laura Sandoval', role: 'Admin Specialist' },
+  { name: 'Karla Bernal', role: 'Senior Project Manager' },
+  { name: 'Majenklis Nedeska', role: 'Senior Project Manager' },
+  { name: 'Yoher Vazquez', role: 'IT Analyst' },
+  { name: 'Karen Sumano', role: 'Lead Designer' },
+  { name: 'Jorge Soto', role: 'Product Lead' },
+  { name: 'Esteban Galicia', role: 'Senior Fullstack Developer' },
+  { name: 'Sofía Estrada', role: 'Strategic Partnership Analyst' },
+  { name: 'Daniela Montaño', role: 'Medical Content Specialist', extra: 'M.D.' },
+  { name: 'Armando Roman', role: 'Business Development Analyst' },
+  { name: 'Daniel Vela', role: 'AI & Data Lead', extra: 'M.S.' },
+  { name: 'Israel Perez', role: 'AI & Data Analyst' },
+  { name: 'Arturo Olmos', role: 'Growth Lead' },
+  { name: 'Ismael Castillo', role: 'Senior Fullstack Developer' },
+  { name: 'Arely Nataren', role: 'Medical Strategist Analyst', extra: 'M.D. LMA' },
+  { name: 'Enrique Aznar', role: 'Fraction Head of People' },
+  { name: 'Uri Torruco', role: 'Medical Education Lead', extra: 'M.D. M.Ed.' },
 ];
 ---
 
@@ -26,11 +42,14 @@ const members = [
 
     <div class="team-grid">
       {
-        members.map((imageSrc) => (
+        members.map((member) => (
           <article class="team-card">
-            <img class="team-card__photo" src={imageSrc} alt="" loading="lazy" />
-            <h3>{t('whatIsReto.team.member.placeholderName')}</h3>
-            <p>{t('whatIsReto.team.member.placeholderRole')}</p>
+            <div class="team-card__avatar" aria-hidden="true">
+              {member.name.split(' ').map(n => n[0]).slice(0,2).join('')}
+            </div>
+            <h3>{member.name}</h3>
+            {member.extra && <span class="team-card__extra">{member.extra}</span>}
+            <p>{member.role}</p>
           </article>
         ))
       }
@@ -77,14 +96,31 @@ const members = [
     background: var(--color-aliceblue);
   }
 
-  .team-card__photo {
-    width: min(200px, 100%);
+  .team-card__avatar {
+    width: min(80px, 100%);
     aspect-ratio: 1;
     margin-inline: auto;
-    border-radius: var(--radius-sm);
-    background: white;
-    object-fit: contain;
-    padding: var(--space-3);
+    border-radius: 50%;
+    background: var(--color-pelicula);
+    color: var(--color-amarillo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .team-card__extra {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-amarillo);
+    background: var(--color-pelicula);
+    border-radius: var(--radius-pill);
+    padding: 2px 8px;
+    margin-top: var(--space-1);
   }
 
   .team-card h3 {
