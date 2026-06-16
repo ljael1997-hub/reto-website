@@ -98,29 +98,29 @@
   "industry": {
     "hero": {
       "h1": "Para industria farmacéutica",
-      "subtitle": "Una plataforma para conectar con médicos a través de contenido educativo validado, campañas de actualización terapéutica y comunidades por especialidad.",
-      "cta": "Solicita una propuesta"
+      "subtitle": "Reto permite a la industria farmacéutica diseñar e implementar estrategias de educación médica dentro de un entorno clínico relevante, con acceso a comunidades de profesionales de la salud y medición de impacto.",
+      "cta": "Solicitar información"
     },
     "solutions": {
       "eyebrow": "Soluciones para industria",
-      "title": "Soluciones para la industria",
-      "body1": "Reto ofrece a la industria farmacéutica una vía directa para acompañar al médico en su actualización profesional, no a través de publicidad sino a través de contenido educativo validado por especialistas.",
-      "body2": "Cada iniciativa se construye con rigor académico, queda alojada en una infraestructura medible y respeta los códigos éticos de la comunicación médica.",
+      "title": "Soluciones de educación médica",
+      "body1": "Desarrollamos contenido clínico alineado a objetivos terapéuticos y educativos: casos clínicos, notas editoriales y contenido multimedia.",
+      "body2": "Activamos campañas educativas dentro de la plataforma, integradas en la experiencia del usuario, con segmentación por especialidad e integración natural en el flujo de aprendizaje.",
       "s1": {
-        "title": "Campañas de actualización terapéutica",
-        "body": "Rutas educativas patrocinadas que actualizan al médico sobre nuevas evidencias, guías y abordajes clínicos en un área terapéutica específica."
+        "title": "Soluciones de educación médica",
+        "body": "Casos clínicos, notas editoriales y contenido multimedia alineado a objetivos terapéuticos y educativos."
       },
       "s2": {
-        "title": "Comunidades por especialidad",
-        "body": "Espacios curados por especialidad médica donde la marca acompaña la conversación científica con presencia editorial, no publicitaria."
+        "title": "Campañas dentro de Reto",
+        "body": "Activaciones educativas integradas en la experiencia del usuario con segmentación por especialidad y alta visibilidad."
       },
       "s3": {
-        "title": "Estudios de comportamiento educativo",
-        "body": "Insights agregados y anonimizados sobre cómo los médicos aprenden, qué buscan y dónde se traba la curva de adopción de nuevas terapias."
+        "title": "Acceso a comunidades médicas",
+        "body": "Licencias y becas para médicos generales, residentes y especialistas dentro de comunidades activas."
       },
       "s4": {
-        "title": "Contenido médico patrocinado",
-        "body": "Producción editorial con respaldo académico: casos clínicos, revisiones de literatura, simposios virtuales con expertos."
+        "title": "Estudios de mercado",
+        "body": "Insights a partir del comportamiento de los usuarios: interacción con contenido, desempeño clínico y tendencias por especialidad."
       },
       "placeholder": "Mockup: panel de campañas educativas"
     },
@@ -136,8 +136,8 @@
         "body": "Todo el contenido es revisado por especialistas y construido con estándares de educación médica continua."
       },
       "b3": {
-        "title": "Cumplimiento normativo",
-        "body": "Respeta los códigos de ética de la industria y los lineamientos regulatorios de comunicación médica."
+        "title": "Métricas y capacidades de medición",
+        "body": "Engagement e interacción, avance y tasa de finalización, consumo de contenido, desempeño en evaluaciones y tasa de certificación."
       },
       "b4": {
         "title": "Insights accionables",
@@ -168,25 +168,25 @@
     "finalCta": {
       "title": "Construyamos juntos contenido que el médico sí quiera consumir.",
       "body": "Si lideras Medical Affairs, marketing médico o educación continua en la industria, te mostramos cómo Reto puede acompañar tu próximo lanzamiento o campaña.",
-      "button": "Agendar reunión"
+      "button": "Colaborar con Reto"
     }
   },
   "hospitals": {
     "hero": {
       "h1": "Para hospitales",
-      "subtitle": "Una plataforma para hospitales que necesitan formar y certificar a su personal médico de forma continua, medible y respaldada institucionalmente.",
-      "cta": "Solicita una demo institucional"
+      "subtitle": "Reto permite a hospitales fortalecer la formación, actualización y conexión con talento médico a través de herramientas educativas y acceso a una comunidad activa de profesionales de la salud.",
+      "cta": "Colaborar con Reto"
     },
     "program": {
-      "title": "Capacitación continua del personal médico",
-      "body1": "Reto permite a hospitales y grupos hospitalarios construir programas de formación continua para residentes, médicos adscritos y personal de enfermería, con contenido validado y trazabilidad clínica.",
-      "body2": "Los profesionales acceden a rutas de actualización, casos clínicos y simulacros desde su día a día. La institución accede a métricas que permiten certificar competencias y respaldar procesos de acreditación.",
+      "title": "Capacitación del personal médico",
+      "body1": "Facilitamos la actualización continua del equipo clínico mediante contenido basado en práctica real.",
+      "body2": "Ofrecemos esquemas de acceso institucional a la plataforma para impulsar la formación de médicos dentro del hospital y permitimos conectar con médicos a través de nuestras comunidades.",
       "advantages": {
         "title": "Lo que incluye:",
-        "a1": "Rutas de actualización por especialidad",
-        "a2": "Dashboard institucional con métricas por servicio",
-        "a3": "Constancias y reportes para acreditación",
-        "a4": "Licencias por institución, no por usuario suelto"
+        "a1": "Casos clínicos interactivos",
+        "a2": "Rutas por especialidad",
+        "a3": "Seguimiento de desempeño",
+        "a4": "Programas de becas y licencias para médicos y residentes"
       },
       "placeholder": "Mockup: dashboard institucional hospitalario"
     },
@@ -194,20 +194,20 @@
       "title": "Beneficios para el hospital",
       "subtitle": "Formación continua que no interrumpe la operación clínica.",
       "b1": {
-        "title": "Certificación trazable",
-        "body": "Cada actividad académica queda registrada y disponible para órganos certificadores."
+        "title": "Capacitación del personal médico",
+        "body": "Actualización continua del equipo clínico con casos clínicos interactivos, rutas por especialidad y seguimiento de desempeño."
       },
       "b2": {
-        "title": "Contenido por especialidad",
-        "body": "Material curado por especialistas, alineado con las áreas críticas del hospital."
+        "title": "Licencias para médicos y residentes",
+        "body": "Esquemas de acceso institucional a la plataforma: programas de becas, acceso a contenido especializado y seguimiento de uso."
       },
       "b3": {
-        "title": "Sin fricción para el médico",
-        "body": "El personal accede desde móvil en tiempos muertos, sin interrumpir la operación clínica."
+        "title": "Difusión de oportunidades profesionales",
+        "body": "Conecta con médicos a través de nuestras comunidades: publicación de vacantes, promoción de espacios clínicos y difusión de equipo en renta."
       },
       "b4": {
-        "title": "Modelo institucional",
-        "body": "Una sola licencia para el hospital, no contratos individuales por cada profesional."
+        "title": "Logos de hospitales aliados",
+        "body": "Salauno, IMSS, Hospital Zambrano Hellion TecSalud, Instituto de Cardiología y Medicina Vascular, y más."
       }
     },
     "case": {
@@ -234,25 +234,25 @@
     "finalCta": {
       "title": "Capacitemos juntos al equipo médico de tu hospital.",
       "body": "Si diriges un programa de formación o educación continua en un hospital, te mostramos cómo Reto se integra a tu institución.",
-      "button": "Agendar demo"
+      "button": "Colaborar con Reto"
     }
   },
   "universities": {
     "hero": {
       "h1": "Para universidades",
-      "subtitle": "Una plataforma diseñada para escuelas y facultades de medicina que necesitan formar mejor, medir más y respaldar institucionalmente cada paso.",
-      "cta": "Solicita una demo institucional"
+      "subtitle": "Reto permite a universidades fortalecer la preparación académica de sus estudiantes a través de una plataforma diseñada para el aprendizaje clínico, la práctica constante y la medición del desempeño.",
+      "cta": "Solicitar información"
     },
     "enarm": {
-      "title": "ENARM institucional",
-      "body1": "Una preparación para el ENARM construida desde la institución, no comprada por el alumno. Reto ofrece a las universidades una infraestructura completa para acompañar a sus generaciones desde antes del examen.",
+      "title": "Preparación ENARM institucional",
+      "body1": "Implementamos programas estructurados de preparación para el ENARM que integran simulación clínica, seguimiento del desempeño y hábitos de estudio sostenidos.",
       "body2": "Los alumnos acceden a contenido validado, casos clínicos, simulacros y analítica en tiempo real. La universidad accede a métricas de cohorte que permiten intervenir donde es necesario.",
       "advantages": {
         "title": "Lo que incluye:",
-        "a1": "Banco de casos y simulacros actualizado",
-        "a2": "Dashboard institucional con métricas por generación",
-        "a3": "Acompañamiento académico durante el ciclo",
-        "a4": "Reporte de impacto al cierre de cada generación"
+        "a1": "Simuladores periódicos",
+        "a2": "Evaluación continua",
+        "a3": "Seguimiento por alumno",
+        "a4": "Casos de éxito"
       },
       "placeholder": "Mockup: dashboard institucional ENARM"
     },
@@ -300,7 +300,7 @@
     "finalCta": {
       "title": "Construyamos juntos la siguiente generación de médicos.",
       "body": "Si coordinas un programa académico de medicina, te mostramos cómo funciona Reto en tu institución.",
-      "button": "Agendar demo"
+      "button": "Solicitar información"
     }
   },
   "paths": {
