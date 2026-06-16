@@ -305,65 +305,69 @@
   },
   "paths": {
     "hero": {
-      "h1": "Rutas educativas",
-      "subtitle": "Programas estructurados, validados y medidos. Diseñados para integrarse al ritmo real del médico."
+      "h1": "Rutas Educativas",
+      "subtitle": "Modelo estructurado de contenido dentro de Reto que organiza el aprendizaje por especialidad médica y permite a aliados implementar estrategias de educación médica dirigidas."
     },
     "concept": {
       "title": "¿Qué es una ruta educativa?",
-      "body1": "Una ruta educativa de Reto es un programa estructurado de formación continua sobre un dominio clínico específico, diseñado en colaboración con instituciones académicas y validado por especialistas en activo.",
-      "body2": "Cada ruta combina contenido teórico, casos clínicos, evaluaciones formativas y momentos de discusión, organizados en módulos que respetan la disponibilidad real del médico.",
-      "body3": "No es un curso aislado: es un trayecto que el médico puede iniciar, pausar, retomar y completar con trazabilidad institucional.",
+      "body1": "Una ruta educativa es un recorrido de aprendizaje secuencial que guía al médico a través de distintos contenidos y momentos de interacción, desde la introducción de un tema hasta la validación de su conocimiento.",
+      "body2": "A diferencia de modelos tradicionales, las rutas en Reto están diseñadas para asegurar avance, participación y comprensión, no sólo consumo de contenido.",
+      "body3": "Una arquitectura diseñada para llevar del entendimiento a la aplicación.",
       "placeholder": "Ilustración: anatomía de una ruta educativa"
     },
     "structure": {
-      "title": "Anatomía de una ruta",
+      "title": "Cómo se estructura una ruta",
       "step1": {
-        "title": "Diagnóstico inicial",
-        "body": "Evaluación de punto de partida del médico para personalizar la ruta."
+        "title": "Casos clínicos",
+        "body": "Eje central del aprendizaje. Escenarios reales que exigen análisis, toma de decisiones y aplicación del conocimiento."
       },
       "step2": {
-        "title": "Módulos teóricos",
-        "body": "Contenido validado por especialistas, en formatos breves y aplicables."
+        "title": "Micro-learning",
+        "body": "Cápsulas breves que facilitan el aprendizaje continuo y se adaptan a los tiempos disponibles del médico."
       },
       "step3": {
-        "title": "Casos clínicos",
-        "body": "Resolución de escenarios reales con retroalimentación inmediata."
+        "title": "Artículos y contenido editorial",
+        "body": "Profundizan en conceptos clave con respaldo académico y validación de especialistas."
       },
       "step4": {
-        "title": "Evaluación formativa",
-        "body": "Medición continua del avance y los puntos a reforzar."
+        "title": "Perlas e infografías",
+        "body": "Refuerzo visual para mejorar retención y facilitar la comprensión de conceptos complejos."
       },
       "step5": {
-        "title": "Acreditación",
-        "body": "Certificación con respaldo institucional al completar la ruta."
+        "title": "Quizzes interactivos",
+        "body": "Evaluaciones ágiles con retroalimentación inmediata que miden el avance en tiempo real."
+      },
+      "step6": {
+        "title": "Evaluación final y certificación",
+        "body": "Validación del aprendizaje bajo criterios definidos con constancia institucional."
       }
     },
     "specialties": {
-      "title": "Especialidades disponibles",
-      "subtitle": "Rutas activas o en desarrollo, construidas con instituciones aliadas.",
+      "title": "Especialidades activas",
+      "subtitle": "Las rutas se activan dentro de comunidades segmentadas por especialidad, asegurando relevancia en el contenido y mayor nivel de interacción.",
       "s1": {
         "name": "Cardiología",
         "body": "Manejo clínico y actualización en cardiología"
       },
       "s2": {
-        "name": "Oncología",
-        "body": "Avances diagnósticos y terapéuticos"
+        "name": "Dermatología",
+        "body": "Diagnóstico y tratamiento dermatológico"
       },
       "s3": {
-        "name": "Pediatría",
-        "body": "Atención integral del paciente pediátrico"
+        "name": "Oftalmología",
+        "body": "Salud visual y manejo oftalmológico"
       },
       "s4": {
-        "name": "Medicina interna",
-        "body": "Razonamiento clínico y casos complejos"
+        "name": "Medicina general",
+        "body": "Atención primaria y razonamiento clínico"
       },
       "s5": {
-        "name": "Ginecología",
-        "body": "Salud reproductiva y de la mujer"
+        "name": "Nefrología",
+        "body": "Enfermedades renales y manejo clínico"
       },
       "s6": {
-        "name": "Endocrinología",
-        "body": "Trastornos metabólicos y hormonales"
+        "name": "Pediatría",
+        "body": "Atención integral del paciente pediátrico"
       },
       "s7": {
         "name": "Neurología",
@@ -375,22 +379,42 @@
       }
     },
     "metrics": {
-      "title": "Impacto medido",
+      "title": "Métricas clave por ruta",
       "m1": {
-        "number": "—",
-        "label": "Médicos formados"
+        "number": "📊",
+        "label": "Engagement e interacción"
       },
       "m2": {
-        "number": "—",
-        "label": "Rutas activas"
+        "number": "📈",
+        "label": "Avance y tasa de finalización"
       },
       "m3": {
-        "number": "—",
-        "label": "Instituciones aliadas"
+        "number": "📋",
+        "label": "Consumo de contenido"
       },
       "m4": {
-        "number": "—",
-        "label": "% de finalización promedio"
+        "number": "🏆",
+        "label": "Desempeño en evaluaciones y tasa de certificación"
+      }
+    },
+    "allies": {
+      "title": "Aplicaciones para aliados",
+      "subtitle": "Un modelo adaptable a distintos objetivos educativos y de negocio.",
+      "a1": {
+        "title": "Educación médica continua",
+        "body": "Programas estructurados de actualización clínica."
+      },
+      "a2": {
+        "title": "Desarrollo de conocimiento en áreas específicas",
+        "body": "Recorridos enfocados en temas o abordajes concretos."
+      },
+      "a3": {
+        "title": "Activaciones educativas dirigidas",
+        "body": "Implementación de rutas para audiencias específicas."
+      },
+      "a4": {
+        "title": "Generación de engagement",
+        "body": "Experiencias diseñadas para fomentar participación sostenida."
       }
     }
   },
