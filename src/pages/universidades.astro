@@ -4,6 +4,7 @@ import AudienceBenefits from '../components/audiences/AudienceBenefits.astro';
 import AudienceProgramSection from '../components/audiences/AudienceProgramSection.astro';
 import CaseStudy from '../components/audiences/CaseStudy.astro';
 import FinalCta from '../components/audiences/FinalCta.astro';
+import AlliancesCarousel from '../components/audiences/AlliancesCarousel.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { useTranslations } from '../i18n/utils';
 
@@ -38,6 +39,7 @@ const t = useTranslations(lang);
     attributionBaseKey="universities.case.attribution"
     metricBaseKey="universities.case"
   />
+  <AlliancesCarousel />
   <FinalCta
     lang={lang}
     titleKey="universities.finalCta.title"
