@@ -397,32 +397,87 @@
   "methodology": {
     "hero": {
       "h1": "Metodología",
-      "subtitle": "Cinco pilares que sostienen cada ruta educativa de Reto."
+      "subtitle": "Una metodología diseñada para generar aprendizaje continuo y medible. Reto combina principios pedagógicos, tecnología y analítica para crear un modelo educativo que permite al médico aprender, practicar y mejorar de forma constante."
     },
     "pillar1": {
-      "title": "Accesibilidad",
-      "description": "El conocimiento médico debe estar disponible donde los médicos lo necesitan: en su consultorio, en el hospital, en su teléfono. Diseñamos cada experiencia para funcionar en condiciones reales: conexiones limitadas, tiempos cortos, dispositivos diversos.",
+      "title": "Accesibilidad radical",
+      "description": "Diseñamos una experiencia de aprendizaje que se adapta a la realidad del médico: móvil, flexible y disponible en cualquier momento. A través de micro-learning y una arquitectura modular, transformamos los tiempos disponibles en oportunidades de aprendizaje efectivas. Educación que vive en el bolsillo del profesional.",
       "placeholder": "Ilustración: dispositivos múltiples accediendo al mismo contenido"
     },
     "pillar2": {
-      "title": "Aprendizaje Basado en Casos",
-      "description": "La medicina se aprende resolviendo casos, no memorizando listas. Cada ruta de Reto está construida sobre escenarios clínicos reales que obligan al médico a tomar decisiones, justificarlas y revisarlas.",
+      "title": "Aprendizaje basado en casos clínicos (ABC + Active Learning)",
+      "description": "El eje del aprendizaje en Reto son los casos clínicos. A través del Aprendizaje Basado en Casos (ABC) y metodologías de active learning, el médico se enfrenta a escenarios reales que exigen análisis, toma de decisiones y aplicación del conocimiento.",
       "placeholder": "Ilustración: estructura de un caso clínico interactivo"
     },
     "pillar3": {
-      "title": "Gamificación con propósito",
-      "description": "No usamos puntos para entretener: usamos sistemas de progreso para sostener la motivación a lo largo de meses de formación. La gamificación de Reto está diseñada por educadores médicos, no por marketers.",
+      "title": "Ecosistema de incentivos",
+      "description": "Integramos un sistema de incentivos diseñado para fomentar la participación continua dentro de la plataforma. La gamificación en Reto no es superficial: está orientada a generar adherencia, reconocer el desempeño y convertir el aprendizaje en un hábito sostenido. Más participación, mayor aprendizaje.",
       "placeholder": "Ilustración: sistema de niveles, logros y progreso"
     },
     "pillar4": {
-      "title": "Analítica que importa",
-      "description": "Cada interacción genera datos útiles: dónde se traba un grupo, qué casos discriminan mejor entre niveles de competencia, qué rutas correlacionan con mejor desempeño clínico. Las instituciones reciben dashboards diseñados para tomar decisiones, no para impresionar.",
+      "title": "Analítica de desempeño",
+      "description": "Cada interacción dentro de Reto se traduce en datos. Nuestra plataforma permite medir engagement, progreso y desempeño, generando indicadores claros sobre el impacto de las intervenciones educativas.",
       "placeholder": "Ilustración: dashboard con métricas de aprendizaje"
     },
     "pillar5": {
-      "title": "Personalización adaptativa",
-      "description": "Cada médico llega con un punto de partida distinto. Reto adapta el ritmo, la profundidad y el enfoque de cada ruta según el desempeño individual, sin sacrificar el rigor del programa.",
+      "title": "Personalización del aprendizaje",
+      "description": "Reto ajusta la experiencia educativa en función del comportamiento, desempeño y ritmo de cada usuario. El médico puede aprender a su propio ritmo, en cualquier momento, con contenido relevante y accesible incluso sin conexión. Educación continua, personalizada y disponible 24/7.",
       "placeholder": "Ilustración: ruta adaptativa con caminos divergentes"
+    },
+    "axes": {
+      "title": "Ejes Estratégicos: El ADN de Reto",
+      "axis1": {
+        "number": "01",
+        "title": "Accesibilidad Radical",
+        "subtitle": "Educación que vive en el bolsillo del profesional.",
+        "concept": "Educación sin fricciones, diseñada para la realidad del profesional de la salud.",
+        "why": "El tiempo es el activo más escaso en medicina. Nuestra arquitectura móvil-modular transforma los tiempos muertos en ventanas de alta productividad.",
+        "promise": "Educación atómica que vive en el bolsillo del profesional, garantizando máxima retención sin saturación cognitiva.",
+        "points": [
+          "Arquitectura móvil-modular.",
+          "Micro-learning: aprendizaje en porciones atómicas.",
+          "Resultado: Máxima productividad en tiempos mínimos."
+        ]
+      },
+      "axis2": {
+        "number": "02",
+        "title": "Metodología de Alto Rendimiento",
+        "subtitle": "El rigor científico se encuentra con el Active Learning.",
+        "concept": "El Aprendizaje Basado en Casos (ABC) como eje del razonamiento clínico.",
+        "why": "La teoría sin contexto se olvida. Combinamos el rigor académico con una experiencia de flujo donde el desafío intelectual impulsa la resolución de problemas reales.",
+        "promise": "Simulación clínica activa: donde el rigor científico se encuentra con el compromiso del aprendizaje basado en retos.",
+        "points": [
+          "Casos clínicos reales (ABC) como eje central.",
+          "Experiencia de flujo cognitivo.",
+          "Resultado: Del aprendizaje pasivo al razonamiento clínico."
+        ]
+      },
+      "axis3": {
+        "number": "03",
+        "title": "Ecosistema de Incentivos",
+        "subtitle": "Ganando la batalla por la atención del médico.",
+        "concept": "Gamificación con propósito para fomentar la adherencia al estudio.",
+        "why": "La actualización médica compite con la economía de la atención. Creamos un sistema de recompensas que transforma la obligación del estudio en un hábito diario premiado.",
+        "promise": "Un ciclo de recompensa diseñado para reconocer la excelencia y asegurar la actualización continua del profesional.",
+        "points": [
+          "Gamificación diseñada para crear hábitos.",
+          "Reconocimiento de la excelencia y progresión.",
+          "Resultado: Adherencia continua y compromiso (Engagement)."
+        ]
+      },
+      "axis4": {
+        "number": "04",
+        "title": "Inteligencia de Datos y Validación",
+        "subtitle": "De la interacción a la decisión clínica.",
+        "concept": "Transformar la interacción en métricas de competencia y calidad.",
+        "why": "En el sector salud, el aprendizaje debe ser demostrable. Aplicamos rigor ético y normativo para generar KPIs que validen el conocimiento y mejoren los desenlaces clínicos.",
+        "promise": "Educación certificada y basada en datos, respaldada por instituciones de prestigio para transformar la información en mejores decisiones médicas.",
+        "points": [
+          "Métricas e indicadores de competencia y calidad.",
+          "Avales institucionales y rigor normativo.",
+          "Resultado: Educación certificada con impacto real en el paciente."
+        ]
+      }
     }
   },
   "whatIsReto": {

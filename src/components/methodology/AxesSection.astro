@@ -1,0 +1,144 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const axes = [1, 2, 3, 4];
+---
+
+<section class="axes-section" aria-labelledby="axes-title">
+  <div class="axes-section__inner">
+    <h2 id="axes-title" class="axes-section__title">{t('methodology.axes.title')}</h2>
+
+    <div class="axes-grid">
+      {axes.map((i) => (
+        <article class="axis-card">
+          <span class="axis-card__number">{t(`methodology.axes.axis${i}.number`)}</span>
+          <h3 class="axis-card__title">{t(`methodology.axes.axis${i}.title`)}</h3>
+          <p class="axis-card__subtitle">{t(`methodology.axes.axis${i}.subtitle`)}</p>
+
+          <div class="axis-card__block">
+            <span class="axis-card__label">El concepto</span>
+            <p>{t(`methodology.axes.axis${i}.concept`)}</p>
+          </div>
+
+          <div class="axis-card__block">
+            <span class="axis-card__label">Por qué importa</span>
+            <p>{t(`methodology.axes.axis${i}.why`)}</p>
+          </div>
+
+          <div class="axis-card__promise">
+            <span class="axis-card__label">La promesa</span>
+            <p>"{t(`methodology.axes.axis${i}.promise`)}"</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .axes-section {
+    background: var(--color-pelicula);
+    padding-block: var(--space-24);
+    padding-inline: var(--container-padding);
+  }
+
+  .axes-section__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  .axes-section__title {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+
+  .axes-grid {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 48em) {
+    .axes-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .axis-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-md);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .axis-card__number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-amarillo);
+    line-height: 1;
+  }
+
+  .axis-card__title {
+    color: #ffffff;
+    font-size: var(--text-h3);
+    line-height: 1.2;
+  }
+
+  .axis-card__subtitle {
+    color: var(--color-amarillo);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .axis-card__block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .axis-card__block p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .axis-card__label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .axis-card__promise {
+    background: rgba(255,255,255,0.06);
+    border-left: 3px solid var(--color-amarillo);
+    padding: var(--space-4);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin-top: auto;
+  }
+
+  .axis-card__promise p {
+    color: rgba(255,255,255,0.85);
+    font-style: italic;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+</style>

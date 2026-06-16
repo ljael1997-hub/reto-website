@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { useTranslations } from '../i18n/utils';
 import PillarSection from '../components/methodology/PillarSection.astro';
+import AxesSection from '../components/methodology/AxesSection.astro';
 
 const lang = 'es';
 const t = useTranslations(lang);
@@ -61,6 +62,8 @@ const alianzas = [
       />
     ))
   }
+
+  <AxesSection lang={lang} />
 
   <section class="alianzas-metodologia">
     <div class="alianzas-metodologia__container">
