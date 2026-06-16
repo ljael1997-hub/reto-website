@@ -40,19 +40,21 @@ const members = [
       <p>{t('whatIsReto.team.subtitle')}</p>
     </div>
 
-    <div class="team-grid">
-      {
-        members.map((member) => (
-          <article class="team-card">
-            <div class="team-card__avatar" aria-hidden="true">
-              {member.name.split(' ').map(n => n[0]).slice(0,2).join('')}
-            </div>
-            <h3>{member.name}</h3>
-            {member.extra && <span class="team-card__extra">{member.extra}</span>}
-            <p>{member.role}</p>
-          </article>
-        ))
-      }
+    <div class="team-grid-wrapper">
+      <div class="team-grid">
+        {
+          members.map((member) => (
+            <article class="team-card">
+              <div class="team-card__avatar" aria-hidden="true">
+                {member.name.split(' ').map(n => n[0]).slice(0,2).join('')}
+              </div>
+              <h3>{member.name}</h3>
+              {member.extra && <span class="team-card__extra">{member.extra}</span>}
+              <p>{member.role}</p>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>
@@ -81,11 +83,32 @@ const members = [
     font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
   }
 
-  .team-grid {
+  .team-grid-wrapper {
+    position: relative;
+    max-height: 480px;
+    overflow-y: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-amarillo) transparent;
     margin-top: var(--space-12);
+  }
+
+  .team-grid-wrapper::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .team-grid-wrapper::-webkit-scrollbar-thumb {
+    background: var(--color-amarillo);
+    border-radius: 2px;
+  }
+
+  .team-grid {
+    margin-top: 0;
+    padding: var(--space-4);
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-6);
+    gap: var(--space-4);
   }
 
   .team-card {
