@@ -8,6 +8,8 @@ interface Props {
   attributionBaseKey: string;
   metricBaseKey: string;
   metricCount?: number;
+  logoSrc?: string;
+  logoAlt?: string;
 }
 
 const {
@@ -17,6 +19,8 @@ const {
   attributionBaseKey,
   metricBaseKey,
   metricCount = 3,
+  logoSrc,
+  logoAlt = '',
 } = Astro.props;
 const t = useTranslations(lang);
 const metrics = Array.from({ length: metricCount }, (_, index) => index + 1);
@@ -27,7 +31,12 @@ const metrics = Array.from({ length: metricCount }, (_, index) => index + 1);
     <h2 id="case-study-title">{t(titleKey)}</h2>
 
     <article class="case-study__card">
-      <div class="case-study__logo" aria-hidden="true"></div>
+      <div
+        class={`case-study__logo${logoSrc ? '' : ' case-study__logo--placeholder'}`}
+        aria-hidden={logoSrc ? 'false' : 'true'}
+      >
+        {logoSrc && <img src={logoSrc} alt={logoAlt} loading="lazy" decoding="async" />}
+      </div>
       <blockquote>{t(quoteKey)}</blockquote>
       <div class="case-study__attribution">
         <p class="case-study__name">{t(`${attributionBaseKey}.name`)}</p>
@@ -74,10 +83,22 @@ const metrics = Array.from({ length: metricCount }, (_, index) => index + 1);
   }
 
   .case-study__logo {
+    display: flex;
+    align-items: center;
     width: 160px;
     height: 56px;
     border-radius: var(--radius-sm);
+  }
+
+  .case-study__logo--placeholder {
     background: linear-gradient(135deg, rgba(32, 30, 30, 0.12), rgba(32, 30, 30, 0.04));
+  }
+
+  .case-study__logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: left center;
   }
 
   .case-study blockquote {
