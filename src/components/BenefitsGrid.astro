@@ -10,18 +10,6 @@ interface Props {
 const { lang } = Astro.props;
 const dict = lang === 'en' ? enJson : esJson;
 const { title, items } = dict.home.benefits;
-
-// Simple geometric SVG icons in --color-amarillo (#FFB500)
-const icons = [
-  // Circle
-  `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="20" fill="#FFB500"/></svg>`,
-  // Diamond (rotated square)
-  `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><polygon points="24,4 44,24 24,44 4,24" fill="#FFB500"/></svg>`,
-  // Triangle
-  `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><polygon points="24,5 44,43 4,43" fill="#FFB500"/></svg>`,
-  // Hexagon
-  `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><polygon points="24,3 42,13.5 42,34.5 24,45 6,34.5 6,13.5" fill="#FFB500"/></svg>`,
-];
 ---
 <section class="benefits" id="beneficios">
   <div class="benefits__container">
@@ -31,7 +19,6 @@ const icons = [
         <div role="listitem">
           <Card>
             <div class="benefit-card">
-              <div class="benefit-card__icon" set:html={icons[i]} />
               <h3 class="benefit-card__title">{item.title}</h3>
               <p class="benefit-card__desc">{item.description}</p>
             </div>
@@ -85,12 +72,6 @@ const icons = [
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
-  }
-
-  .benefit-card__icon {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
   }
 
   .benefit-card__title {

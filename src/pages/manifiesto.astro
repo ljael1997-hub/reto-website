@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ManifestoSection from '../components/whatIsReto/ManifestoSection.astro';
+import { useTranslations } from '../i18n/utils';
+
+const lang = 'es';
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title="Manifiesto"
+  description="El manifiesto de Reto: por qué existimos y qué defendemos."
+  lang={lang}
+>
+  <div class="manifesto-page__back">
+    <a href="/que-es-reto">&larr; {t('manifestoPage.backLink')}</a>
+  </div>
+  <ManifestoSection lang={lang} />
+</BaseLayout>
+
+<style>
+  .manifesto-page__back {
+    max-width: 800px;
+    margin: var(--space-8) auto 0;
+    padding-inline: var(--container-padding);
+  }
+
+  .manifesto-page__back a {
+    color: var(--color-azul-acero);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--text-small);
+    text-decoration: none;
+  }
+
+  .manifesto-page__back a:hover {
+    text-decoration: underline;
+  }
+</style>

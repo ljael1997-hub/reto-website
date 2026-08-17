@@ -5,11 +5,15 @@ import PillarSection from '../../components/methodology/PillarSection.astro';
 
 const lang = 'en';
 const t = useTranslations(lang);
+// "The promise" for each pillar reuses the text that used to live in the
+// "Strategic Axes" section (now removed as duplicate) — each pillar is
+// matched by topic to its corresponding axis. Pillar 5 had no equivalent
+// axis, so it stays without a promise block.
 const pillars = [
-  { number: '01', index: 1, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-accessibility.webp' },
-  { number: '02', index: 2, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-cases.webp' },
-  { number: '03', index: 3, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-gamification.webp' },
-  { number: '04', index: 4, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-analytics.webp' },
+  { number: '01', index: 1, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-accessibility.webp', promiseKey: 'methodology.axes.axis1.promise' },
+  { number: '02', index: 2, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-cases.webp', promiseKey: 'methodology.axes.axis2.promise' },
+  { number: '03', index: 3, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-gamification.webp', promiseKey: 'methodology.axes.axis3.promise' },
+  { number: '04', index: 4, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-analytics.webp', promiseKey: 'methodology.axes.axis4.promise' },
   { number: '05', index: 5, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-personalization.webp' },
 ] as const;
 ---
@@ -37,6 +41,7 @@ const pillars = [
         imageSrc={pillar.imageSrc}
         bgColor={pillar.bgColor}
         imageOnLeft={pillar.imageOnLeft}
+        promiseKey={pillar.promiseKey}
       />
     ))
   }

@@ -18,7 +18,10 @@
   "footer": {
     "quick_links": "Enlaces rápidos",
     "powered_by": "Reto es una plataforma de Mellow",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "manifesto_link": "Manifiesto",
+    "terms_link": "Términos y condiciones",
+    "privacy_link": "Aviso de privacidad"
   },
   "contact": {
     "hero": {
@@ -381,19 +384,19 @@
     "metrics": {
       "title": "Métricas clave por ruta",
       "m1": {
-        "number": "📊",
+        "number": "—",
         "label": "Engagement e interacción"
       },
       "m2": {
-        "number": "📈",
+        "number": "—",
         "label": "Avance y tasa de finalización"
       },
       "m3": {
-        "number": "📋",
+        "number": "—",
         "label": "Consumo de contenido"
       },
       "m4": {
-        "number": "🏆",
+        "number": "—",
         "label": "Desempeño en evaluaciones y tasa de certificación"
       }
     },
@@ -546,12 +549,12 @@
         "body": "Hemos acompañado a miles de médicos generales en su preparación para el ENARM, integrando simulación, casos clínicos y seguimiento de desempeño."
       },
       "stat3": {
-        "number": "🏥",
+        "number": "—",
         "label": "Formación de especialistas",
         "body": "Apoyamos a médicos especialistas en su actualización y preparación para sus exámenes de certificación a través de contenido relevante por especialidad."
       },
       "stat4": {
-        "number": "🎓",
+        "number": "—",
         "label": "Vinculación con hospitales e instituciones",
         "body": "Colaboramos con hospitales escuela y universidades para fortalecer la formación médica a través de licencias, programas académicos y becas."
       }
@@ -563,6 +566,60 @@
         "placeholderName": "Nombre Apellido",
         "placeholderRole": "Rol en Reto"
       }
+    },
+    "values": {
+      "title": "Los valores que guían a Reto",
+      "items": [
+        {
+          "title": "Somos curiosos",
+          "description": "Buscamos entender a fondo las necesidades de nuestros usuarios y clientes para diseñar la solución correcta. Cuestionamos el status quo, no juzgamos ideas nuevas y mantenemos un aprendizaje constante que nos impulsa a salir de nuestra zona de confort."
+        },
+        {
+          "title": "Pensamos como dueños todos en la organización",
+          "description": "Nos apasionan los resultados del negocio y asumimos total responsabilidad de nuestros actos. Cuidamos los recursos, actuamos con sentido de urgencia y practicidad, y elevamos continuamente el estándar de excelencia."
+        },
+        {
+          "title": "Somos generosos",
+          "description": "Nos mueve el bienestar integral y el impacto positivo de nuestro trabajo. Disfrutamos ayudar a los demás y buscamos siempre transformar y mejorar nuestro entorno."
+        },
+        {
+          "title": "Somos transparentes",
+          "description": "La ética y la responsabilidad guían cada una de nuestras relaciones. Nos comunicamos de forma honesta, abierta y bajo la premisa de superar siempre las expectativas generadas (under promise, over delivered)."
+        },
+        {
+          "title": "Somos perseverantes",
+          "description": "Trabajamos con un propósito firme que trasciende lo inmediato. Creemos profundamente en el valor de lo que estamos construyendo y siempre damos ese esfuerzo extra para alcanzar nuestras metas."
+        },
+        {
+          "title": "Tomamos en serio nuestras promesas, nuestras palabras",
+          "description": "Nuestra palabra tiene valor. Cumplimos con lo prometido a clientes, aliados y compañeros; mantenemos informados sobre nuestros avances y, si surge algún imprevisto, siempre avisamos con honestidad."
+        },
+        {
+          "title": "Creamos conexiones",
+          "description": "Construimos relaciones significativas enfocadas en lo que los usuarios realmente necesitan. Fomentamos el crecimiento mutuo e impulsamos el desarrollo de sueños profesionales dentro y fuera de la organización."
+        },
+        {
+          "title": "Somos promotores de los profesionales de la salud",
+          "description": "Somos los mayores aliados de quienes cuidan vidas. Buscamos y gestionamos los mejores recursos para apoyarlos en su crecimiento, facilitando su camino hacia el éxito."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Lo que dicen nuestros aliados",
+      "items": [
+        {
+          "quote": "Logramos posicionar a nuestras clínicas como un lugar atractivo para trabajar. Nuestro equipo de RH notó este crecimiento y valora mucho los avances alcanzados.",
+          "attribution": "Hospital Aliado"
+        },
+        {
+          "quote": "La plataforma logró un engagement muy superior al de nuestras campañas tradicionales.",
+          "attribution": "Medical Affairs – Laboratorio"
+        },
+        {
+          "quote": "Reto MD nos ayuda a unificar al grupo, enriqueciendo las clases y fomentando el trabajo en equipo. Los simuladores y casos clínicos promueven la revisión colaborativa y la búsqueda de bibliografía adicional; estudiar en equipo con estas herramientas mejora las técnicas de estudio y reduce notablemente el estrés de los alumnos.",
+          "attribution": "Dra. Coordinadora programas ENARM - Universidad Privada (Top #1)"
+        }
+      ]
     }
   },
   "home": {
@@ -605,5 +662,15 @@
       "title": "Instituciones que confían en Reto",
       "subtitle": "Universidades, hospitales y compañías líderes del sector salud."
     }
+  },
+  "manifestoPage": {
+    "title": "Manifiesto",
+    "backLink": "Volver a ¿Qué es Reto?"
+  },
+  "legalPlaceholder": {
+    "termsTitle": "Términos y condiciones",
+    "privacyTitle": "Aviso de privacidad",
+    "body": "Este contenido está en preparación. Pronto encontrarás aquí el texto legal definitivo.",
+    "backLink": "Volver al inicio"
   }
 }

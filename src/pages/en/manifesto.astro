@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ManifestoSection from '../../components/whatIsReto/ManifestoSection.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title="Manifesto"
+  description="Reto's manifesto: why we exist and what we stand for."
+  lang={lang}
+>
+  <div class="manifesto-page__back">
+    <a href="/en/what-is-reto">&larr; {t('manifestoPage.backLink')}</a>
+  </div>
+  <ManifestoSection lang={lang} />
+</BaseLayout>
+
+<style>
+  .manifesto-page__back {
+    max-width: 800px;
+    margin: var(--space-8) auto 0;
+    padding-inline: var(--container-padding);
+  }
+
+  .manifesto-page__back a {
+    color: var(--color-azul-acero);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--text-small);
+    text-decoration: none;
+  }
+
+  .manifesto-page__back a:hover {
+    text-decoration: underline;
+  }
+</style>

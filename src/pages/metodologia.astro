@@ -2,15 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { useTranslations } from '../i18n/utils';
 import PillarSection from '../components/methodology/PillarSection.astro';
-import AxesSection from '../components/methodology/AxesSection.astro';
 
 const lang = 'es';
 const t = useTranslations(lang);
+// "La promesa" de cada pilar reusa el texto que ya vivía en la sección
+// "Ejes Estratégicos" (ahora eliminada por estar duplicada) — cada pilar
+// se empareja por tema con el eje que le correspondía. El Pilar 5 no tenía
+// un eje equivalente, así que se queda sin bloque de promesa.
 const pillars = [
-  { number: '01', index: 1, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-accessibility.webp' },
-  { number: '02', index: 2, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-cases.webp' },
-  { number: '03', index: 3, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-gamification.webp' },
-  { number: '04', index: 4, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-analytics.webp' },
+  { number: '01', index: 1, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-accessibility.webp', promiseKey: 'methodology.axes.axis1.promise' },
+  { number: '02', index: 2, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-cases.webp', promiseKey: 'methodology.axes.axis2.promise' },
+  { number: '03', index: 3, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-gamification.webp', promiseKey: 'methodology.axes.axis3.promise' },
+  { number: '04', index: 4, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-analytics.webp', promiseKey: 'methodology.axes.axis4.promise' },
   { number: '05', index: 5, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-personalization.webp' },
 ] as const;
 
@@ -59,11 +62,10 @@ const alianzas = [
         imageSrc={pillar.imageSrc}
         bgColor={pillar.bgColor}
         imageOnLeft={pillar.imageOnLeft}
+        promiseKey={pillar.promiseKey}
       />
     ))
   }
-
-  <AxesSection lang={lang} />
 
   <section class="alianzas-metodologia">
     <div class="alianzas-metodologia__container">

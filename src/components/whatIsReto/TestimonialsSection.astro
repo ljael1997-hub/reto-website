@@ -1,0 +1,98 @@
+---
+import esJson from '../../i18n/es.json';
+import enJson from '../../i18n/en.json';
+import type { Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = lang === 'en' ? enJson : esJson;
+const { title, items: testimonials } = dict.whatIsReto.testimonials;
+---
+
+<section class="testimonials-section" aria-labelledby="testimonials-title">
+  <div class="testimonials-section__inner">
+    <h2 id="testimonials-title">{title}</h2>
+
+    <div class="testimonials-grid">
+      {
+        testimonials.map((item) => (
+          <figure class="testimonial-card">
+            <blockquote>{item.quote}</blockquote>
+            <figcaption>{item.attribution}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    background: var(--color-aliceblue);
+    padding-block: var(--space-24);
+    padding-inline: var(--container-padding);
+  }
+
+  .testimonials-section__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  .testimonials-section h2 {
+    text-align: center;
+    color: var(--color-pelicula);
+    margin-bottom: var(--space-12);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .testimonial-card {
+    border: 1px solid rgba(32, 30, 30, 0.08);
+    border-radius: var(--radius-sm);
+    background: white;
+    padding: var(--space-8);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .testimonial-card blockquote {
+    margin: 0;
+    color: var(--color-pelicula);
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .testimonial-card blockquote::before {
+    content: '“';
+    color: var(--color-amarillo);
+    font-family: var(--font-display);
+    font-size: 1.5em;
+    line-height: 0;
+    margin-right: var(--space-1);
+  }
+
+  .testimonial-card figcaption {
+    color: rgba(32, 30, 30, 0.64);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--text-small);
+  }
+
+  @media (min-width: 64em) {
+    .testimonials-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

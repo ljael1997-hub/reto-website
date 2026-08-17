@@ -18,7 +18,10 @@
   "footer": {
     "quick_links": "Quick links",
     "powered_by": "Reto is a Mellow platform",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "manifesto_link": "Manifesto",
+    "terms_link": "Terms and conditions",
+    "privacy_link": "Privacy notice"
   },
   "contact": {
     "hero": {
@@ -423,6 +426,20 @@
       "title": "Adaptive personalization",
       "description": "Every physician arrives with a different starting point. Reto adapts the pace, depth and focus of each path based on individual performance, without sacrificing the program's rigor.",
       "placeholder": "Illustration: adaptive path with divergent branches"
+    },
+    "axes": {
+      "axis1": {
+        "promise": "Atomic education that lives in the professional's pocket, ensuring maximum retention without cognitive overload."
+      },
+      "axis2": {
+        "promise": "Active clinical simulation: where scientific rigor meets the commitment of challenge-based learning."
+      },
+      "axis3": {
+        "promise": "A reward cycle designed to recognize excellence and ensure the professional's continuous updating."
+      },
+      "axis4": {
+        "promise": "Certified, data-driven education, backed by prestigious institutions, turning information into better medical decisions."
+      }
     }
   },
   "whatIsReto": {
@@ -475,15 +492,69 @@
         "body": "We have supported thousands of general practitioners in preparing for the ENARM, integrating simulation, clinical cases and performance tracking."
       },
       "stat3": {
-        "number": "🏥",
+        "number": "—",
         "label": "Specialist training",
         "body": "We support medical specialists in their continuing education and preparation for certification exams through specialty-relevant content."
       },
       "stat4": {
-        "number": "🎓",
+        "number": "—",
         "label": "Partnerships with hospitals and institutions",
         "body": "We collaborate with teaching hospitals and universities to strengthen medical training through licenses, academic programs and scholarships."
       }
+    },
+    "values": {
+      "title": "The values that guide Reto",
+      "items": [
+        {
+          "title": "We are curious",
+          "description": "We seek to deeply understand the needs of our users and clients to design the right solution. We question the status quo, don't judge new ideas, and maintain constant learning that pushes us out of our comfort zone."
+        },
+        {
+          "title": "We think like owners across the organization",
+          "description": "We are passionate about business results and take full responsibility for our actions. We take care of resources, act with urgency and practicality, and continuously raise the standard of excellence."
+        },
+        {
+          "title": "We are generous",
+          "description": "We are driven by holistic wellbeing and the positive impact of our work. We enjoy helping others and always seek to transform and improve our environment."
+        },
+        {
+          "title": "We are transparent",
+          "description": "Ethics and responsibility guide every one of our relationships. We communicate honestly and openly, always aiming to exceed the expectations we set (under promise, over deliver)."
+        },
+        {
+          "title": "We are persistent",
+          "description": "We work with a firm purpose that goes beyond the immediate. We deeply believe in the value of what we are building and always give that extra effort to reach our goals."
+        },
+        {
+          "title": "We take our promises seriously, our word matters",
+          "description": "Our word has value. We deliver on what we promise to clients, partners and teammates; we keep everyone informed of our progress and, if something unexpected comes up, we always communicate it honestly."
+        },
+        {
+          "title": "We build connections",
+          "description": "We build meaningful relationships focused on what users really need. We foster mutual growth and support professional dreams, inside and outside the organization."
+        },
+        {
+          "title": "We champion healthcare professionals",
+          "description": "We are the biggest allies of those who care for lives. We seek out and manage the best resources to support their growth, making their path to success easier."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What our partners say",
+      "items": [
+        {
+          "quote": "We managed to position our clinics as an attractive place to work. Our HR team noticed this growth and greatly values the progress achieved.",
+          "attribution": "Partner Hospital"
+        },
+        {
+          "quote": "The platform achieved engagement far higher than our traditional campaigns.",
+          "attribution": "Medical Affairs – Pharmaceutical Lab"
+        },
+        {
+          "quote": "Reto MD helps us unify the group, enriching classes and fostering teamwork. The simulators and clinical cases promote collaborative review and additional research; studying as a team with these tools improves study techniques and noticeably reduces student stress.",
+          "attribution": "ENARM Program Coordinator, M.D. - Private University (Top #1)"
+        }
+      ]
     }
   },
   "home": {
@@ -526,5 +597,15 @@
       "title": "Institutions that trust Reto",
       "subtitle": "Leading universities, hospitals and healthcare companies."
     }
+  },
+  "manifestoPage": {
+    "title": "Manifesto",
+    "backLink": "Back to What is Reto?"
+  },
+  "legalPlaceholder": {
+    "termsTitle": "Terms and conditions",
+    "privacyTitle": "Privacy notice",
+    "body": "This content is being prepared. The final legal text will be available here soon.",
+    "backLink": "Back to home"
   }
 }
