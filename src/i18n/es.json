@@ -8,10 +8,10 @@
     "about": "¿Qué es Reto?",
     "methodology": "Metodología",
     "paths": "Rutas educativas",
-    "forYou": "Para ti",
+    "forYou": "Industria",
     "universities": "Universidades",
     "hospitals": "Hospitales",
-    "industry": "Industria",
+    "industry": "Farma",
     "solutions": "Soluciones",
     "contact": "Contacto"
   },
@@ -377,8 +377,8 @@
         "body": "Diagnóstico y manejo neurológico"
       },
       "s8": {
-        "name": "Medicina familiar",
-        "body": "Atención primaria y continuidad clínica"
+        "name": "Psiquiatría",
+        "body": "Diagnóstico y manejo en salud mental"
       }
     },
     "metrics": {
@@ -449,7 +449,8 @@
     "pillar5": {
       "title": "Personalización del aprendizaje",
       "description": "Reto ajusta la experiencia educativa en función del comportamiento, desempeño y ritmo de cada usuario. El médico puede aprender a su propio ritmo, en cualquier momento, con contenido relevante y accesible incluso sin conexión. Educación continua, personalizada y disponible 24/7.",
-      "placeholder": "Ilustración: ruta adaptativa con caminos divergentes"
+      "placeholder": "Ilustración: ruta adaptativa con caminos divergentes",
+      "promise": "Educación certificada y basada en datos, respaldada por instituciones de prestigio para transformar la información en mejores decisiones médicas."
     },
     "axes": {
       "title": "Ejes Estratégicos: El ADN de Reto",
@@ -510,7 +511,7 @@
   "whatIsReto": {
     "hero": {
       "h1": "¿Qué es Reto?",
-      "subtitle": "Explicación institucional de la plataforma y su propósito dentro del ecosistema de educación médica."
+      "subtitle": "Reto es una plataforma de educación médica que conecta instituciones, hospitales e industria farmacéutica con comunidades médicas mediante experiencias de aprendizaje, tecnología y analítica para generar un impacto educativo medible."
     },
     "problem": {
       "title": "El problema que resolvemos",

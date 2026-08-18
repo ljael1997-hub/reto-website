@@ -8,10 +8,10 @@
     "about": "What is Reto?",
     "methodology": "Methodology",
     "paths": "Learning paths",
-    "forYou": "For you",
+    "forYou": "Industry",
     "universities": "Universities",
     "hospitals": "Hospitals",
-    "industry": "Industry",
+    "industry": "Pharma",
     "solutions": "Solutions",
     "contact": "Contact"
   },
@@ -349,32 +349,32 @@
         "body": "Clinical management and updates in cardiology"
       },
       "s2": {
-        "name": "Oncology",
-        "body": "Diagnostic and therapeutic advances"
+        "name": "Dermatology",
+        "body": "Diagnosis and dermatological treatment"
       },
       "s3": {
-        "name": "Pediatrics",
-        "body": "Comprehensive pediatric patient care"
+        "name": "Ophthalmology",
+        "body": "Visual health and ophthalmological care"
       },
       "s4": {
-        "name": "Internal Medicine",
-        "body": "Clinical reasoning and complex cases"
+        "name": "General Medicine",
+        "body": "Primary care and clinical reasoning"
       },
       "s5": {
-        "name": "Gynecology",
-        "body": "Reproductive and women's health"
+        "name": "Nephrology",
+        "body": "Kidney disease and clinical management"
       },
       "s6": {
-        "name": "Endocrinology",
-        "body": "Metabolic and hormonal disorders"
+        "name": "Pediatrics",
+        "body": "Comprehensive pediatric patient care"
       },
       "s7": {
         "name": "Neurology",
         "body": "Neurological diagnosis and management"
       },
       "s8": {
-        "name": "Family Medicine",
-        "body": "Primary care and clinical continuity"
+        "name": "Psychiatry",
+        "body": "Mental health diagnosis and management"
       }
     },
     "metrics": {
@@ -425,7 +425,8 @@
     "pillar5": {
       "title": "Adaptive personalization",
       "description": "Every physician arrives with a different starting point. Reto adapts the pace, depth and focus of each path based on individual performance, without sacrificing the program's rigor.",
-      "placeholder": "Illustration: adaptive path with divergent branches"
+      "placeholder": "Illustration: adaptive path with divergent branches",
+      "promise": "Certified, data-driven education, backed by prestigious institutions, turning information into better medical decisions."
     },
     "axes": {
       "axis1": {
