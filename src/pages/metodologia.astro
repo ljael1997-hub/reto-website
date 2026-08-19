@@ -7,14 +7,14 @@ const lang = 'es';
 const t = useTranslations(lang);
 // "La promesa" de cada pilar reusa el texto que ya vivía en la sección
 // "Ejes Estratégicos" (ahora eliminada por estar duplicada) — cada pilar
-// se empareja por tema con el eje que le correspondía. El Pilar 5 no tenía
-// un eje equivalente, así que se queda sin bloque de promesa.
+// se empareja por tema con el eje que le correspondía. El Pilar 5 reusa
+// el mismo texto de promesa que tenía el eje 4 en el Copy Deck.
 const pillars = [
   { number: '01', index: 1, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-accessibility.webp', promiseKey: 'methodology.axes.axis1.promise' },
   { number: '02', index: 2, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-cases.webp', promiseKey: 'methodology.axes.axis2.promise' },
   { number: '03', index: 3, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-gamification.webp', promiseKey: 'methodology.axes.axis3.promise' },
   { number: '04', index: 4, bgColor: 'aliceblue', imageOnLeft: true, imageSrc: '/brand/methodology-analytics.webp', promiseKey: 'methodology.axes.axis4.promise' },
-  { number: '05', index: 5, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-personalization.webp' },
+  { number: '05', index: 5, bgColor: 'white', imageOnLeft: false, imageSrc: '/brand/methodology-personalization.webp', promiseKey: 'methodology.pillar5.promise' },
 ] as const;
 
 const alianzas = [

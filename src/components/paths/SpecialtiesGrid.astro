@@ -8,9 +8,8 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 // El logo de cada especialidad se mapea por nombre de archivo real
-// (assets entregados por Karen). "Medicina familiar" (s8) todavía no
-// tiene un logo entregado — Karen preparó "Psiquiatría" en su lugar,
-// así que por ahora se queda con el ícono genérico anterior.
+// (assets entregados por Karen). s8 pasó de "Medicina familiar" a
+// "Psiquiatría" por indicación del Copy Deck; el logo ya está en Drive.
 const specialties = [
   'cardiologia',
   'dermatologia',
@@ -19,7 +18,7 @@ const specialties = [
   'nefrologia',
   'pediatria',
   'neurologia',
-  null,
+  'psiquiatria',
 ];
 ---
 
